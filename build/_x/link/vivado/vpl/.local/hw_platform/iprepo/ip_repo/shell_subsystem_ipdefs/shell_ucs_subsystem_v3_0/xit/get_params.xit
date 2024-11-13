@@ -1,0 +1,601 @@
+# (c) Copyright 2019 Xilinx, Inc. All rights reserved.
+#
+# This file contains confidential and proprietary information
+# of Xilinx, Inc. and is protected under U.S. and
+# international copyright and other intellectual property
+# laws.
+#
+# DISCLAIMER
+# This disclaimer is not a license and does not grant any
+# rights to the materials distributed herewith. Except as
+# otherwise provided in a valid license issued to you by
+# Xilinx, and to the maximum extent permitted by applicable
+# law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+# WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+# AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+# BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+# INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+# (2) Xilinx shall not be liable (whether in contract or tort,
+# including negligence, or under any other theory of
+# liability) for any loss or damage of any kind or nature
+# related to, arising under or in connection with these
+# materials, including for any direct, or any indirect,
+# special, incidental, or consequential loss or damage
+# (including loss of data, profits, goodwill, or any type of
+# loss or damage suffered as a result of any action brought
+# by a third party) even if such damage or loss was
+# reasonably foreseeable or Xilinx had been advised of the
+# possibility of the same.
+#
+# CRITICAL APPLICATIONS
+# Xilinx products are not designed or intended to be fail-
+# safe, or for use in any application requiring fail-safe
+# performance, such as life-support or safety devices or
+# systems, Class III medical devices, nuclear facilities,
+# applications related to the deployment of airbags, or any
+# other applications that could lead to death, personal
+# injury, or severe property or environmental damage
+# (individually and collectively, "Critical
+# Applications"). Customer assumes the sole risk and
+# liability of any use of Xilinx products in Critical
+# Applications, subject only to applicable laws and
+# regulations governing limitations on product liability.
+#
+# THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+# PART OF THIS FILE AT ALL TIMES.
+############################################################
+
+set shell_subsystem                                   [::ipxit::current_inst]
+
+#============================================================================================================================================================#
+# Get Project settings
+#============================================================================================================================================================#
+
+# N/A
+
+#============================================================================================================================================================#
+# Constants
+#============================================================================================================================================================#
+
+set max_kernel_clocks                                 6
+
+#============================================================================================================================================================#
+# Get user parameters
+#============================================================================================================================================================#
+
+set C_NUM_SLR                                         [get_property CONFIG.NUM_SLR                                                        $shell_subsystem]
+
+# Create dictionary to store numberof pipeline registers for resets fanned out to each SLR
+
+set slr_fanout_dictionary                             {}
+
+dict set slr_fanout_dictionary 0 num_flops            [get_property CONFIG.NUM_RESET_FANOUT_FLOPS_SLR0                                    $shell_subsystem]
+dict set slr_fanout_dictionary 1 num_flops            [get_property CONFIG.NUM_RESET_FANOUT_FLOPS_SLR1                                    $shell_subsystem]
+dict set slr_fanout_dictionary 2 num_flops            [get_property CONFIG.NUM_RESET_FANOUT_FLOPS_SLR2                                    $shell_subsystem]
+dict set slr_fanout_dictionary 3 num_flops            [get_property CONFIG.NUM_RESET_FANOUT_FLOPS_SLR3                                    $shell_subsystem]
+
+set hbm_clock_frequency                               400
+
+# HAS_HBM_CLK
+# 1 - HBM Clock Disabled
+# 2 - 400MHz HBM Clock enabled
+# 3 - 450MHz HBM Clock enabled
+if {[get_property CONFIG.HAS_HBM_CLK $shell_subsystem] == 1} {
+
+    set C_HAS_HBM_CLK                                 false
+
+} elseif {[get_property CONFIG.HAS_HBM_CLK $shell_subsystem] == 2} {
+
+    set C_HAS_HBM_CLK                                 true
+
+} elseif {[get_property CONFIG.HAS_HBM_CLK $shell_subsystem] == 3} {
+
+    set C_HAS_HBM_CLK                                 true
+    set hbm_clock_frequency                           450
+
+}
+
+set C_FREQ_CNT_REF_CLK_HZ                             [get_property CONFIG.FREQ_CNT_REF_CLK_HZ                                            $shell_subsystem]
+set C_DISABLE_THROTTLING                              [get_property CONFIG.DISABLE_THROTTLING                                             $shell_subsystem]
+set C_ENABLE_SHUTDOWN_CLOCKS                          [get_property CONFIG.ENABLE_SHUTDOWN_CLOCKS                                         $shell_subsystem]
+set C_CLK_DOMAIN_CLK_HBM                              [get_property CONFIG.CLK_DOMAIN_CLK_HBM                                             $shell_subsystem]
+set C_DISABLE_MGMT_JSON_METADATA                      [get_property CONFIG.DISABLE_MGMT_JSON_METADATA                                     $shell_subsystem]
+
+# Create dictionaries for Kernel Clock and MMC group settings
+
+set kernel_clock_dictionary                           {}
+set mmcm_group_dictionary                             {}
+
+# Create variable to store number of enabled kernel clocks
+set num_enabled_kernel_clocks                         0
+
+# Create variable to store number of enabled scalable kernel clocks
+set num_enabled_scalable_kernel_clocks                0
+
+# Create variable to store AXI index of toplevel AXI IC
+set axi_ic_top_index                                  0
+
+# Create variable to store AXI index of frequency counter AXI IC
+set axi_ic_freq_index                                 0
+
+# Create flags to mark kernel clocks as Master/Slave in multiple-MMCM clock mode
+# The Master clock is the first kernel clock in an MMCM clock group.
+# All other clocks are slaves
+set group_master_1                                    true
+set group_master_2                                    true
+set group_master_3                                    true
+set group_master_4                                    true
+set group_master_5                                    true
+
+# Create variables to store index numbers for each clock within a group.
+# The master clock will have index 1, slaves index 2-5
+# Default to 0 (disabled) until Multi-MMCM clock mode is enabled
+set group_index_1                                     0
+set group_index_2                                     0
+set group_index_3                                     0
+set group_index_4                                     0
+set group_index_5                                     0
+
+# Create a loop to scroll through all kernel clocks and build dictionaries
+for {set k 0} {$k < $max_kernel_clocks} {incr k} {
+
+    # Create index left-padded with a zero
+    set index [format %02s $k]
+
+    # Load Kernel Clock Index into dictionary
+    dict set kernel_clock_dictionary $k index $index
+
+    # Load Kernel Clock frequency into dictionary
+    dict set kernel_clock_dictionary $k frequency         [get_property CONFIG.FREQ_HZ_KERNEL_CLOCK_$index                                $shell_subsystem]
+
+    # Increment variable storing number of enabled kernel clocks
+    if {[get_property CONFIG.FREQ_HZ_KERNEL_CLOCK_$index $shell_subsystem] > 0} {
+        incr num_enabled_kernel_clocks
+    }
+
+    # Load Kernel Clock Scalable Enable into dictionary
+    dict set kernel_clock_dictionary $k scaling           [get_property CONFIG.ENABLE_SCALABLE_KERNEL_CLOCK_$index                        $shell_subsystem]
+
+    # Load Kernel Clock Throttling Enable into dictionary
+    dict set kernel_clock_dictionary $k throttling        [get_property CONFIG.ENABLE_THROTTLING_KERNEL_CLOCK_$index                      $shell_subsystem]
+
+    # Load Continuous Kernel Clock Enable into dictionary
+    dict set kernel_clock_dictionary $k continuous        [get_property CONFIG.ENABLE_CONT_KERNEL_CLOCK_$index                            $shell_subsystem]
+
+    # Load Kernel Clock Divisor into dictionary
+    dict set kernel_clock_dictionary $k divisor           [get_property CONFIG.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_$index                   $shell_subsystem]
+
+    # Load Kernel Clock MMCM Clock Group into dictionary
+    dict set kernel_clock_dictionary $k group             [get_property CONFIG.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_$index                    $shell_subsystem]
+
+    # Store additional MMC clock group informaiton when non-zero group value is read
+    if {[get_property CONFIG.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_$index $shell_subsystem] > 0} {
+
+        # Load params from dictionary for current kernel clock (k)
+        set group        [dict get $kernel_clock_dictionary $k group]
+        set frequency    [dict get $kernel_clock_dictionary $k frequency]
+
+        # Calculate name of MMCM group master variable name based on current MMCM group
+        set group_master_name group_master_${group}
+
+        # Calculate name of MMCM group index variable name based on current MMCM group
+        set group_index_name  group_index_${group}
+
+        # Load current MMCM group index value into a variable, increment and store back into original variable
+        set group_index_value [subst $$group_index_name]
+        incr group_index_value
+        set $group_index_name $group_index_value
+
+        # Load MMCM group master and MMCM group index variables into dictionary
+        dict set kernel_clock_dictionary $k group_master  [subst $$group_master_name]
+        dict set kernel_clock_dictionary $k group_index   $group_index_value
+
+        # Update Group master flag
+        set $group_master_name false
+
+        # Copy frequency value into MMCM group dictionary
+        dict set mmcm_group_dictionary   $group freq${group_index_value}  $frequency
+
+    } else {
+
+        # Set n/a flags (for debug)
+        dict set kernel_clock_dictionary $k group_master  not_applicable
+        dict set kernel_clock_dictionary $k group_index   not_applicable
+
+    }
+
+    # Load Kernel Clock Domain into dictionary
+    dict set kernel_clock_dictionary $k domain            [get_property CONFIG.CLK_DOMAIN_ACLK_KERNEL_$index                              $shell_subsystem]
+
+    # Load Indexes for axi_ic_ctrl_mgmt_top and axi_ix_ctrl_mgmt_freq into dictionary
+    dict set kernel_clock_dictionary $k axi_ic_top_index  [format %02s $axi_ic_top_index]
+    dict set kernel_clock_dictionary $k axi_ic_freq_index [format %02s $axi_ic_freq_index]
+
+    # Increment indexes when enabled kernel clock is detected
+    if {[get_property CONFIG.FREQ_HZ_KERNEL_CLOCK_$index $shell_subsystem] > 0} {
+
+        incr axi_ic_freq_index
+
+        # Toplevel AXI IC index is only incremented if scalable clock is enabled
+        if {[get_property CONFIG.ENABLE_SCALABLE_KERNEL_CLOCK_$index $shell_subsystem] == true} {
+            incr axi_ic_top_index
+            incr num_enabled_scalable_kernel_clocks
+        }
+
+    }
+
+}
+
+# Load max_kernel_clocks, num_enabled_kernel_clocks and num_enabled_scalable_kernel_clocks into dictionary
+dict set kernel_clock_dictionary max_kernel_clocks                  $max_kernel_clocks
+dict set kernel_clock_dictionary num_enabled_kernel_clocks          $num_enabled_kernel_clocks
+dict set kernel_clock_dictionary num_enabled_scalable_kernel_clocks $num_enabled_scalable_kernel_clocks
+
+# Record MMCM group size in dictionary
+for {set k 0} {$k < $max_kernel_clocks} {incr k} {
+
+    # Create index left-padded with a zero
+    set index [format %02s $k]
+
+    # Check if Multi-MMCM clock mode is enabled for this kernel clock
+    if {[get_property CONFIG.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_$index $shell_subsystem] > 0} {
+
+        # Load params from dictionary
+        set group             [dict get $kernel_clock_dictionary $k group]
+
+        # Calculate name of MMCM group index variable name based on current MMCM group
+        set group_index_name  group_index_${group}
+
+        # Load current MMCM group index value into a variable
+        set group_index_value [subst $$group_index_name]
+
+        # Load MMCM group index value into dictionary to record group size and number of clocks to be enabled in Multi-MMCM clkwiz
+        dict set kernel_clock_dictionary $k     group_size   $group_index_value
+        dict set mmcm_group_dictionary   $group num_out_clks $group_index_value
+
+    } else {
+
+        # Set n/a flags (for debug)
+        dict set kernel_clock_dictionary $k group_size   not_applicable
+
+    }
+
+}
+
+# Print debug info
+for {set k 0} {$k < $max_kernel_clocks} {incr k} {
+    dbg_puts "------------------------------------------------------------"
+    dbg_puts "Instance                            $k"
+    dbg_puts "Index                               [dict get $kernel_clock_dictionary $k index]"
+    dbg_puts "AXI Index Top                       [dict get $kernel_clock_dictionary $k axi_ic_top_index]"
+    dbg_puts "AXI Index Freq                      [dict get $kernel_clock_dictionary $k axi_ic_freq_index]"
+    dbg_puts "frequency                           [dict get $kernel_clock_dictionary $k frequency]"
+    dbg_puts "Scaling                             [dict get $kernel_clock_dictionary $k scaling]"
+    dbg_puts "Throttling                          [dict get $kernel_clock_dictionary $k throttling]"
+    dbg_puts "Continuous                          [dict get $kernel_clock_dictionary $k continuous]"
+    dbg_puts "Divisor                             [dict get $kernel_clock_dictionary $k divisor]"
+    dbg_puts "Group                               [dict get $kernel_clock_dictionary $k group]"
+    dbg_puts "Group Master                        [dict get $kernel_clock_dictionary $k group_master]"
+    dbg_puts "Group Index                         [dict get $kernel_clock_dictionary $k group_index]"
+    dbg_puts "Group Size                          [dict get $kernel_clock_dictionary $k group_size]"
+    dbg_puts "Domain                              [dict get $kernel_clock_dictionary $k domain]"
+}
+
+dbg_puts "------------------------------------------------------------"
+dbg_puts "max_kernel_clocks                   [dict get $kernel_clock_dictionary max_kernel_clocks]"
+dbg_puts "num_enabled_kernel_clocks           [dict get $kernel_clock_dictionary num_enabled_kernel_clocks]"
+dbg_puts "num_enabled_scalable_kernel_clocks  [dict get $kernel_clock_dictionary num_enabled_scalable_kernel_clocks]"
+
+dbg_puts "------------------------------------------------------------"
+dbg_puts "$mmcm_group_dictionary"
+dbg_puts "------------------------------------------------------------"
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# BUILD INFO
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_SUBSYSTEM_ID                                    [get_property CONFIG.VERSION.SUBSYSTEM_ID                                           $shell_subsystem]
+set C_VIV_VERSION                                     [get_property CONFIG.VERSION.VIV_VERSION                                            $shell_subsystem]
+set C_MAJOR_VERSION                                   [get_property CONFIG.VERSION.MAJOR_VERSION                                          $shell_subsystem]
+set C_MINOR_VERSION                                   [get_property CONFIG.VERSION.MINOR_VERSION                                          $shell_subsystem]
+set C_CORE_REVISION                                   [get_property CONFIG.VERSION.CORE_REVISION                                          $shell_subsystem]
+set C_PATCH_REVISION                                  [get_property CONFIG.VERSION.PATCH_REVISION                                         $shell_subsystem]
+set C_PERFORCE_CL                                     [get_property CONFIG.VERSION.PERFORCE_CL                                            $shell_subsystem]
+set C_RESERVED_TAG                                    [get_property CONFIG.VERSION.RESERVED_TAG                                           $shell_subsystem]
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# Host Peripheral Address / Endpoint parameters
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_ENABLE_FULL_ADDRESS_ASSIGNMENTS                 [get_property CONFIG.ENABLE_FULL_ADDRESS_ASSIGNMENTS                                $shell_subsystem]
+set C_SUPPORT_NEW_INTERRUPT_SCHEMA                    [get_property CONFIG.SUPPORT_NEW_INTERRUPT_SCHEMA                                   $shell_subsystem]
+
+set C_MGMT_PF_BASE_ADDRESS                            [get_property CONFIG.MGMT_PF_BASE_ADDRESS                                           $shell_subsystem]
+
+set C_EP_UCS_BUILD_INFO_00_OFFSET                     [get_property CONFIG.EP_UCS_BUILD_INFO_00_OFFSET                                    $shell_subsystem]
+set C_EP_UCS_BUILD_INFO_00_OFFSET_FULL                [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_UCS_BUILD_INFO_00_OFFSET]
+set C_EP_UCS_BUILD_INFO_00_RANGE                      [convert_range_to_hex [get_property CONFIG.EP_UCS_BUILD_INFO_00_RANGE               $shell_subsystem]]
+
+set C_EP_GAPPING_DEMAND_00_OFFSET                     [get_property CONFIG.EP_GAPPING_DEMAND_00_OFFSET                                    $shell_subsystem]
+set C_EP_GAPPING_DEMAND_00_OFFSET_FULL                [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_GAPPING_DEMAND_00_OFFSET]
+set C_EP_GAPPING_DEMAND_00_RANGE                      [convert_range_to_hex [get_property CONFIG.EP_GAPPING_DEMAND_00_RANGE               $shell_subsystem]]
+set C_EP_GAPPING_DEMAND_00_PF                         [string tolower [get_property CONFIG.EP_GAPPING_DEMAND_00_PF                        $shell_subsystem]]
+set C_EP_GAPPING_DEMAND_00_BAR                        [string tolower [get_property CONFIG.EP_GAPPING_DEMAND_00_BAR                       $shell_subsystem]]
+set C_EP_GAPPING_DEMAND_00_REGABS                     [string tolower [get_property CONFIG.EP_GAPPING_DEMAND_00_REGABS                    $shell_subsystem]]
+
+set C_EP_UCS_CONTROL_STATUS_00_OFFSET                 [get_property CONFIG.EP_UCS_CONTROL_STATUS_00_OFFSET                                $shell_subsystem]
+set C_EP_UCS_CONTROL_STATUS_00_OFFSET_FULL            [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_UCS_CONTROL_STATUS_00_OFFSET]
+set C_EP_UCS_CONTROL_STATUS_00_RANGE                  [convert_range_to_hex [get_property CONFIG.EP_UCS_CONTROL_STATUS_00_RANGE           $shell_subsystem]]
+set C_EP_UCS_CONTROL_STATUS_00_PF                     [string tolower [get_property CONFIG.EP_UCS_CONTROL_STATUS_00_PF                    $shell_subsystem]]
+set C_EP_UCS_CONTROL_STATUS_00_BAR                    [string tolower [get_property CONFIG.EP_UCS_CONTROL_STATUS_00_BAR                   $shell_subsystem]]
+set C_EP_UCS_CONTROL_STATUS_00_REGABS                 [string tolower [get_property CONFIG.EP_UCS_CONTROL_STATUS_00_REGABS                $shell_subsystem]]
+
+set C_EP_ACLK_KERNEL_00_OFFSET                        [get_property CONFIG.EP_ACLK_KERNEL_00_OFFSET                                       $shell_subsystem]
+set C_EP_ACLK_KERNEL_00_OFFSET_FULL                   [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_ACLK_KERNEL_00_OFFSET]
+set C_EP_ACLK_KERNEL_00_RANGE                         [convert_range_to_hex [get_property CONFIG.EP_ACLK_KERNEL_00_RANGE                  $shell_subsystem]]
+set C_EP_ACLK_KERNEL_00_PF                            [string tolower [get_property CONFIG.EP_ACLK_KERNEL_00_PF                           $shell_subsystem]]
+set C_EP_ACLK_KERNEL_00_BAR                           [string tolower [get_property CONFIG.EP_ACLK_KERNEL_00_BAR                          $shell_subsystem]]
+set C_EP_ACLK_KERNEL_00_REGABS                        [string tolower [get_property CONFIG.EP_ACLK_KERNEL_00_REGABS                       $shell_subsystem]]
+
+set C_EP_ACLK_KERNEL_01_OFFSET                        [get_property CONFIG.EP_ACLK_KERNEL_01_OFFSET                                       $shell_subsystem]
+set C_EP_ACLK_KERNEL_01_OFFSET_FULL                   [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_ACLK_KERNEL_01_OFFSET]
+set C_EP_ACLK_KERNEL_01_RANGE                         [convert_range_to_hex [get_property CONFIG.EP_ACLK_KERNEL_01_RANGE                  $shell_subsystem]]
+set C_EP_ACLK_KERNEL_01_PF                            [string tolower [get_property CONFIG.EP_ACLK_KERNEL_01_PF                           $shell_subsystem]]
+set C_EP_ACLK_KERNEL_01_BAR                           [string tolower [get_property CONFIG.EP_ACLK_KERNEL_01_BAR                          $shell_subsystem]]
+set C_EP_ACLK_KERNEL_01_REGABS                        [string tolower [get_property CONFIG.EP_ACLK_KERNEL_01_REGABS                       $shell_subsystem]]
+
+set C_EP_ACLK_KERNEL_02_OFFSET                        [get_property CONFIG.EP_ACLK_KERNEL_02_OFFSET                                       $shell_subsystem]
+set C_EP_ACLK_KERNEL_02_OFFSET_FULL                   [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_ACLK_KERNEL_02_OFFSET]
+set C_EP_ACLK_KERNEL_02_RANGE                         [convert_range_to_hex [get_property CONFIG.EP_ACLK_KERNEL_02_RANGE                  $shell_subsystem]]
+set C_EP_ACLK_KERNEL_02_PF                            [string tolower [get_property CONFIG.EP_ACLK_KERNEL_02_PF                           $shell_subsystem]]
+set C_EP_ACLK_KERNEL_02_BAR                           [string tolower [get_property CONFIG.EP_ACLK_KERNEL_02_BAR                          $shell_subsystem]]
+set C_EP_ACLK_KERNEL_02_REGABS                        [string tolower [get_property CONFIG.EP_ACLK_KERNEL_02_REGABS                       $shell_subsystem]]
+
+set C_EP_ACLK_KERNEL_03_OFFSET                        [get_property CONFIG.EP_ACLK_KERNEL_03_OFFSET                                       $shell_subsystem]
+set C_EP_ACLK_KERNEL_03_OFFSET_FULL                   [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_ACLK_KERNEL_03_OFFSET]
+set C_EP_ACLK_KERNEL_03_RANGE                         [convert_range_to_hex [get_property CONFIG.EP_ACLK_KERNEL_03_RANGE                  $shell_subsystem]]
+set C_EP_ACLK_KERNEL_03_PF                            [string tolower [get_property CONFIG.EP_ACLK_KERNEL_03_PF                           $shell_subsystem]]
+set C_EP_ACLK_KERNEL_03_BAR                           [string tolower [get_property CONFIG.EP_ACLK_KERNEL_03_BAR                          $shell_subsystem]]
+set C_EP_ACLK_KERNEL_03_REGABS                        [string tolower [get_property CONFIG.EP_ACLK_KERNEL_03_REGABS                       $shell_subsystem]]
+
+set C_EP_ACLK_KERNEL_04_OFFSET                        [get_property CONFIG.EP_ACLK_KERNEL_04_OFFSET                                       $shell_subsystem]
+set C_EP_ACLK_KERNEL_04_OFFSET_FULL                   [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_ACLK_KERNEL_04_OFFSET]
+set C_EP_ACLK_KERNEL_04_RANGE                         [convert_range_to_hex [get_property CONFIG.EP_ACLK_KERNEL_04_RANGE                  $shell_subsystem]]
+set C_EP_ACLK_KERNEL_04_PF                            [string tolower [get_property CONFIG.EP_ACLK_KERNEL_04_PF                           $shell_subsystem]]
+set C_EP_ACLK_KERNEL_04_BAR                           [string tolower [get_property CONFIG.EP_ACLK_KERNEL_04_BAR                          $shell_subsystem]]
+set C_EP_ACLK_KERNEL_04_REGABS                        [string tolower [get_property CONFIG.EP_ACLK_KERNEL_04_REGABS                       $shell_subsystem]]
+
+set C_EP_ACLK_KERNEL_05_OFFSET                        [get_property CONFIG.EP_ACLK_KERNEL_05_OFFSET                                       $shell_subsystem]
+set C_EP_ACLK_KERNEL_05_OFFSET_FULL                   [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_ACLK_KERNEL_05_OFFSET]
+set C_EP_ACLK_KERNEL_05_RANGE                         [convert_range_to_hex [get_property CONFIG.EP_ACLK_KERNEL_05_RANGE                  $shell_subsystem]]
+set C_EP_ACLK_KERNEL_05_PF                            [string tolower [get_property CONFIG.EP_ACLK_KERNEL_05_PF                           $shell_subsystem]]
+set C_EP_ACLK_KERNEL_05_BAR                           [string tolower [get_property CONFIG.EP_ACLK_KERNEL_05_BAR                          $shell_subsystem]]
+set C_EP_ACLK_KERNEL_05_REGABS                        [string tolower [get_property CONFIG.EP_ACLK_KERNEL_05_REGABS                       $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET               [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET                              $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET_FULL          [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET]
+set C_EP_FREQ_CNT_ACLK_KERNEL_00_RANGE                [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_00_RANGE         $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_00_PF                   [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_00_PF                  $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_00_BAR                  [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_00_BAR                 $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_00_REGABS               [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_00_REGABS              $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET               [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET                              $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET_FULL          [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET]
+set C_EP_FREQ_CNT_ACLK_KERNEL_01_RANGE                [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_01_RANGE         $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_01_PF                   [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_01_PF                  $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_01_BAR                  [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_01_BAR                 $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_01_REGABS               [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_01_REGABS              $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET               [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET                              $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET_FULL          [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET]
+set C_EP_FREQ_CNT_ACLK_KERNEL_02_RANGE                [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_02_RANGE         $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_02_PF                   [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_02_PF                  $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_02_BAR                  [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_02_BAR                 $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_02_REGABS               [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_02_REGABS              $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET               [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET                              $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET_FULL          [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET]
+set C_EP_FREQ_CNT_ACLK_KERNEL_03_RANGE                [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_03_RANGE         $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_03_PF                   [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_03_PF                  $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_03_BAR                  [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_03_BAR                 $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_03_REGABS               [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_03_REGABS              $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET               [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET                              $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET_FULL          [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET]
+set C_EP_FREQ_CNT_ACLK_KERNEL_04_RANGE                [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_04_RANGE         $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_04_PF                   [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_04_PF                  $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_04_BAR                  [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_04_BAR                 $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_04_REGABS               [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_04_REGABS              $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET               [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET                              $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET_FULL          [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET]
+set C_EP_FREQ_CNT_ACLK_KERNEL_05_RANGE                [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_05_RANGE         $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_05_PF                   [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_05_PF                  $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_05_BAR                  [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_05_BAR                 $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_KERNEL_05_REGABS               [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_KERNEL_05_REGABS              $shell_subsystem]]
+
+set C_EP_ACLK_HBM_00_OFFSET                           [get_property CONFIG.EP_ACLK_HBM_00_OFFSET                                          $shell_subsystem]
+set C_EP_ACLK_HBM_00_OFFSET_FULL                      [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_ACLK_HBM_00_OFFSET]
+set C_EP_ACLK_HBM_00_RANGE                            [convert_range_to_hex [get_property CONFIG.EP_ACLK_HBM_00_RANGE                     $shell_subsystem]]
+set C_EP_ACLK_HBM_00_PF                               [string tolower [get_property CONFIG.EP_ACLK_HBM_00_PF                              $shell_subsystem]]
+set C_EP_ACLK_HBM_00_BAR                              [string tolower [get_property CONFIG.EP_ACLK_HBM_00_BAR                             $shell_subsystem]]
+set C_EP_ACLK_HBM_00_REGABS                           [string tolower [get_property CONFIG.EP_ACLK_HBM_00_REGABS                          $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_HBM_00_OFFSET                  [get_property CONFIG.EP_FREQ_CNT_ACLK_HBM_00_OFFSET                                 $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_HBM_00_OFFSET_FULL             [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_HBM_00_OFFSET]
+set C_EP_FREQ_CNT_ACLK_HBM_00_RANGE                   [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_HBM_00_RANGE            $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_HBM_00_PF                      [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_HBM_00_PF                     $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_HBM_00_BAR                     [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_HBM_00_BAR                    $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_HBM_00_REGABS                  [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_HBM_00_REGABS                 $shell_subsystem]]
+
+set C_EP_FREQ_CNT_ACLK_00_OFFSET                      [get_property CONFIG.EP_FREQ_CNT_ACLK_00_OFFSET                                     $shell_subsystem]
+set C_EP_FREQ_CNT_ACLK_00_OFFSET_FULL                 [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS $C_EP_FREQ_CNT_ACLK_00_OFFSET]
+set C_EP_FREQ_CNT_ACLK_00_RANGE                       [convert_range_to_hex [get_property CONFIG.EP_FREQ_CNT_ACLK_00_RANGE                $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_00_PF                          [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_00_PF                         $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_00_BAR                         [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_00_BAR                        $shell_subsystem]]
+set C_EP_FREQ_CNT_ACLK_00_REGABS                      [string tolower [get_property CONFIG.EP_FREQ_CNT_ACLK_00_REGABS                     $shell_subsystem]]
+
+#============================================================================================================================================================#
+# Create Metadata Dictionary
+#============================================================================================================================================================#
+
+# initialize Endpoint Dictionary
+
+set endpoint_dictionary {}
+
+# Load parameters into dictionary
+
+# Generate dummy ep_shutdown_clocks_00 endpoint when enabled
+if {$C_ENABLE_SHUTDOWN_CLOCKS == true} {
+    set endpoint ep_shutdown_clocks_00
+    dict set endpoint_dictionary $endpoint offset                   "0000000000000000"
+    dict set endpoint_dictionary $endpoint range                    "0000000000000000"
+    dict set endpoint_dictionary $endpoint pf                       0x0
+    dict set endpoint_dictionary $endpoint bar                      0x0
+    dict set endpoint_dictionary $endpoint regabs                   dummy_endpoint
+}
+
+set endpoint ep_gapping_demand_00
+# Change endpoint name when throttling is disabled
+if {$C_DISABLE_THROTTLING == true} {
+    set endpoint ep_gapping_demand_disabled_00
+}
+dict set endpoint_dictionary $endpoint offset                       $C_EP_GAPPING_DEMAND_00_OFFSET_FULL
+dict set endpoint_dictionary $endpoint range                        $C_EP_GAPPING_DEMAND_00_RANGE
+dict set endpoint_dictionary $endpoint pf                           $C_EP_GAPPING_DEMAND_00_PF
+dict set endpoint_dictionary $endpoint bar                          $C_EP_GAPPING_DEMAND_00_BAR
+dict set endpoint_dictionary $endpoint regabs                       $C_EP_GAPPING_DEMAND_00_REGABS
+
+set endpoint ep_ucs_control_status_00
+dict set endpoint_dictionary $endpoint offset                       $C_EP_UCS_CONTROL_STATUS_00_OFFSET_FULL
+dict set endpoint_dictionary $endpoint range                        $C_EP_UCS_CONTROL_STATUS_00_RANGE
+dict set endpoint_dictionary $endpoint pf                           $C_EP_UCS_CONTROL_STATUS_00_PF
+dict set endpoint_dictionary $endpoint bar                          $C_EP_UCS_CONTROL_STATUS_00_BAR
+dict set endpoint_dictionary $endpoint regabs                       $C_EP_UCS_CONTROL_STATUS_00_REGABS
+
+for {set k 0} {$k < [dict get $kernel_clock_dictionary max_kernel_clocks]} {incr k} {
+
+    set index  [dict get $kernel_clock_dictionary $k index]
+
+    set clkwiz_offset  C_EP_ACLK_KERNEL_${index}_OFFSET_FULL
+    set clkwiz_range   C_EP_ACLK_KERNEL_${index}_RANGE
+    set clkwiz_pf      C_EP_ACLK_KERNEL_${index}_PF
+    set clkwiz_bar     C_EP_ACLK_KERNEL_${index}_BAR
+    set clkwiz_regabs  C_EP_ACLK_KERNEL_${index}_REGABS
+
+    set freqcnt_offset C_EP_FREQ_CNT_ACLK_KERNEL_${index}_OFFSET_FULL
+    set freqcnt_range  C_EP_FREQ_CNT_ACLK_KERNEL_${index}_RANGE
+    set freqcnt_pf     C_EP_FREQ_CNT_ACLK_KERNEL_${index}_PF
+    set freqcnt_bar    C_EP_FREQ_CNT_ACLK_KERNEL_${index}_BAR
+    set freqcnt_regabs C_EP_FREQ_CNT_ACLK_KERNEL_${index}_REGABS
+
+    if {[dict get $kernel_clock_dictionary $k frequency] > 0} {
+
+        set endpoint ep_freq_cnt_aclk_kernel_${index}
+        dict set endpoint_dictionary $endpoint offset               [subst $$freqcnt_offset]
+        dict set endpoint_dictionary $endpoint range                [subst $$freqcnt_range]
+        dict set endpoint_dictionary $endpoint pf                   [subst $$freqcnt_pf]
+        dict set endpoint_dictionary $endpoint bar                  [subst $$freqcnt_bar]
+        dict set endpoint_dictionary $endpoint regabs               [subst $$freqcnt_regabs]
+
+        if {[dict get $kernel_clock_dictionary $k scaling] == true} {
+
+            set endpoint ep_aclk_kernel_${index}
+            dict set endpoint_dictionary $endpoint offset           [subst $$clkwiz_offset]
+            dict set endpoint_dictionary $endpoint range            [subst $$clkwiz_range]
+            dict set endpoint_dictionary $endpoint pf               [subst $$clkwiz_pf]
+            dict set endpoint_dictionary $endpoint bar              [subst $$clkwiz_bar]
+            dict set endpoint_dictionary $endpoint regabs           [subst $$clkwiz_regabs]
+
+        }
+
+    }
+
+}
+
+if {$C_HAS_HBM_CLK == true} {
+
+    set endpoint ep_aclk_hbm_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_ACLK_HBM_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_ACLK_HBM_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_ACLK_HBM_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_ACLK_HBM_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_ACLK_HBM_00_REGABS
+
+    set endpoint ep_freq_cnt_aclk_hbm_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_FREQ_CNT_ACLK_HBM_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_FREQ_CNT_ACLK_HBM_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_FREQ_CNT_ACLK_HBM_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_FREQ_CNT_ACLK_HBM_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_FREQ_CNT_ACLK_HBM_00_REGABS
+
+}
+
+set endpoint ep_freq_cnt_aclk_00
+dict set endpoint_dictionary $endpoint offset                       $C_EP_FREQ_CNT_ACLK_00_OFFSET_FULL
+dict set endpoint_dictionary $endpoint range                        $C_EP_FREQ_CNT_ACLK_00_RANGE
+dict set endpoint_dictionary $endpoint pf                           $C_EP_FREQ_CNT_ACLK_00_PF
+dict set endpoint_dictionary $endpoint bar                          $C_EP_FREQ_CNT_ACLK_00_BAR
+dict set endpoint_dictionary $endpoint regabs                       $C_EP_FREQ_CNT_ACLK_00_REGABS
+dict set endpoint_dictionary $endpoint is_last                      true
+
+# Ensure the is_last flag is set on an last enabled endpoint in endpoint_list
+
+if {$C_DISABLE_MGMT_JSON_METADATA == "true"} {
+
+    dbg_puts "MGMT endpoint JSON Metadata generation disabled"
+
+    set endpoint_list {}
+
+} else {
+
+    set endpoint_list [list ep_gapping_demand_00            \
+                            ep_shutdown_clocks_00           \
+                            ep_gapping_demand_disabled_00   \
+                            ep_ucs_control_status_00        \
+                            ep_aclk_kernel_00               \
+                            ep_aclk_kernel_01               \
+                            ep_aclk_kernel_02               \
+                            ep_aclk_kernel_03               \
+                            ep_aclk_kernel_04               \
+                            ep_aclk_kernel_05               \
+                            ep_freq_cnt_aclk_kernel_00      \
+                            ep_freq_cnt_aclk_kernel_01      \
+                            ep_freq_cnt_aclk_kernel_02      \
+                            ep_freq_cnt_aclk_kernel_03      \
+                            ep_freq_cnt_aclk_kernel_04      \
+                            ep_freq_cnt_aclk_kernel_05      \
+                            ep_aclk_hbm_00                  \
+                            ep_freq_cnt_aclk_hbm_00         \
+                            ep_freq_cnt_aclk_00]
+
+}
+
+#============================================================================================================================================================#
+# Enable full address assignments
+#============================================================================================================================================================#
+
+if {$C_ENABLE_FULL_ADDRESS_ASSIGNMENTS == "true"} {
+
+    set C_EP_UCS_BUILD_INFO_00_OFFSET                               $C_EP_UCS_BUILD_INFO_00_OFFSET_FULL
+    set C_EP_GAPPING_DEMAND_00_OFFSET                               $C_EP_GAPPING_DEMAND_00_OFFSET_FULL
+    set C_EP_UCS_CONTROL_STATUS_00_OFFSET                           $C_EP_UCS_CONTROL_STATUS_00_OFFSET_FULL
+    set C_EP_ACLK_KERNEL_00_OFFSET                                  $C_EP_ACLK_KERNEL_00_OFFSET_FULL
+    set C_EP_ACLK_KERNEL_01_OFFSET                                  $C_EP_ACLK_KERNEL_01_OFFSET_FULL
+    set C_EP_ACLK_KERNEL_02_OFFSET                                  $C_EP_ACLK_KERNEL_02_OFFSET_FULL
+    set C_EP_ACLK_KERNEL_03_OFFSET                                  $C_EP_ACLK_KERNEL_03_OFFSET_FULL
+    set C_EP_ACLK_KERNEL_04_OFFSET                                  $C_EP_ACLK_KERNEL_04_OFFSET_FULL
+    set C_EP_ACLK_KERNEL_05_OFFSET                                  $C_EP_ACLK_KERNEL_05_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET                         $C_EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET                         $C_EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET                         $C_EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET                         $C_EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET                         $C_EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET                         $C_EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET_FULL
+    set C_EP_ACLK_HBM_00_OFFSET                                     $C_EP_ACLK_HBM_00_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_HBM_00_OFFSET                            $C_EP_FREQ_CNT_ACLK_HBM_00_OFFSET_FULL
+    set C_EP_FREQ_CNT_ACLK_00_OFFSET                                $C_EP_FREQ_CNT_ACLK_00_OFFSET_FULL
+
+}
+
+#============================================================================================================================================================#

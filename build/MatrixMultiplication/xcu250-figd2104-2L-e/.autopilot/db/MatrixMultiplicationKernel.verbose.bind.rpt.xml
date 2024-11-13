@@ -1,0 +1,85 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'MatrixMultiplicationKernel'" level="0">
+<item name = "Date">Mon Nov 11 16:40:29 2024
+</item>
+<item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
+<item name = "Project">MatrixMultiplication</item>
+<item name = "Solution">xcu250-figd2104-2L-e (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu250-figd2104-2L-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="call_ln27_entry_proc_fu_1004">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_ReadA_fu_1011">ReadA, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ReadB_fu_1044">ReadB, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_TransposeA_fu_1062">TransposeA, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ConvertWidthB_fu_1086">ConvertWidthB, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_FeedB_fu_1098">FeedB, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_1_fu_1107">ProcessingElement_1, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_2_fu_1122">ProcessingElement_2, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ConvertWidthC_fu_1135">ConvertWidthC, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_3_fu_1145">ProcessingElement_3, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_WriteC_fu_1158">WriteC, 4, 1152921504606846976, 40.000 ns, 1.2e+10 sec, 4, 1152921504606846976, no</column>
+<column name="grp_ProcessingElement_4_fu_1168">ProcessingElement_4, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_5_fu_1181">ProcessingElement_5, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_6_fu_1194">ProcessingElement_6, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_7_fu_1207">ProcessingElement_7, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_8_fu_1220">ProcessingElement_8, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_9_fu_1233">ProcessingElement_9, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_10_fu_1246">ProcessingElement_10, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_11_fu_1259">ProcessingElement_11, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_12_fu_1272">ProcessingElement_12, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_13_fu_1285">ProcessingElement_13, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_14_fu_1298">ProcessingElement_14, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_15_fu_1311">ProcessingElement_15, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_16_fu_1324">ProcessingElement_16, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_17_fu_1337">ProcessingElement_17, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_18_fu_1350">ProcessingElement_18, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_19_fu_1363">ProcessingElement_19, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_20_fu_1376">ProcessingElement_20, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_21_fu_1389">ProcessingElement_21, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_22_fu_1402">ProcessingElement_22, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_23_fu_1415">ProcessingElement_23, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_24_fu_1428">ProcessingElement_24, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_25_fu_1441">ProcessingElement_25, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_26_fu_1454">ProcessingElement_26, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_27_fu_1467">ProcessingElement_27, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_28_fu_1480">ProcessingElement_28, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_29_fu_1493">ProcessingElement_29, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_30_fu_1506">ProcessingElement_30, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_31_fu_1519">ProcessingElement_31, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ProcessingElement_fu_1535">ProcessingElement, ?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

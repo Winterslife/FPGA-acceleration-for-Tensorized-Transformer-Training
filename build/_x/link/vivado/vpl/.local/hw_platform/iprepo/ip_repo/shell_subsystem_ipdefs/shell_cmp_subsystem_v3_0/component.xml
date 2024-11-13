@@ -1,0 +1,1235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>ip</spirit:library>
+  <spirit:name>shell_cmp_subsystem</spirit:name>
+  <spirit:version>3.0</spirit:version>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_blockdiagram</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_blockdiagram_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>7d9f514c</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_elaboratebd</spirit:name>
+        <spirit:displayName>Elaborate BD</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:elaborate.bd</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_bram_ctrl_4_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_crossbar_2_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_hwicap_3_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_interconnect_2_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_mmu_2_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_quad_spi_3_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_debug_bridge_3_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_jtag_axi_1_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_mdm_3_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_system_management_wiz_1_3__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_xlconstant_1_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_xlconcat_2_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_util_reduced_logic_2_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_intc_4_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_shell_utils_uuid_rom_2_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_shell_utils_build_info_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_register_slice_2_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_icap_arb_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_proc_sys_reset_5_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>9af3e7e2</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_elaborateports</spirit:name>
+        <spirit:displayName>Elaborate Ports</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:elaborate.ports</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaborateports_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>0f58c0e2</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>a9c96ef8</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:modelName>shell_cmp_subsystem_v3_0_6</spirit:modelName>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:modelName>shell_cmp_subsystem_v3_0_6</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>54e1301f</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_utilityxitfiles</spirit:name>
+        <spirit:displayName>Utility XIT/TTCL</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xit.util</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_utilityxitfiles_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>fc38d991</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_versioninformation</spirit:name>
+        <spirit:displayName>Version Information</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+      </spirit:view>
+    </spirit:views>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_0368cae8</spirit:name>
+      <spirit:enumeration>BLP</spirit:enumeration>
+      <spirit:enumeration>PLP</spirit:enumeration>
+      <spirit:enumeration>ULP</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_43f14c75</spirit:name>
+      <spirit:enumeration>NONE</spirit:enumeration>
+      <spirit:enumeration>SLR</spirit:enumeration>
+      <spirit:enumeration>TDM</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_70e5d502</spirit:name>
+      <spirit:enumeration>1RP</spirit:enumeration>
+      <spirit:enumeration>NRP</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_8c511e6c</spirit:name>
+      <spirit:enumeration>NONE</spirit:enumeration>
+      <spirit:enumeration>SLR</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9b94c6ac</spirit:name>
+      <spirit:enumeration>4k</spirit:enumeration>
+      <spirit:enumeration>8k</spirit:enumeration>
+      <spirit:enumeration>16k</spirit:enumeration>
+      <spirit:enumeration>32k</spirit:enumeration>
+      <spirit:enumeration>64k</spirit:enumeration>
+      <spirit:enumeration>128k</spirit:enumeration>
+      <spirit:enumeration>256k</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_4873554b</spirit:name>
+      <spirit:enumeration spirit:text="false">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="true">1</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_blockdiagram_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xit/update_contents.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_bram_ctrl_4_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_bram_ctrl" xilinx:version="4.1" xilinx:coreRevision="6">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_crossbar_2_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_crossbar" xilinx:version="2.1" xilinx:coreRevision="27">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0" xilinx:coreRevision="28">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_hwicap_3_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_hwicap" xilinx:version="3.0" xilinx:coreRevision="30">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_interconnect_2_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_interconnect" xilinx:version="2.1" xilinx:coreRevision="27">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_mmu_2_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_mmu" xilinx:version="2.1" xilinx:coreRevision="24">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_quad_spi_3_2__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_quad_spi" xilinx:version="3.2" xilinx:coreRevision="25">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_debug_bridge_3_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="debug_bridge" xilinx:version="3.0" xilinx:coreRevision="8">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="blk_mem_gen" xilinx:version="8.4" xilinx:coreRevision="5">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_jtag_axi_1_2__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="jtag_axi" xilinx:version="1.2" xilinx:coreRevision="14">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_mdm_3_2__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="mdm" xilinx:version="3.2" xilinx:coreRevision="23">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_system_management_wiz_1_3__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="system_management_wiz" xilinx:version="1.3" xilinx:coreRevision="16">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_xlconstant_1_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="xlconstant" xilinx:version="1.1" xilinx:coreRevision="7">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_xlconcat_2_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="xlconcat" xilinx:version="2.1" xilinx:coreRevision="4">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_util_reduced_logic_2_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="util_reduced_logic" xilinx:version="2.0" xilinx:coreRevision="4">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_intc_4_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_intc" xilinx:version="4.1" xilinx:coreRevision="17">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_shell_utils_uuid_rom_2_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="shell_utils_uuid_rom" xilinx:version="2.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_shell_utils_build_info_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="shell_utils_build_info" xilinx:version="1.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_register_slice_2_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_register_slice" xilinx:version="2.1" xilinx:coreRevision="26">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_icap_arb_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="icap_arb" xilinx:version="1.0" xilinx:coreRevision="1">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_proc_sys_reset_5_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="proc_sys_reset" xilinx:version="5.0" xilinx:coreRevision="13">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaborateports_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xit/update_ports.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/shell_cmp_subsystem_v3_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>ttcl/utils/common.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ttcl/xdc/ooc_xdc.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ttcl/xdc/xdc.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ttcl/utils/disclaimer.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_utilityxitfiles_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xit/get_params.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/util.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/debug_util.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/generate_ports.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/generate_contents.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>tcl/update_logic_uuid_rom.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>doc/shell_cmp_subsystem_v3_0_changelog.txt</spirit:name>
+        <spirit:userFileType>text</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>This is a horizontal subsystem which contains peripherals responsible for board health and diagnostics, debug and programming</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="2">shell_cmp_subsystem_v3_0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Component_Name">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.SUBSYSTEM_ID</spirit:name>
+      <spirit:displayName>Subsystem ID</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.SUBSYSTEM_ID" spirit:order="3" spirit:bitStringLength="8">0x03</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.SUBSYSTEM_ID">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.MAJOR_VERSION</spirit:name>
+      <spirit:displayName>Subsystem Major Version</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.MAJOR_VERSION" spirit:order="4">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.MINOR_VERSION</spirit:name>
+      <spirit:displayName>Subsystem Minor Version</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.MINOR_VERSION" spirit:order="5">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.CORE_REVISION</spirit:name>
+      <spirit:displayName>Subsystem Core Revision</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.CORE_REVISION" spirit:order="6">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.PATCH_REVISION</spirit:name>
+      <spirit:displayName>Subsystem Patch Revision</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.PATCH_REVISION" spirit:order="7">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.RESERVED_TAG</spirit:name>
+      <spirit:displayName>Reserved Tag</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.RESERVED_TAG" spirit:order="8" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.RESERVED_TAG">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>PARTITION_NAME</spirit:name>
+      <spirit:displayName>Define Partition Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PARTITION_NAME" spirit:choiceRef="choice_list_0368cae8" spirit:order="9">BLP</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.PARTITION_NAME">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DESIGN_TYPE</spirit:name>
+      <spirit:displayName>Select 1RP or NRP design</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.DESIGN_TYPE" spirit:choiceRef="choice_list_70e5d502" spirit:order="10">1RP</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.DESIGN_TYPE" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.HAS_USER_DEBUG&apos;)) = &quot;TRUE&quot;">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_JTAG_AXI_MASTER</spirit:name>
+      <spirit:displayName>Include JTAG AXI Master</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_JTAG_AXI_MASTER" spirit:order="11">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_JTAG_AXI_MASTER" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot;">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_USER_DEBUG</spirit:name>
+      <spirit:displayName>Include User Debug Bridge</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_USER_DEBUG" spirit:order="12">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_USER_DEBUG" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;ULP&quot;">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_UUID_ROM</spirit:name>
+      <spirit:displayName>Include UUID ROM</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_UUID_ROM" spirit:order="13">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_UUID_ROM" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot;">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_MEMORY_CALIB_STATUS</spirit:name>
+      <spirit:displayName>Include DDR Calibration Status GPIO</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_MEMORY_CALIB_STATUS" spirit:order="14">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_MEMORY_CALIB_STATUS" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot;">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_AXI_HWICAP</spirit:name>
+      <spirit:displayName>Include HW ICAP</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_AXI_HWICAP" spirit:order="15">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_AXI_HWICAP" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;BLP&quot;">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_AXI_ICAP_ARB</spirit:name>
+      <spirit:displayName>Include HW ICAP Arbiter</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_AXI_ICAP_ARB" spirit:order="16">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_AXI_ICAP_ARB" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;BLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_AXI_HWICAP&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_MGMT_DEBUG</spirit:name>
+      <spirit:displayName>Include Management Debug Bridge</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_MGMT_DEBUG" spirit:order="17">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_MGMT_DEBUG" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;BLP&quot;">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_DDR4_RESET_GATE</spirit:name>
+      <spirit:displayName>Include DDR4 Reset Gate AXI GPIO</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_DDR4_RESET_GATE" spirit:order="18">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_DDR4_RESET_GATE" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot;">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>USE_MDM_UART</spirit:name>
+      <spirit:displayName>Enable MDM JTAG UART</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USE_MDM_UART" spirit:choiceRef="choice_pairs_4873554b" spirit:order="19">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.USE_MDM_UART" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;BLP&quot;">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NUM_MEMORY_CALIB</spirit:name>
+      <spirit:displayName>Configure number of DDR memory calibration status bits</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_MEMORY_CALIB" spirit:order="20" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.NUM_MEMORY_CALIB" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_MEMORY_CALIB_STATUS&apos;)) = TRUE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NUM_MB_DEBUG_PORTS</spirit:name>
+      <spirit:displayName>Configure number of Microblaze Debug Ports</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_MB_DEBUG_PORTS" spirit:order="21" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.NUM_MB_DEBUG_PORTS" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;BLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_MGMT_DEBUG&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>INIT_LOGIC_UUID</spirit:name>
+      <spirit:displayName>Set initial Logic UUID</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.INIT_LOGIC_UUID" spirit:order="22">00000000000000000000000000000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.INIT_LOGIC_UUID" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_UUID_ROM&apos;)) = TRUE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>REGSLICE_USER_DEBUG_BRIDGE</spirit:name>
+      <spirit:displayName>Enable SLR Crossing Reg Slice on User Debug Bridge</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.REGSLICE_USER_DEBUG_BRIDGE" spirit:choiceRef="choice_list_43f14c75" spirit:order="23">NONE</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.REGSLICE_USER_DEBUG_BRIDGE" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;ULP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_USER_DEBUG&apos;)) = TRUE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>REGSLICE_UUID_ROM</spirit:name>
+      <spirit:displayName>Enable SLR Crossing Reg Slice on UUID ROM AXI Interface</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.REGSLICE_UUID_ROM" spirit:choiceRef="choice_list_43f14c75" spirit:order="24">NONE</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.REGSLICE_UUID_ROM" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_UUID_ROM&apos;)) = TRUE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>REGSLICE_MEMORY_CALIB_STATUS</spirit:name>
+      <spirit:displayName>Enable SLR Crossing Reg Slice on DDR Calibration Status GPIO AXI Interface</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.REGSLICE_MEMORY_CALIB_STATUS" spirit:choiceRef="choice_list_43f14c75" spirit:order="25">NONE</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.REGSLICE_MEMORY_CALIB_STATUS" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;PLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_MEMORY_CALIB_STATUS&apos;)) = TRUE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>REGSLICE_AXI_HWICAP</spirit:name>
+      <spirit:displayName>Enable SLR Crossing Reg Slice on HW ICAP AXI Interface</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.REGSLICE_AXI_HWICAP" spirit:choiceRef="choice_list_8c511e6c" spirit:order="26">NONE</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.REGSLICE_AXI_HWICAP" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;BLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_AXI_HWICAP&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>REGSLICE_MGMT_DEBUG</spirit:name>
+      <spirit:displayName>Enable SLR Crossing Reg Slice on Management Debug Bridge</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.REGSLICE_MGMT_DEBUG" spirit:choiceRef="choice_list_43f14c75" spirit:order="27">NONE</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.REGSLICE_MGMT_DEBUG" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.PARTITION_NAME&apos;)) = &quot;BLP&quot; and spirit:decode(id(&apos;PARAM_VALUE.HAS_MGMT_DEBUG&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>REGSLICE_DDR4_RESET_GATE</spirit:name>
+      <spirit:displayName>Enable SLR Crossing Reg Slice on DDR4 Reset Gate AXI GPIO</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.REGSLICE_DDR4_RESET_GATE" spirit:choiceRef="choice_list_43f14c75" spirit:order="28">NONE</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.REGSLICE_DDR4_RESET_GATE" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.HAS_DDR4_RESET_GATE&apos;)) = TRUE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_FULL_ADDRESS_ASSIGNMENTS</spirit:name>
+      <spirit:displayName>Enable full address assignments for all Hst endpoints</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_FULL_ADDRESS_ASSIGNMENTS" spirit:order="29">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_FULL_ADDRESS_ASSIGNMENTS">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MGMT_PF_BASE_ADDRESS_BLP</spirit:name>
+      <spirit:displayName>Platform MGMT PF Base address for BLP instance of this subsystem</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MGMT_PF_BASE_ADDRESS_BLP" spirit:order="30" spirit:bitStringLength="32">0x01E80000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MGMT_PF_BASE_ADDRESS_PLP</spirit:name>
+      <spirit:displayName>Platform MGMT PF Base address for PLP instance of this subsystem</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MGMT_PF_BASE_ADDRESS_PLP" spirit:order="31" spirit:bitStringLength="32">0x00060000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MGMT_PF_BASE_ADDRESS_ULP</spirit:name>
+      <spirit:displayName>Platform MGMT PF Base address for ULP instance of this subsystem</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MGMT_PF_BASE_ADDRESS_ULP" spirit:order="32" spirit:bitStringLength="32">0x01020000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>USER_PF_BASE_ADDRESS_ULP</spirit:name>
+      <spirit:displayName>Platform USER PF Base address for ULP instance of this subsystem</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_PF_BASE_ADDRESS_ULP" spirit:order="33" spirit:bitStringLength="32">0x01020000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SUPPORT_NEW_INTERRUPT_SCHEMA</spirit:name>
+      <spirit:displayName>Support new Interrupt Metadata Exchange</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.SUPPORT_NEW_INTERRUPT_SCHEMA" spirit:order="34">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.SUPPORT_NEW_INTERRUPT_SCHEMA">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_CMP_BUILD_INFO_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_cmp_build_info_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_CMP_BUILD_INFO_00_OFFSET" spirit:order="35" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_CMP_BUILD_INFO_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_CMP_BUILD_INFO_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_cmp_build_info_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_CMP_BUILD_INFO_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="36">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_CMP_BUILD_INFO_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ICAP_ARB_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_icap_arb_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ICAP_ARB_00_OFFSET" spirit:order="37" spirit:bitStringLength="32">0x00001000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ICAP_ARB_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ICAP_ARB_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_icap_arb_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ICAP_ARB_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="38">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ICAP_ARB_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ICAP_ARB_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_icap_arb_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ICAP_ARB_00_PF" spirit:order="39" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ICAP_ARB_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_icap_arb_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ICAP_ARB_00_BAR" spirit:order="40" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ICAP_ARB_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_icap_arb_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ICAP_ARB_00_REGABS" spirit:order="41">xilinx.com:reg_abs:icap_arb:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UUID_ROM_PLP_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_uuid_rom_plp_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UUID_ROM_PLP_00_OFFSET" spirit:order="42" spirit:bitStringLength="32">0x00002000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_UUID_ROM_PLP_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UUID_ROM_PLP_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_uuid_rom_plp_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UUID_ROM_PLP_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="43">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_UUID_ROM_PLP_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UUID_ROM_PLP_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_uuid_rom_plp_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UUID_ROM_PLP_00_PF" spirit:order="44" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UUID_ROM_PLP_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_uuid_rom_plp_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UUID_ROM_PLP_00_BAR" spirit:order="45" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UUID_ROM_PLP_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_uuid_rom_plp_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UUID_ROM_PLP_00_REGABS" spirit:order="46">xilinx.com:reg_abs:uuid_rom:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_CALIB_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_ddr_mem_calib_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_CALIB_00_OFFSET" spirit:order="47" spirit:bitStringLength="32">0x00003000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DDR_MEM_CALIB_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_CALIB_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_ddr_mem_calib_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_CALIB_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="48">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DDR_MEM_CALIB_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_CALIB_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_ddr_mem_calib_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_CALIB_00_PF" spirit:order="49" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_CALIB_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_ddr_mem_calib_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_CALIB_00_BAR" spirit:order="50" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_CALIB_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_ddr_mem_calib_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_CALIB_00_REGABS" spirit:order="51">xilinx.com:reg_abs:cmp_ddr_calib:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_SRSR_GATE_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_ddr_mem_srsr_gate_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_SRSR_GATE_00_OFFSET" spirit:order="52" spirit:bitStringLength="32">0x00004000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DDR_MEM_SRSR_GATE_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_SRSR_GATE_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_ddr_mem_srsr_gate_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_SRSR_GATE_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="53">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DDR_MEM_SRSR_GATE_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_SRSR_GATE_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_ddr_mem_srsr_gate_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_SRSR_GATE_00_PF" spirit:order="54" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_SRSR_GATE_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_ddr_mem_srsr_gate_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_SRSR_GATE_00_BAR" spirit:order="55" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DDR_MEM_SRSR_GATE_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_ddr_mem_srsr_gate_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DDR_MEM_SRSR_GATE_00_REGABS" spirit:order="56">xilinx.com:reg_abs:gpio_srsr_gate:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_OFFSET" spirit:order="57" spirit:bitStringLength="32">0x00008000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FPGA_CONFIGURATION_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="58">32k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FPGA_CONFIGURATION_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_PF" spirit:order="59" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_BAR" spirit:order="60" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_REGABS" spirit:order="61">xilinx.com:reg_abs:axi_hwicap:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_MSIX_START</spirit:name>
+      <spirit:displayName>Enter MSIX Start index for ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_MSIX_START" spirit:order="62" spirit:bitStringLength="4">0x1</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_MSIX_END</spirit:name>
+      <spirit:displayName>Enter MSIX End index for ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_MSIX_END" spirit:order="63" spirit:bitStringLength="4">0x1</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FPGA_CONFIGURATION_00_INTERRUPT_ALIAS</spirit:name>
+      <spirit:displayName>Enter (comma separated) Interrupt Alias(es) generated by ep_fpga_configuration_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FPGA_CONFIGURATION_00_INTERRUPT_ALIAS" spirit:order="64">interrupt_fpga_configuration_00</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_MGMT_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_debug_bscan_mgmt_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_MGMT_00_OFFSET" spirit:order="65" spirit:bitStringLength="32">0x00010000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DEBUG_BSCAN_MGMT_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_MGMT_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_debug_bscan_mgmt_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_MGMT_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="66">64k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DEBUG_BSCAN_MGMT_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_MGMT_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_debug_bscan_mgmt_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_MGMT_00_PF" spirit:order="67" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_MGMT_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_debug_bscan_mgmt_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_MGMT_00_BAR" spirit:order="68" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_MGMT_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_debug_bscan_mgmt_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_MGMT_00_REGABS" spirit:order="69">xilinx.com:reg_abs:debug_bridge:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_USER_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_debug_bscan_user_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_USER_00_OFFSET" spirit:order="70" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DEBUG_BSCAN_USER_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_USER_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_debug_bscan_user_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_USER_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="71">64k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_DEBUG_BSCAN_USER_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_USER_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_debug_bscan_user_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_USER_00_PF" spirit:order="72" spirit:bitStringLength="4">0x1</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_USER_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_debug_bscan_user_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_USER_00_BAR" spirit:order="73" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_DEBUG_BSCAN_USER_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_debug_bscan_user_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_DEBUG_BSCAN_USER_00_REGABS" spirit:order="74">xilinx.com:reg_abs:debug_bridge:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>OFFSET_MDM_SEG</spirit:name>
+      <spirit:displayName>CMP_MDM_UART offset</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.OFFSET_MDM_SEG" spirit:order="75" spirit:bitStringLength="32">0x01F40000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.OFFSET_MDM_SEG">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>RANGE_MDM_SEG</spirit:name>
+      <spirit:displayName>CMP_BUICMP_MDM_UARTLD_INFO range</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.RANGE_MDM_SEG" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="76">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.RANGE_MDM_SEG">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.PERFORCE_CL</spirit:name>
+      <spirit:displayName>VERSION.PERFORCE_CL</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.PERFORCE_CL">3478949</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.PERFORCE_CL">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.VIV_VERSION</spirit:name>
+      <spirit:displayName>VERSION.VIV_VERSION</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.VIV_VERSION" spirit:bitStringLength="24">0x202210</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.VIV_VERSION">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g{xcu26-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g{xcux35-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g{xcvu23p-(vsva1365)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM{xcu(50|55c|55n|280)-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM{xcvu(35p|37p|47p)-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus{xcu(200|250)-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus{xcu(25|30)-(.*)-(.*)-(.*)}</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/Shell_Subsystems</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>Shell Card Management Peripheral Subsystem</xilinx:displayName>
+      <xilinx:designToolContexts>
+        <xilinx:designToolContext>IPI</xilinx:designToolContext>
+      </xilinx:designToolContexts>
+      <xilinx:coreRevision>6</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-03-01T12:06:07Z</xilinx:coreCreationDateTime>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="da148c60"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="8b4c3fa7"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

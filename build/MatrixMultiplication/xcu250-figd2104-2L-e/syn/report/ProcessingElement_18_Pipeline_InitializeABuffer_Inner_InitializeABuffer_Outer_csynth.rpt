@@ -1,0 +1,170 @@
+
+
+================================================================
+== Vitis HLS Report for 'ProcessingElement_18_Pipeline_InitializeABuffer_Inner_InitializeABuffer_Outer'
+================================================================
+* Date:           Mon Nov 11 16:41:05 2024
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        MatrixMultiplication
+* Solution:       xcu250-figd2104-2L-e (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.930 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                   |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                     |
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+    |      242|      242|  2.420 us|  2.420 us|  241|  241|  loop auto-rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |                     Loop Name                     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- InitializeABuffer_Inner_InitializeABuffer_Outer  |      240|      240|         2|          1|          1|   240|       yes|
+        +---------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|       93|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|       81|     -|
+|Register             |        -|      -|       22|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|       22|      174|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln3147_fu_162_p2              |         +|   0|  0|  12|           5|           1|
+    |add_ln31_fu_114_p2                |         +|   0|  0|  15|           8|           1|
+    |add_ln35_fu_143_p2                |         +|   0|  0|  12|           4|           1|
+    |ap_block_pp0_stage0_01001         |       and|   0|  0|   2|           1|           1|
+    |first_iter_0_fu_137_p2            |      icmp|   0|  0|  12|           4|           1|
+    |icmp_ln31_fu_108_p2               |      icmp|   0|  0|  15|           8|           6|
+    |icmp_ln35_fu_123_p2               |      icmp|   0|  0|  12|           4|           2|
+    |ap_block_state2_pp0_stage0_iter1  |        or|   0|  0|   2|           1|           1|
+    |select_ln31_22_fu_168_p3          |    select|   0|  0|   5|           1|           5|
+    |select_ln31_fu_129_p3             |    select|   0|  0|   4|           1|           1|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  93|          38|          22|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |aPipes_17_blk_n                       |   9|          2|    1|          2|
+    |aPipes_18_blk_n                       |   9|          2|    1|          2|
+    |ap_done_int                           |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1               |   9|          2|    1|          2|
+    |ap_sig_allocacmp_indvar_flatten_load  |   9|          2|    8|         16|
+    |ap_sig_allocacmp_n1_load              |   9|          2|    4|          8|
+    |indvar_flatten_fu_58                  |   9|          2|    8|         16|
+    |n1_fu_50                              |   9|          2|    4|          8|
+    |n2_fu_54                              |   9|          2|    5|         10|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 |  81|         18|   33|         66|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_done_reg              |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    |first_iter_0_reg_214     |  1|   0|    1|          0|
+    |icmp_ln35_reg_209        |  1|   0|    1|          0|
+    |indvar_flatten_fu_58     |  8|   0|    8|          0|
+    |n1_fu_50                 |  4|   0|    4|          0|
+    |n2_fu_54                 |  5|   0|    5|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    | 22|   0|   22|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |                                 Source Object                                 |    C Type    |
++--------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+|ap_clk                    |   in|    1|  ap_ctrl_hs|  ProcessingElement.18_Pipeline_InitializeABuffer_Inner_InitializeABuffer_Outer|  return value|
+|ap_rst                    |   in|    1|  ap_ctrl_hs|  ProcessingElement.18_Pipeline_InitializeABuffer_Inner_InitializeABuffer_Outer|  return value|
+|ap_start                  |   in|    1|  ap_ctrl_hs|  ProcessingElement.18_Pipeline_InitializeABuffer_Inner_InitializeABuffer_Outer|  return value|
+|ap_done                   |  out|    1|  ap_ctrl_hs|  ProcessingElement.18_Pipeline_InitializeABuffer_Inner_InitializeABuffer_Outer|  return value|
+|ap_idle                   |  out|    1|  ap_ctrl_hs|  ProcessingElement.18_Pipeline_InitializeABuffer_Inner_InitializeABuffer_Outer|  return value|
+|ap_ready                  |  out|    1|  ap_ctrl_hs|  ProcessingElement.18_Pipeline_InitializeABuffer_Inner_InitializeABuffer_Outer|  return value|
+|aPipes_17_dout            |   in|   32|     ap_fifo|                                                                      aPipes_17|       pointer|
+|aPipes_17_num_data_valid  |   in|    3|     ap_fifo|                                                                      aPipes_17|       pointer|
+|aPipes_17_fifo_cap        |   in|    3|     ap_fifo|                                                                      aPipes_17|       pointer|
+|aPipes_17_empty_n         |   in|    1|     ap_fifo|                                                                      aPipes_17|       pointer|
+|aPipes_17_read            |  out|    1|     ap_fifo|                                                                      aPipes_17|       pointer|
+|aPipes_18_din             |  out|   32|     ap_fifo|                                                                      aPipes_18|       pointer|
+|aPipes_18_num_data_valid  |   in|    3|     ap_fifo|                                                                      aPipes_18|       pointer|
+|aPipes_18_fifo_cap        |   in|    3|     ap_fifo|                                                                      aPipes_18|       pointer|
+|aPipes_18_full_n          |   in|    1|     ap_fifo|                                                                      aPipes_18|       pointer|
+|aPipes_18_write           |  out|    1|     ap_fifo|                                                                      aPipes_18|       pointer|
+|aBuffer_address0          |  out|    5|   ap_memory|                                                                        aBuffer|         array|
+|aBuffer_ce0               |  out|    1|   ap_memory|                                                                        aBuffer|         array|
+|aBuffer_we0               |  out|    1|   ap_memory|                                                                        aBuffer|         array|
+|aBuffer_d0                |  out|   32|   ap_memory|                                                                        aBuffer|         array|
++--------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+

@@ -1,0 +1,321 @@
+Mon Nov 11 15:24:31 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:24:31 2024: Server was asked to start on port: '41571'
+Mon Nov 11 15:24:31 2024: Server is using token UUID: 'c0029f31-9b9b-4d8f-9558-60794d0dc530'
+Mon Nov 11 15:24:31 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:24:31 2024: Attempting to start server on port '41571'
+Mon Nov 11 15:24:31 2024: XCD main fifo: created main fifo '/tmp/xcdmainc0029f31-9b9b-4d8f-9558-60794d0dc530', fd read = 13
+Mon Nov 11 15:24:31 2024: Running Dispatch Server
+Mon Nov 11 15:24:31 2024: Version 2.2.0
+Mon Nov 11 15:24:32 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:24:32 2024: Starting Socket connection
+Mon Nov 11 15:24:32 2024: EXCHANGE_TOKEN received, server token: c0029f31-9b9b-4d8f-9558-60794d0dc530, passed token: c0029f31-9b9b-4d8f-9558-60794d0dc530
+Mon Nov 11 15:24:32 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:24:32 2024: SESSION_MGR: creating session with session uuid: '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:24:32 2024: KERNEL_SVC: creating session with uuid: '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:24:32 2024: GUIDANCE_SMGR: creating guidance session with uuid: '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:24:32 2024: SYSTEM_DIAGRAM: creating session with uuid: '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:24:43 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:24:43 2024: Starting Socket connection
+Mon Nov 11 15:25:00 2024: SESSION_MGR: closing session for UUID '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:25:00 2024: KERNEL_SVC: closing session for UUID '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:25:00 2024: GUIDANCE_SMGR: closing session for UUID '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:25:00 2024: SYSTEM_DIAGRAM: closing session for UUID '7bc06262-2b6e-4b99-9c6a-2ceac5447da1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:25:00 2024: STOP_SERVER received, server token: c0029f31-9b9b-4d8f-9558-60794d0dc530, passed token: c0029f31-9b9b-4d8f-9558-60794d0dc530
+Mon Nov 11 15:25:00 2024: Socket received request to stop server.
+Mon Nov 11 15:25:00 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:25:00 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:25:00 2024: XCD main fifo: Stopping
+Mon Nov 11 15:25:00 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:25:00 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:25:00 2024: SERVER: destructor for server bound to port 41571
+Mon Nov 11 15:25:00 2024: XCD main fifo: Good unlink of /tmp/xcdmainc0029f31-9b9b-4d8f-9558-60794d0dc530
+Mon Nov 11 15:25:00 2024: Server exiting with status 0.
+Mon Nov 11 15:25:00 2024: Closing log file.
+Mon Nov 11 15:30:34 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:30:34 2024: Server was asked to start on port: '39513'
+Mon Nov 11 15:30:34 2024: Server is using token UUID: 'ea25166f-caa7-495a-8b89-a3c565649f1b'
+Mon Nov 11 15:30:34 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:30:34 2024: Attempting to start server on port '39513'
+Mon Nov 11 15:30:34 2024: XCD main fifo: created main fifo '/tmp/xcdmainea25166f-caa7-495a-8b89-a3c565649f1b', fd read = 13
+Mon Nov 11 15:30:34 2024: Running Dispatch Server
+Mon Nov 11 15:30:34 2024: Version 2.2.0
+Mon Nov 11 15:30:36 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:30:36 2024: Starting Socket connection
+Mon Nov 11 15:30:36 2024: EXCHANGE_TOKEN received, server token: ea25166f-caa7-495a-8b89-a3c565649f1b, passed token: ea25166f-caa7-495a-8b89-a3c565649f1b
+Mon Nov 11 15:30:36 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:30:36 2024: SESSION_MGR: creating session with session uuid: '922610fa-8730-4495-bae6-9db2823cf64f' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:36 2024: KERNEL_SVC: creating session with uuid: '922610fa-8730-4495-bae6-9db2823cf64f' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:36 2024: GUIDANCE_SMGR: creating guidance session with uuid: '922610fa-8730-4495-bae6-9db2823cf64f' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:36 2024: SYSTEM_DIAGRAM: creating session with uuid: '922610fa-8730-4495-bae6-9db2823cf64f' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:45 2024: SESSION_MGR: closing session for UUID '922610fa-8730-4495-bae6-9db2823cf64f' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:45 2024: KERNEL_SVC: closing session for UUID '922610fa-8730-4495-bae6-9db2823cf64f' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:45 2024: GUIDANCE_SMGR: closing session for UUID '922610fa-8730-4495-bae6-9db2823cf64f' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:45 2024: SYSTEM_DIAGRAM: closing session for UUID '922610fa-8730-4495-bae6-9db2823cf64f' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:30:45 2024: STOP_SERVER received, server token: ea25166f-caa7-495a-8b89-a3c565649f1b, passed token: ea25166f-caa7-495a-8b89-a3c565649f1b
+Mon Nov 11 15:30:45 2024: Socket received request to stop server.
+Mon Nov 11 15:30:45 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:30:45 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:30:45 2024: XCD main fifo: Stopping
+Mon Nov 11 15:30:45 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:30:45 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:30:45 2024: SERVER: destructor for server bound to port 39513
+Mon Nov 11 15:30:45 2024: XCD main fifo: Good unlink of /tmp/xcdmainea25166f-caa7-495a-8b89-a3c565649f1b
+Mon Nov 11 15:30:45 2024: Server exiting with status 0.
+Mon Nov 11 15:30:45 2024: Closing log file.
+Mon Nov 11 15:32:32 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:32:32 2024: Server was asked to start on port: '44691'
+Mon Nov 11 15:32:32 2024: Server is using token UUID: 'b1908bd5-6905-4a79-951d-a962d09bb1c7'
+Mon Nov 11 15:32:32 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:32:32 2024: Attempting to start server on port '44691'
+Mon Nov 11 15:32:32 2024: XCD main fifo: created main fifo '/tmp/xcdmainb1908bd5-6905-4a79-951d-a962d09bb1c7', fd read = 13
+Mon Nov 11 15:32:32 2024: Running Dispatch Server
+Mon Nov 11 15:32:32 2024: Version 2.2.0
+Mon Nov 11 15:32:34 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:32:34 2024: Starting Socket connection
+Mon Nov 11 15:32:34 2024: EXCHANGE_TOKEN received, server token: b1908bd5-6905-4a79-951d-a962d09bb1c7, passed token: b1908bd5-6905-4a79-951d-a962d09bb1c7
+Mon Nov 11 15:32:34 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:32:34 2024: SESSION_MGR: creating session with session uuid: 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:34 2024: KERNEL_SVC: creating session with uuid: 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:34 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:34 2024: SYSTEM_DIAGRAM: creating session with uuid: 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:42 2024: SESSION_MGR: closing session for UUID 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:42 2024: KERNEL_SVC: closing session for UUID 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:42 2024: GUIDANCE_SMGR: closing session for UUID 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:43 2024: SYSTEM_DIAGRAM: closing session for UUID 'e02adffe-7c77-482e-8a5f-d7d0dde42c7c' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:32:43 2024: STOP_SERVER received, server token: b1908bd5-6905-4a79-951d-a962d09bb1c7, passed token: b1908bd5-6905-4a79-951d-a962d09bb1c7
+Mon Nov 11 15:32:43 2024: Socket received request to stop server.
+Mon Nov 11 15:32:43 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:32:43 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:32:43 2024: XCD main fifo: Stopping
+Mon Nov 11 15:32:43 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:32:43 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:32:43 2024: SERVER: destructor for server bound to port 44691
+Mon Nov 11 15:32:43 2024: XCD main fifo: Good unlink of /tmp/xcdmainb1908bd5-6905-4a79-951d-a962d09bb1c7
+Mon Nov 11 15:32:43 2024: Server exiting with status 0.
+Mon Nov 11 15:32:43 2024: Closing log file.
+Mon Nov 11 15:35:38 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:35:38 2024: Server was asked to start on port: '37349'
+Mon Nov 11 15:35:38 2024: Server is using token UUID: 'f6983350-8d91-4d09-953c-038fb1c541f3'
+Mon Nov 11 15:35:38 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:35:38 2024: Attempting to start server on port '37349'
+Mon Nov 11 15:35:38 2024: XCD main fifo: created main fifo '/tmp/xcdmainf6983350-8d91-4d09-953c-038fb1c541f3', fd read = 13
+Mon Nov 11 15:35:38 2024: Running Dispatch Server
+Mon Nov 11 15:35:38 2024: Version 2.2.0
+Mon Nov 11 15:35:40 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:35:40 2024: Starting Socket connection
+Mon Nov 11 15:35:40 2024: EXCHANGE_TOKEN received, server token: f6983350-8d91-4d09-953c-038fb1c541f3, passed token: f6983350-8d91-4d09-953c-038fb1c541f3
+Mon Nov 11 15:35:40 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:35:40 2024: SESSION_MGR: creating session with session uuid: 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:40 2024: KERNEL_SVC: creating session with uuid: 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:40 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:40 2024: SYSTEM_DIAGRAM: creating session with uuid: 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:48 2024: SESSION_MGR: closing session for UUID 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:48 2024: KERNEL_SVC: closing session for UUID 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:48 2024: GUIDANCE_SMGR: closing session for UUID 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:48 2024: SYSTEM_DIAGRAM: closing session for UUID 'fb64d4ba-eaef-4249-9441-09d7e7d38c10' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:35:48 2024: STOP_SERVER received, server token: f6983350-8d91-4d09-953c-038fb1c541f3, passed token: f6983350-8d91-4d09-953c-038fb1c541f3
+Mon Nov 11 15:35:48 2024: Socket received request to stop server.
+Mon Nov 11 15:35:48 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:35:48 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:35:48 2024: XCD main fifo: Stopping
+Mon Nov 11 15:35:48 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:35:48 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:35:48 2024: SERVER: destructor for server bound to port 37349
+Mon Nov 11 15:35:48 2024: XCD main fifo: Good unlink of /tmp/xcdmainf6983350-8d91-4d09-953c-038fb1c541f3
+Mon Nov 11 15:35:48 2024: Server exiting with status 0.
+Mon Nov 11 15:35:48 2024: Closing log file.
+Mon Nov 11 15:36:51 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:36:51 2024: Server was asked to start on port: '40917'
+Mon Nov 11 15:36:51 2024: Server is using token UUID: 'f2d0bb40-ad4a-49c3-83a8-aba23d63a4ca'
+Mon Nov 11 15:36:51 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:36:51 2024: Attempting to start server on port '40917'
+Mon Nov 11 15:36:51 2024: XCD main fifo: created main fifo '/tmp/xcdmainf2d0bb40-ad4a-49c3-83a8-aba23d63a4ca', fd read = 13
+Mon Nov 11 15:36:51 2024: Running Dispatch Server
+Mon Nov 11 15:36:51 2024: Version 2.2.0
+Mon Nov 11 15:36:52 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:36:52 2024: Starting Socket connection
+Mon Nov 11 15:36:52 2024: EXCHANGE_TOKEN received, server token: f2d0bb40-ad4a-49c3-83a8-aba23d63a4ca, passed token: f2d0bb40-ad4a-49c3-83a8-aba23d63a4ca
+Mon Nov 11 15:36:53 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:36:53 2024: SESSION_MGR: creating session with session uuid: 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:36:53 2024: KERNEL_SVC: creating session with uuid: 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:36:53 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:36:53 2024: SYSTEM_DIAGRAM: creating session with uuid: 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:37:03 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:37:03 2024: Starting Socket connection
+Mon Nov 11 15:37:54 2024: SESSION_MGR: closing session for UUID 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:37:54 2024: KERNEL_SVC: closing session for UUID 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:37:54 2024: GUIDANCE_SMGR: closing session for UUID 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:37:54 2024: SYSTEM_DIAGRAM: closing session for UUID 'd7ae3727-40e8-4456-8e7e-35b6fbac5be1' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:37:54 2024: STOP_SERVER received, server token: f2d0bb40-ad4a-49c3-83a8-aba23d63a4ca, passed token: f2d0bb40-ad4a-49c3-83a8-aba23d63a4ca
+Mon Nov 11 15:37:54 2024: Socket received request to stop server.
+Mon Nov 11 15:37:54 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:37:54 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:37:54 2024: XCD main fifo: Stopping
+Mon Nov 11 15:37:54 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:37:54 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:37:54 2024: SERVER: destructor for server bound to port 40917
+Mon Nov 11 15:37:54 2024: XCD main fifo: Good unlink of /tmp/xcdmainf2d0bb40-ad4a-49c3-83a8-aba23d63a4ca
+Mon Nov 11 15:37:54 2024: Server exiting with status 0.
+Mon Nov 11 15:37:54 2024: Closing log file.
+Mon Nov 11 15:41:33 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:41:33 2024: Server was asked to start on port: '36503'
+Mon Nov 11 15:41:33 2024: Server is using token UUID: '97aeaef1-3f17-4199-ba39-42aeb10f3d6f'
+Mon Nov 11 15:41:33 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:41:33 2024: Attempting to start server on port '36503'
+Mon Nov 11 15:41:33 2024: XCD main fifo: created main fifo '/tmp/xcdmain97aeaef1-3f17-4199-ba39-42aeb10f3d6f', fd read = 13
+Mon Nov 11 15:41:33 2024: Running Dispatch Server
+Mon Nov 11 15:41:33 2024: Version 2.2.0
+Mon Nov 11 15:41:35 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:41:35 2024: Starting Socket connection
+Mon Nov 11 15:41:35 2024: EXCHANGE_TOKEN received, server token: 97aeaef1-3f17-4199-ba39-42aeb10f3d6f, passed token: 97aeaef1-3f17-4199-ba39-42aeb10f3d6f
+Mon Nov 11 15:41:35 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:41:35 2024: SESSION_MGR: creating session with session uuid: 'bbb34203-3a01-403f-a19c-50491643b75a' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:41:35 2024: KERNEL_SVC: creating session with uuid: 'bbb34203-3a01-403f-a19c-50491643b75a' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:41:35 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'bbb34203-3a01-403f-a19c-50491643b75a' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:41:35 2024: SYSTEM_DIAGRAM: creating session with uuid: 'bbb34203-3a01-403f-a19c-50491643b75a' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:42:03 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:42:03 2024: Starting Socket connection
+Mon Nov 11 15:42:08 2024: SESSION_MGR: closing session for UUID 'bbb34203-3a01-403f-a19c-50491643b75a' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:42:08 2024: KERNEL_SVC: closing session for UUID 'bbb34203-3a01-403f-a19c-50491643b75a' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:42:08 2024: GUIDANCE_SMGR: closing session for UUID 'bbb34203-3a01-403f-a19c-50491643b75a' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:42:09 2024: SYSTEM_DIAGRAM: closing session for UUID 'bbb34203-3a01-403f-a19c-50491643b75a' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:42:09 2024: STOP_SERVER received, server token: 97aeaef1-3f17-4199-ba39-42aeb10f3d6f, passed token: 97aeaef1-3f17-4199-ba39-42aeb10f3d6f
+Mon Nov 11 15:42:09 2024: Socket received request to stop server.
+Mon Nov 11 15:42:09 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:42:09 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:42:09 2024: XCD main fifo: Stopping
+Mon Nov 11 15:42:09 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:42:09 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:42:09 2024: SERVER: destructor for server bound to port 36503
+Mon Nov 11 15:42:09 2024: XCD main fifo: Good unlink of /tmp/xcdmain97aeaef1-3f17-4199-ba39-42aeb10f3d6f
+Mon Nov 11 15:42:09 2024: Server exiting with status 0.
+Mon Nov 11 15:42:09 2024: Closing log file.
+Mon Nov 11 15:45:07 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:45:07 2024: Server was asked to start on port: '36267'
+Mon Nov 11 15:45:07 2024: Server is using token UUID: 'b8679b6c-4aa8-460c-9c7a-d9e7c1027597'
+Mon Nov 11 15:45:07 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:45:07 2024: Attempting to start server on port '36267'
+Mon Nov 11 15:45:07 2024: XCD main fifo: created main fifo '/tmp/xcdmainb8679b6c-4aa8-460c-9c7a-d9e7c1027597', fd read = 13
+Mon Nov 11 15:45:07 2024: Running Dispatch Server
+Mon Nov 11 15:45:07 2024: Version 2.2.0
+Mon Nov 11 15:45:09 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:45:09 2024: Starting Socket connection
+Mon Nov 11 15:45:09 2024: EXCHANGE_TOKEN received, server token: b8679b6c-4aa8-460c-9c7a-d9e7c1027597, passed token: b8679b6c-4aa8-460c-9c7a-d9e7c1027597
+Mon Nov 11 15:45:09 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:45:09 2024: SESSION_MGR: creating session with session uuid: '0942caea-4977-46b9-8f55-68d64ac78a51' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:09 2024: KERNEL_SVC: creating session with uuid: '0942caea-4977-46b9-8f55-68d64ac78a51' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:09 2024: GUIDANCE_SMGR: creating guidance session with uuid: '0942caea-4977-46b9-8f55-68d64ac78a51' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:09 2024: SYSTEM_DIAGRAM: creating session with uuid: '0942caea-4977-46b9-8f55-68d64ac78a51' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:19 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:45:19 2024: Starting Socket connection
+Mon Nov 11 15:45:51 2024: SESSION_MGR: closing session for UUID '0942caea-4977-46b9-8f55-68d64ac78a51' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:51 2024: KERNEL_SVC: closing session for UUID '0942caea-4977-46b9-8f55-68d64ac78a51' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:51 2024: GUIDANCE_SMGR: closing session for UUID '0942caea-4977-46b9-8f55-68d64ac78a51' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:51 2024: SYSTEM_DIAGRAM: closing session for UUID '0942caea-4977-46b9-8f55-68d64ac78a51' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:45:51 2024: STOP_SERVER received, server token: b8679b6c-4aa8-460c-9c7a-d9e7c1027597, passed token: b8679b6c-4aa8-460c-9c7a-d9e7c1027597
+Mon Nov 11 15:45:51 2024: Socket received request to stop server.
+Mon Nov 11 15:45:51 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:45:51 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:45:51 2024: XCD main fifo: Stopping
+Mon Nov 11 15:45:51 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:45:51 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:45:51 2024: SERVER: destructor for server bound to port 36267
+Mon Nov 11 15:45:51 2024: XCD main fifo: Good unlink of /tmp/xcdmainb8679b6c-4aa8-460c-9c7a-d9e7c1027597
+Mon Nov 11 15:45:51 2024: Server exiting with status 0.
+Mon Nov 11 15:45:51 2024: Closing log file.
+Mon Nov 11 15:47:40 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:47:40 2024: Server was asked to start on port: '36739'
+Mon Nov 11 15:47:40 2024: Server is using token UUID: 'd0efd2dc-1b92-4c82-a338-02021d5184dc'
+Mon Nov 11 15:47:40 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:47:40 2024: Attempting to start server on port '36739'
+Mon Nov 11 15:47:40 2024: XCD main fifo: created main fifo '/tmp/xcdmaind0efd2dc-1b92-4c82-a338-02021d5184dc', fd read = 13
+Mon Nov 11 15:47:40 2024: Running Dispatch Server
+Mon Nov 11 15:47:40 2024: Version 2.2.0
+Mon Nov 11 15:47:41 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:47:41 2024: Starting Socket connection
+Mon Nov 11 15:47:41 2024: EXCHANGE_TOKEN received, server token: d0efd2dc-1b92-4c82-a338-02021d5184dc, passed token: d0efd2dc-1b92-4c82-a338-02021d5184dc
+Mon Nov 11 15:47:42 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:47:42 2024: SESSION_MGR: creating session with session uuid: '665e0365-8e62-49d0-9ce3-94a176e1a477' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:42 2024: KERNEL_SVC: creating session with uuid: '665e0365-8e62-49d0-9ce3-94a176e1a477' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:42 2024: GUIDANCE_SMGR: creating guidance session with uuid: '665e0365-8e62-49d0-9ce3-94a176e1a477' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:42 2024: SYSTEM_DIAGRAM: creating session with uuid: '665e0365-8e62-49d0-9ce3-94a176e1a477' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:50 2024: SESSION_MGR: closing session for UUID '665e0365-8e62-49d0-9ce3-94a176e1a477' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:50 2024: KERNEL_SVC: closing session for UUID '665e0365-8e62-49d0-9ce3-94a176e1a477' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:50 2024: GUIDANCE_SMGR: closing session for UUID '665e0365-8e62-49d0-9ce3-94a176e1a477' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:50 2024: SYSTEM_DIAGRAM: closing session for UUID '665e0365-8e62-49d0-9ce3-94a176e1a477' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:47:50 2024: STOP_SERVER received, server token: d0efd2dc-1b92-4c82-a338-02021d5184dc, passed token: d0efd2dc-1b92-4c82-a338-02021d5184dc
+Mon Nov 11 15:47:50 2024: Socket received request to stop server.
+Mon Nov 11 15:47:50 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:47:50 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:47:50 2024: XCD main fifo: Stopping
+Mon Nov 11 15:47:50 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:47:50 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:47:50 2024: SERVER: destructor for server bound to port 36739
+Mon Nov 11 15:47:50 2024: XCD main fifo: Good unlink of /tmp/xcdmaind0efd2dc-1b92-4c82-a338-02021d5184dc
+Mon Nov 11 15:47:50 2024: Server exiting with status 0.
+Mon Nov 11 15:47:50 2024: Closing log file.
+Mon Nov 11 15:51:01 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:51:01 2024: Server was asked to start on port: '40691'
+Mon Nov 11 15:51:01 2024: Server is using token UUID: 'a29c3935-9ce6-4c3b-b983-529c37bf883b'
+Mon Nov 11 15:51:01 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:51:01 2024: Attempting to start server on port '40691'
+Mon Nov 11 15:51:01 2024: XCD main fifo: created main fifo '/tmp/xcdmaina29c3935-9ce6-4c3b-b983-529c37bf883b', fd read = 13
+Mon Nov 11 15:51:01 2024: Running Dispatch Server
+Mon Nov 11 15:51:01 2024: Version 2.2.0
+Mon Nov 11 15:51:03 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:51:03 2024: Starting Socket connection
+Mon Nov 11 15:51:03 2024: EXCHANGE_TOKEN received, server token: a29c3935-9ce6-4c3b-b983-529c37bf883b, passed token: a29c3935-9ce6-4c3b-b983-529c37bf883b
+Mon Nov 11 15:51:03 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:51:03 2024: SESSION_MGR: creating session with session uuid: '4805a627-d7fa-4c26-998c-b30202036a29' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:51:03 2024: KERNEL_SVC: creating session with uuid: '4805a627-d7fa-4c26-998c-b30202036a29' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:51:03 2024: GUIDANCE_SMGR: creating guidance session with uuid: '4805a627-d7fa-4c26-998c-b30202036a29' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:51:03 2024: SYSTEM_DIAGRAM: creating session with uuid: '4805a627-d7fa-4c26-998c-b30202036a29' and name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:51:13 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:51:13 2024: Starting Socket connection
+Mon Nov 11 15:59:22 2024: SESSION_MGR: closing session for UUID '4805a627-d7fa-4c26-998c-b30202036a29' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:59:22 2024: KERNEL_SVC: closing session for UUID '4805a627-d7fa-4c26-998c-b30202036a29' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:59:22 2024: GUIDANCE_SMGR: closing session for UUID '4805a627-d7fa-4c26-998c-b30202036a29' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:59:22 2024: SYSTEM_DIAGRAM: closing session for UUID '4805a627-d7fa-4c26-998c-b30202036a29' with name 'v++_compile_MatrixMultiplicationKernel_hw'
+Mon Nov 11 15:59:22 2024: STOP_SERVER received, server token: a29c3935-9ce6-4c3b-b983-529c37bf883b, passed token: a29c3935-9ce6-4c3b-b983-529c37bf883b
+Mon Nov 11 15:59:22 2024: Socket received request to stop server.
+Mon Nov 11 15:59:22 2024: Dispatch Server: do_await_stop
+Mon Nov 11 15:59:22 2024: Dispatch Server: stopping mainFifo_
+Mon Nov 11 15:59:22 2024: XCD main fifo: Stopping
+Mon Nov 11 15:59:22 2024: XCD main fifo: do_read error code: Operation canceled
+Mon Nov 11 15:59:22 2024: XCD main fifo: bytes_transferred: 0
+Mon Nov 11 15:59:22 2024: SERVER: destructor for server bound to port 40691
+Mon Nov 11 15:59:22 2024: XCD main fifo: Good unlink of /tmp/xcdmaina29c3935-9ce6-4c3b-b983-529c37bf883b
+Mon Nov 11 15:59:22 2024: Server exiting with status 0.
+Mon Nov 11 15:59:22 2024: Closing log file.
+Mon Nov 11 15:59:24 2024: Running xcd server. This server was built by gradle.
+Mon Nov 11 15:59:24 2024: Server was asked to start on port: '39949'
+Mon Nov 11 15:59:24 2024: Server is using token UUID: '7646d176-abbb-4265-a339-bc5c435e84c5'
+Mon Nov 11 15:59:24 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Nov 11 15:59:24 2024: Attempting to start server on port '39949'
+Mon Nov 11 15:59:24 2024: XCD main fifo: created main fifo '/tmp/xcdmain7646d176-abbb-4265-a339-bc5c435e84c5', fd read = 12
+Mon Nov 11 15:59:24 2024: Running Dispatch Server
+Mon Nov 11 15:59:24 2024: Version 2.2.0
+Mon Nov 11 15:59:26 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:59:26 2024: Starting Socket connection
+Mon Nov 11 15:59:26 2024: EXCHANGE_TOKEN received, server token: 7646d176-abbb-4265-a339-bc5c435e84c5, passed token: 7646d176-abbb-4265-a339-bc5c435e84c5
+Mon Nov 11 15:59:26 2024: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Nov 11 15:59:26 2024: SESSION_MGR: creating session with session uuid: 'ac6c02b3-cbde-4902-b0bb-d41452bc3d15' and name 'v++_link_MatrixMultiplication_hw'
+Mon Nov 11 15:59:26 2024: KERNEL_SVC: creating session with uuid: 'ac6c02b3-cbde-4902-b0bb-d41452bc3d15' and name 'v++_link_MatrixMultiplication_hw'
+Mon Nov 11 15:59:26 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'ac6c02b3-cbde-4902-b0bb-d41452bc3d15' and name 'v++_link_MatrixMultiplication_hw'
+Mon Nov 11 15:59:26 2024: SYSTEM_DIAGRAM: creating session with uuid: 'ac6c02b3-cbde-4902-b0bb-d41452bc3d15' and name 'v++_link_MatrixMultiplication_hw'
+Mon Nov 11 15:59:47 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:59:47 2024: Starting Socket connection
+Mon Nov 11 15:59:56 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 15:59:56 2024: Starting Socket connection
+Mon Nov 11 16:02:16 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 16:02:16 2024: Starting Socket connection
+Mon Nov 11 16:02:16 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 16:02:16 2024: Starting Socket connection
+Mon Nov 11 16:02:16 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 16:02:16 2024: Starting Socket connection
+Mon Nov 11 16:02:16 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 16:02:16 2024: Starting Socket connection
+Mon Nov 11 16:02:16 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 16:02:16 2024: Starting Socket connection
+Mon Nov 11 16:02:16 2024: Dispatch Server: Accepted socket connection from client
+Mon Nov 11 16:02:16 2024: Starting Socket connection

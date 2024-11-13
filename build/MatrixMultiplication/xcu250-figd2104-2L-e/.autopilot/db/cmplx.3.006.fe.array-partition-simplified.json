@@ -1,0 +1,569 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "1 6 8 21 12 9 13 15 37 4 32 30 10 39 22 17 28 2 5 31 33 3 34 24 11 23 38 19 18 14 25 20 35 27 26 16 7 29 36",
+    "file": "Top.cpp",
+    "fileloc": 10,
+    "instructions": 714,
+    "name": "MatrixMultiplicationKernel",
+    "total_instructions": 9844
+  },
+  "1": {
+    "basicblocks": 14,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 106,
+    "instructions": 128,
+    "loads": {
+      "L": 1
+    },
+    "name": "ReadA",
+    "total_instructions": 128
+  },
+  "10": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "11": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "12": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 399,
+    "instructions": 78,
+    "loads": {
+      "L": 1
+    },
+    "name": "FeedB",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 78
+  },
+  "13": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "14": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "15": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "16": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "17": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "18": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "19": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "2": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "20": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "21": {
+    "basicblocks": 8,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 289,
+    "instructions": 61,
+    "name": "ConvertWidthB",
+    "total_instructions": 61
+  },
+  "22": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "23": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "24": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "25": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "26": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "27": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "28": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "29": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 323,
+    "instructions": 67,
+    "name": "ConvertWidthC",
+    "total_instructions": 67
+  },
+  "3": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "30": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "31": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "32": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "33": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "34": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "35": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "36": {
+    "basicblocks": 14,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 361,
+    "instructions": 54,
+    "name": "WriteC",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 54
+  },
+  "37": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "38": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "39": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "4": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "5": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 269,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 269
+  },
+  "6": {
+    "basicblocks": 29,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 164,
+    "instructions": 102,
+    "name": "TransposeA",
+    "total_instructions": 102
+  },
+  "7": {
+    "basicblocks": 29,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 247,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 247
+  },
+  "8": {
+    "basicblocks": 12,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 265,
+    "instructions": 56,
+    "loads": {
+      "L": 1
+    },
+    "name": "ReadB",
+    "total_instructions": 56
+  },
+  "9": {
+    "basicblocks": 38,
+    "calls": "",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 267,
+    "loads": {
+      "L": 3
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 267
+  }
+}

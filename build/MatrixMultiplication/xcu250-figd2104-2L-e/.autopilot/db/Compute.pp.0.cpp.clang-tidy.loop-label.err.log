@@ -1,0 +1,5 @@
+1 warning and 3 errors generated.
+Error while processing /home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Compute.pp.0.cpp.
+clang-tidy applied 51 of 51 suggested fixes.
+Suppressed 84 warnings (83 in non-user code, 1 with check filters).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

@@ -1,0 +1,322 @@
+
+
+================================================================
+== Vitis HLS Report for 'ReadA'
+================================================================
+* Date:           Mon Nov 11 16:40:30 2024
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        MatrixMultiplication
+* Solution:       xcu250-figd2104-2L-e (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------------------------------+-------------------------------------------------------------+---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+        |                                                                        |                                                             |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                   |
+        |                                Instance                                |                            Module                           |   min   |   max   |    min   |    max   | min | max |                      Type                     |
+        +------------------------------------------------------------------------+-------------------------------------------------------------+---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+        |grp_ReadA_Pipeline_ReadA_N0_ReadA_M0_ReadA_K0_ReadA_N1_ReadA_N2_fu_152  |ReadA_Pipeline_ReadA_N0_ReadA_M0_ReadA_K0_ReadA_N1_ReadA_N2  |        ?|        ?|         ?|         ?|    0|    0|  loop auto-rewind stp(delay=0 clock cycles(s))|
+        +------------------------------------------------------------------------+-------------------------------------------------------------+---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|       82|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|     10|     1110|     1317|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|      233|     -|
+|Register             |        -|      -|      254|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|     10|     1364|     1632|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|     ~0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|     ~0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+    |                                Instance                                |                            Module                           | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+    |grp_ReadA_Pipeline_ReadA_N0_ReadA_M0_ReadA_K0_ReadA_N1_ReadA_N2_fu_152  |ReadA_Pipeline_ReadA_N0_ReadA_M0_ReadA_K0_ReadA_N1_ReadA_N2  |        0|   3|  1110|  1255|    0|
+    |mul_24ns_37ns_60_1_1_U28                                                |mul_24ns_37ns_60_1_1                                         |        0|   3|     0|    25|    0|
+    |mul_24ns_60ns_83_1_1_U29                                                |mul_24ns_60ns_83_1_1                                         |        0|   4|     0|    37|    0|
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+    |Total                                                                   |                                                             |        0|  10|  1110|  1317|    0|
+    +------------------------------------------------------------------------+-------------------------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln111_fu_208_p2  |         +|   0|  0|  40|          33|           9|
+    |add_ln116_fu_228_p2  |         +|   0|  0|  40|          33|           9|
+    |ap_block_state1      |        or|   0|  0|   2|           1|           1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  82|          67|          19|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------+----+-----------+-----+-----------+
+    |         Name        | LUT| Input Size| Bits| Total Bits|
+    +---------------------+----+-----------+-----+-----------+
+    |aSplit_0_write       |   9|          2|    1|          2|
+    |aSplit_10_write      |   9|          2|    1|          2|
+    |aSplit_11_write      |   9|          2|    1|          2|
+    |aSplit_12_write      |   9|          2|    1|          2|
+    |aSplit_13_write      |   9|          2|    1|          2|
+    |aSplit_14_write      |   9|          2|    1|          2|
+    |aSplit_15_write      |   9|          2|    1|          2|
+    |aSplit_1_write       |   9|          2|    1|          2|
+    |aSplit_2_write       |   9|          2|    1|          2|
+    |aSplit_3_write       |   9|          2|    1|          2|
+    |aSplit_4_write       |   9|          2|    1|          2|
+    |aSplit_5_write       |   9|          2|    1|          2|
+    |aSplit_6_write       |   9|          2|    1|          2|
+    |aSplit_7_write       |   9|          2|    1|          2|
+    |aSplit_8_write       |   9|          2|    1|          2|
+    |aSplit_9_write       |   9|          2|    1|          2|
+    |ap_NS_fsm            |  26|          5|    1|          5|
+    |ap_done              |   9|          2|    1|          2|
+    |m_axi_gmem0_ARVALID  |   9|          2|    1|          2|
+    |m_axi_gmem0_RREADY   |   9|          2|    1|          2|
+    |real_start           |   9|          2|    1|          2|
+    |size_k_c8_blk_n      |   9|          2|    1|          2|
+    |size_m_c13_blk_n     |   9|          2|    1|          2|
+    |size_n_c5_blk_n      |   9|          2|    1|          2|
+    +---------------------+----+-----------+-----+-----------+
+    |Total                | 233|         51|   24|         51|
+    +---------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                         Name                                        | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                            |   4|   0|    4|          0|
+    |ap_done_reg                                                                          |   1|   0|    1|          0|
+    |bound17_reg_306                                                                      |  60|   0|   60|          0|
+    |bound40_reg_311                                                                      |  83|   0|   83|          0|
+    |grp_ReadA_Pipeline_ReadA_N0_ReadA_M0_ReadA_K0_ReadA_N1_ReadA_N2_fu_152_ap_start_reg  |   1|   0|    1|          0|
+    |lshr_ln1_reg_284                                                                     |  24|   0|   24|          0|
+    |lshr_ln2_reg_289                                                                     |  28|   0|   28|          0|
+    |lshr_ln_reg_279                                                                      |  24|   0|   24|          0|
+    |start_once_reg                                                                       |   1|   0|    1|          0|
+    |tmp_s_reg_301                                                                        |  28|   0|   37|          9|
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                | 254|   0|  263|          9|
+    +-------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+--------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|         ReadA|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|         ReadA|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|         ReadA|  return value|
+|start_full_n               |   in|    1|  ap_ctrl_hs|         ReadA|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|         ReadA|  return value|
+|ap_continue                |   in|    1|  ap_ctrl_hs|         ReadA|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|         ReadA|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|         ReadA|  return value|
+|start_out                  |  out|    1|  ap_ctrl_hs|         ReadA|  return value|
+|start_write                |  out|    1|  ap_ctrl_hs|         ReadA|  return value|
+|m_axi_gmem0_AWVALID        |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWREADY        |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWADDR         |  out|   64|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWID           |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWLEN          |  out|   32|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWSIZE         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWBURST        |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWLOCK         |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWCACHE        |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWPROT         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWQOS          |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWREGION       |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWUSER         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WVALID         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WREADY         |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WDATA          |  out|  512|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WSTRB          |  out|   64|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WLAST          |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WID            |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WUSER          |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARVALID        |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARREADY        |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARADDR         |  out|   64|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARID           |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARLEN          |  out|   32|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARSIZE         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARBURST        |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARLOCK         |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARCACHE        |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARPROT         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARQOS          |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARREGION       |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARUSER         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RVALID         |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RREADY         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RDATA          |   in|  512|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RLAST          |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RID            |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RFIFONUM       |   in|    9|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RUSER          |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RRESP          |   in|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BVALID         |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BREADY         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BRESP          |   in|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BID            |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BUSER          |   in|    1|       m_axi|         gmem0|       pointer|
+|a                          |   in|   64|     ap_none|             a|        scalar|
+|aSplit_0_din               |  out|   32|     ap_fifo|      aSplit_0|       pointer|
+|aSplit_0_num_data_valid    |   in|   11|     ap_fifo|      aSplit_0|       pointer|
+|aSplit_0_fifo_cap          |   in|   11|     ap_fifo|      aSplit_0|       pointer|
+|aSplit_0_full_n            |   in|    1|     ap_fifo|      aSplit_0|       pointer|
+|aSplit_0_write             |  out|    1|     ap_fifo|      aSplit_0|       pointer|
+|aSplit_1_din               |  out|   32|     ap_fifo|      aSplit_1|       pointer|
+|aSplit_1_num_data_valid    |   in|   11|     ap_fifo|      aSplit_1|       pointer|
+|aSplit_1_fifo_cap          |   in|   11|     ap_fifo|      aSplit_1|       pointer|
+|aSplit_1_full_n            |   in|    1|     ap_fifo|      aSplit_1|       pointer|
+|aSplit_1_write             |  out|    1|     ap_fifo|      aSplit_1|       pointer|
+|aSplit_2_din               |  out|   32|     ap_fifo|      aSplit_2|       pointer|
+|aSplit_2_num_data_valid    |   in|   11|     ap_fifo|      aSplit_2|       pointer|
+|aSplit_2_fifo_cap          |   in|   11|     ap_fifo|      aSplit_2|       pointer|
+|aSplit_2_full_n            |   in|    1|     ap_fifo|      aSplit_2|       pointer|
+|aSplit_2_write             |  out|    1|     ap_fifo|      aSplit_2|       pointer|
+|aSplit_3_din               |  out|   32|     ap_fifo|      aSplit_3|       pointer|
+|aSplit_3_num_data_valid    |   in|   11|     ap_fifo|      aSplit_3|       pointer|
+|aSplit_3_fifo_cap          |   in|   11|     ap_fifo|      aSplit_3|       pointer|
+|aSplit_3_full_n            |   in|    1|     ap_fifo|      aSplit_3|       pointer|
+|aSplit_3_write             |  out|    1|     ap_fifo|      aSplit_3|       pointer|
+|aSplit_4_din               |  out|   32|     ap_fifo|      aSplit_4|       pointer|
+|aSplit_4_num_data_valid    |   in|   11|     ap_fifo|      aSplit_4|       pointer|
+|aSplit_4_fifo_cap          |   in|   11|     ap_fifo|      aSplit_4|       pointer|
+|aSplit_4_full_n            |   in|    1|     ap_fifo|      aSplit_4|       pointer|
+|aSplit_4_write             |  out|    1|     ap_fifo|      aSplit_4|       pointer|
+|aSplit_5_din               |  out|   32|     ap_fifo|      aSplit_5|       pointer|
+|aSplit_5_num_data_valid    |   in|   11|     ap_fifo|      aSplit_5|       pointer|
+|aSplit_5_fifo_cap          |   in|   11|     ap_fifo|      aSplit_5|       pointer|
+|aSplit_5_full_n            |   in|    1|     ap_fifo|      aSplit_5|       pointer|
+|aSplit_5_write             |  out|    1|     ap_fifo|      aSplit_5|       pointer|
+|aSplit_6_din               |  out|   32|     ap_fifo|      aSplit_6|       pointer|
+|aSplit_6_num_data_valid    |   in|   11|     ap_fifo|      aSplit_6|       pointer|
+|aSplit_6_fifo_cap          |   in|   11|     ap_fifo|      aSplit_6|       pointer|
+|aSplit_6_full_n            |   in|    1|     ap_fifo|      aSplit_6|       pointer|
+|aSplit_6_write             |  out|    1|     ap_fifo|      aSplit_6|       pointer|
+|aSplit_7_din               |  out|   32|     ap_fifo|      aSplit_7|       pointer|
+|aSplit_7_num_data_valid    |   in|   11|     ap_fifo|      aSplit_7|       pointer|
+|aSplit_7_fifo_cap          |   in|   11|     ap_fifo|      aSplit_7|       pointer|
+|aSplit_7_full_n            |   in|    1|     ap_fifo|      aSplit_7|       pointer|
+|aSplit_7_write             |  out|    1|     ap_fifo|      aSplit_7|       pointer|
+|aSplit_8_din               |  out|   32|     ap_fifo|      aSplit_8|       pointer|
+|aSplit_8_num_data_valid    |   in|   11|     ap_fifo|      aSplit_8|       pointer|
+|aSplit_8_fifo_cap          |   in|   11|     ap_fifo|      aSplit_8|       pointer|
+|aSplit_8_full_n            |   in|    1|     ap_fifo|      aSplit_8|       pointer|
+|aSplit_8_write             |  out|    1|     ap_fifo|      aSplit_8|       pointer|
+|aSplit_9_din               |  out|   32|     ap_fifo|      aSplit_9|       pointer|
+|aSplit_9_num_data_valid    |   in|   11|     ap_fifo|      aSplit_9|       pointer|
+|aSplit_9_fifo_cap          |   in|   11|     ap_fifo|      aSplit_9|       pointer|
+|aSplit_9_full_n            |   in|    1|     ap_fifo|      aSplit_9|       pointer|
+|aSplit_9_write             |  out|    1|     ap_fifo|      aSplit_9|       pointer|
+|aSplit_10_din              |  out|   32|     ap_fifo|     aSplit_10|       pointer|
+|aSplit_10_num_data_valid   |   in|   11|     ap_fifo|     aSplit_10|       pointer|
+|aSplit_10_fifo_cap         |   in|   11|     ap_fifo|     aSplit_10|       pointer|
+|aSplit_10_full_n           |   in|    1|     ap_fifo|     aSplit_10|       pointer|
+|aSplit_10_write            |  out|    1|     ap_fifo|     aSplit_10|       pointer|
+|aSplit_11_din              |  out|   32|     ap_fifo|     aSplit_11|       pointer|
+|aSplit_11_num_data_valid   |   in|   11|     ap_fifo|     aSplit_11|       pointer|
+|aSplit_11_fifo_cap         |   in|   11|     ap_fifo|     aSplit_11|       pointer|
+|aSplit_11_full_n           |   in|    1|     ap_fifo|     aSplit_11|       pointer|
+|aSplit_11_write            |  out|    1|     ap_fifo|     aSplit_11|       pointer|
+|aSplit_12_din              |  out|   32|     ap_fifo|     aSplit_12|       pointer|
+|aSplit_12_num_data_valid   |   in|   11|     ap_fifo|     aSplit_12|       pointer|
+|aSplit_12_fifo_cap         |   in|   11|     ap_fifo|     aSplit_12|       pointer|
+|aSplit_12_full_n           |   in|    1|     ap_fifo|     aSplit_12|       pointer|
+|aSplit_12_write            |  out|    1|     ap_fifo|     aSplit_12|       pointer|
+|aSplit_13_din              |  out|   32|     ap_fifo|     aSplit_13|       pointer|
+|aSplit_13_num_data_valid   |   in|   11|     ap_fifo|     aSplit_13|       pointer|
+|aSplit_13_fifo_cap         |   in|   11|     ap_fifo|     aSplit_13|       pointer|
+|aSplit_13_full_n           |   in|    1|     ap_fifo|     aSplit_13|       pointer|
+|aSplit_13_write            |  out|    1|     ap_fifo|     aSplit_13|       pointer|
+|aSplit_14_din              |  out|   32|     ap_fifo|     aSplit_14|       pointer|
+|aSplit_14_num_data_valid   |   in|   11|     ap_fifo|     aSplit_14|       pointer|
+|aSplit_14_fifo_cap         |   in|   11|     ap_fifo|     aSplit_14|       pointer|
+|aSplit_14_full_n           |   in|    1|     ap_fifo|     aSplit_14|       pointer|
+|aSplit_14_write            |  out|    1|     ap_fifo|     aSplit_14|       pointer|
+|aSplit_15_din              |  out|   32|     ap_fifo|     aSplit_15|       pointer|
+|aSplit_15_num_data_valid   |   in|   11|     ap_fifo|     aSplit_15|       pointer|
+|aSplit_15_fifo_cap         |   in|   11|     ap_fifo|     aSplit_15|       pointer|
+|aSplit_15_full_n           |   in|    1|     ap_fifo|     aSplit_15|       pointer|
+|aSplit_15_write            |  out|    1|     ap_fifo|     aSplit_15|       pointer|
+|size_n                     |   in|   32|     ap_none|        size_n|        scalar|
+|size_k                     |   in|   32|     ap_none|        size_k|        scalar|
+|size_m                     |   in|   32|     ap_none|        size_m|        scalar|
+|size_n_c5_din              |  out|   32|     ap_fifo|     size_n_c5|       pointer|
+|size_n_c5_num_data_valid   |   in|    3|     ap_fifo|     size_n_c5|       pointer|
+|size_n_c5_fifo_cap         |   in|    3|     ap_fifo|     size_n_c5|       pointer|
+|size_n_c5_full_n           |   in|    1|     ap_fifo|     size_n_c5|       pointer|
+|size_n_c5_write            |  out|    1|     ap_fifo|     size_n_c5|       pointer|
+|size_k_c8_din              |  out|   32|     ap_fifo|     size_k_c8|       pointer|
+|size_k_c8_num_data_valid   |   in|    3|     ap_fifo|     size_k_c8|       pointer|
+|size_k_c8_fifo_cap         |   in|    3|     ap_fifo|     size_k_c8|       pointer|
+|size_k_c8_full_n           |   in|    1|     ap_fifo|     size_k_c8|       pointer|
+|size_k_c8_write            |  out|    1|     ap_fifo|     size_k_c8|       pointer|
+|size_m_c13_din             |  out|   32|     ap_fifo|    size_m_c13|       pointer|
+|size_m_c13_num_data_valid  |   in|    3|     ap_fifo|    size_m_c13|       pointer|
+|size_m_c13_fifo_cap        |   in|    3|     ap_fifo|    size_m_c13|       pointer|
+|size_m_c13_full_n          |   in|    1|     ap_fifo|    size_m_c13|       pointer|
+|size_m_c13_write           |  out|    1|     ap_fifo|    size_m_c13|       pointer|
++---------------------------+-----+-----+------------+--------------+--------------+
+

@@ -1,0 +1,66 @@
+{
+    "partition_metadata" : {
+        "schema_version" : {
+            "major" : "0x1",
+            "minor" : "0x0"
+        },
+        "addressable_endpoints" : {
+            "ep_gapping_demand_00" : {
+                "offset" : "0x0000000000981000",
+                "range" : "0x0000000000001000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:ucs_gapping_demand:1.0"
+            },
+            "ep_shutdown_clocks_00" : {
+                "offset" : "0000000000000000",
+                "range" : "0000000000000000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "dummy_endpoint"
+            },
+            "ep_ucs_control_status_00" : {
+                "offset" : "0x0000000000982000",
+                "range" : "0x0000000000001000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:ucs_control_status:1.0"
+            },
+            "ep_aclk_kernel_00" : {
+                "offset" : "0x0000000000983000",
+                "range" : "0x0000000000001000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:clkwiz:1.0"
+            },
+            "ep_aclk_kernel_01" : {
+                "offset" : "0x0000000000984000",
+                "range" : "0x0000000000001000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:clkwiz:1.0"
+            },
+            "ep_freq_cnt_aclk_kernel_00" : {
+                "offset" : "0x0000000000989000",
+                "range" : "0x0000000000001000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:frequency_counter:1.0"
+            },
+            "ep_freq_cnt_aclk_kernel_01" : {
+                "offset" : "0x000000000098A000",
+                "range" : "0x0000000000001000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:frequency_counter:1.0"
+            },
+            "ep_freq_cnt_aclk_00" : {
+                "offset" : "0x0000000000991000",
+                "range" : "0x0000000000001000",
+                "pcie_physical_function" : "0x0",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:frequency_counter:1.0"
+            }
+        }
+    }
+}

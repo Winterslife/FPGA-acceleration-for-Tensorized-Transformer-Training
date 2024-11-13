@@ -1,0 +1,191 @@
+{
+  "0": {
+    "basicblocks": 16,
+    "calls": "1 6 3 8 5 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 13",
+    "file": "Top.cpp",
+    "fileloc": 10,
+    "instructions": 348,
+    "name": "MatrixMultiplicationKernel",
+    "total_instructions": 28365
+  },
+  "1": {
+    "basicblocks": 20,
+    "calls": "9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9",
+    "file": "Memory.cpp",
+    "fileloc": 106,
+    "instructions": 212,
+    "loads": {
+      "L": 1
+    },
+    "name": "ReadA",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 260
+  },
+  "10": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "DataPack.h",
+    "fileloc": 126,
+    "instructions": 5,
+    "name": "DataPack",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 5
+  },
+  "11": {
+    "basicblocks": 16,
+    "calls": "10 4 9 2 9 2 9 2 9 2 9 2 9 2 9 2 9 2",
+    "file": "Memory.cpp",
+    "fileloc": 323,
+    "instructions": 198,
+    "loads": {
+      "L": 10
+    },
+    "name": "ConvertWidthC",
+    "stores": {
+      "L": 18
+    },
+    "total_instructions": 272
+  },
+  "12": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "DataPack.h",
+    "fileloc": 126,
+    "instructions": 5,
+    "name": "DataPack",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 5
+  },
+  "13": {
+    "basicblocks": 18,
+    "calls": "10",
+    "file": "Memory.cpp",
+    "fileloc": 361,
+    "instructions": 76,
+    "loads": {
+      "L": 1
+    },
+    "name": "WriteC",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 81
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "DataPack.h",
+    "fileloc": 35,
+    "instructions": 5,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_range",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 5
+  },
+  "3": {
+    "basicblocks": 17,
+    "calls": "",
+    "file": "Memory.cpp",
+    "fileloc": 265,
+    "instructions": 86,
+    "loads": {
+      "L": 1
+    },
+    "name": "ReadB",
+    "total_instructions": 86
+  },
+  "4": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "DataPack.h",
+    "fileloc": 126,
+    "instructions": 5,
+    "name": "DataPack",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 5
+  },
+  "5": {
+    "basicblocks": 24,
+    "calls": "4 4 4",
+    "file": "Memory.cpp",
+    "fileloc": 399,
+    "instructions": 127,
+    "loads": {
+      "L": 4
+    },
+    "name": "FeedB",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 142
+  },
+  "6": {
+    "basicblocks": 17,
+    "calls": "12 2",
+    "file": "Memory.cpp",
+    "fileloc": 164,
+    "instructions": 104,
+    "loads": {
+      "L": 2
+    },
+    "name": "TransposeA",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 114
+  },
+  "7": {
+    "basicblocks": 122,
+    "calls": "12 4 12 12 12 4 4 9 9 9 2 4 9 9 9 2 9 9 9 2 9 9 9 2 9 9 9 2 9 9 9 2 9 9 9 2 9 9 9 2",
+    "file": "Compute.cpp",
+    "fileloc": 11,
+    "instructions": 683,
+    "loads": {
+      "L": 29
+    },
+    "name": "ProcessingElement",
+    "stores": {
+      "L": 58
+    },
+    "total_instructions": 835
+  },
+  "8": {
+    "basicblocks": 12,
+    "calls": "10 10 4 9 2 9 2 9 2 9 2 9 2 9 2 9 2 9 2",
+    "file": "Memory.cpp",
+    "fileloc": 289,
+    "instructions": 263,
+    "loads": {
+      "L": 12
+    },
+    "name": "ConvertWidthB",
+    "stores": {
+      "L": 19
+    },
+    "total_instructions": 342
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "DataPack.h",
+    "fileloc": 31,
+    "instructions": 3,
+    "loads": {
+      "L": 1
+    },
+    "name": "from_range",
+    "total_instructions": 3
+  }
+}

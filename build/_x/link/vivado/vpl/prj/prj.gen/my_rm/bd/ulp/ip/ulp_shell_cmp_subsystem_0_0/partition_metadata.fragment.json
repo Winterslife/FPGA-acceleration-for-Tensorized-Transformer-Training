@@ -1,0 +1,17 @@
+{
+    "partition_metadata" : {
+        "schema_version" : {
+            "major" : "0x1",
+            "minor" : "0x0"
+        },
+        "addressable_endpoints" : {
+            "ep_debug_bscan_user_00" : {
+                "offset" : "0x0000000001C00000",
+                "range" : "0x0000000000010000",
+                "pcie_physical_function" : "0x1",
+                "pcie_base_address_register" : "0x0",
+                "register_abstraction_name" : "xilinx.com:reg_abs:debug_bridge:1.0"
+            }
+        }
+    }
+}

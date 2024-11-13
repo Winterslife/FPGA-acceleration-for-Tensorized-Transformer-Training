@@ -1,0 +1,6 @@
+
+Family       : virtexuplus
+Device       : xcu250
+Package      : -figd2104
+Speed Grade  : -2L-e
+Clock Period : 3.333

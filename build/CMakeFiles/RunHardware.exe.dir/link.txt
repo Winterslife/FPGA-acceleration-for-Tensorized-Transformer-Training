@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++14 -rdynamic CMakeFiles/RunHardware.exe.dir/host/RunHardware.cpp.o -o RunHardware.exe  -Wl,-rpath,:/opt/xilinx/xrt/lib:/home/minghe/Xilinx/Vitis_HLS/2024.1/lib/lnx64.o -lOpenCL /opt/xilinx/xrt/lib/libxilinxopencl.so libmmkernel.a 

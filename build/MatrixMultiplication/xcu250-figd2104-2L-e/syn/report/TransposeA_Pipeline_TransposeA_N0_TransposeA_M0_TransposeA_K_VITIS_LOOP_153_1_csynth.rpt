@@ -1,0 +1,298 @@
+
+
+================================================================
+== Vitis HLS Report for 'TransposeA_Pipeline_TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1'
+================================================================
+* Date:           Mon Nov 11 16:40:31 2024
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        MatrixMultiplication
+* Solution:       xcu250-figd2104-2L-e (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.567 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                   |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                     |
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+    |        ?|        ?|         ?|         ?|    0|    0|  loop auto-rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                                             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |                          Loop Name                          |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1  |        ?|        ?|         2|          1|          1|     ?|       yes|
+        +-------------------------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|      805|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|      306|     -|
+|Register             |        -|      -|      351|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|      351|     1111|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+-----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+-----+------------+------------+
+    |add_ln153_fu_467_p2               |         +|   0|  0|   17|          10|           1|
+    |add_ln172_fu_376_p2               |         +|   0|  0|  107|          87|           1|
+    |add_ln174_fu_507_p2               |         +|   0|  0|   73|          66|           1|
+    |add_ln176_1_fu_493_p2             |         +|   0|  0|   49|          42|           1|
+    |k_fu_449_p2                       |         +|   0|  0|   39|          32|           1|
+    |and_ln172_fu_437_p2               |       and|   0|  0|    2|           1|           1|
+    |and_ln174_fu_443_p2               |       and|   0|  0|    2|           1|           1|
+    |ap_block_pp0_stage0_01001         |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op101_read_state3    |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op103_read_state3    |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op105_read_state3    |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op107_read_state3    |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op77_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op79_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op81_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op83_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op85_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op87_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op89_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op91_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op93_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op95_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op97_read_state3     |       and|   0|  0|    2|           1|           1|
+    |ap_predicate_op99_read_state3     |       and|   0|  0|    2|           1|           1|
+    |icmp_ln153_fu_393_p2              |      icmp|   0|  0|   18|          10|          11|
+    |icmp_ln172_fu_368_p2              |      icmp|   0|  0|  107|          87|          87|
+    |icmp_ln174_fu_382_p2              |      icmp|   0|  0|   73|          66|          66|
+    |icmp_ln176_1_fu_404_p2            |      icmp|   0|  0|   49|          42|          42|
+    |icmp_ln176_fu_399_p2              |      icmp|   0|  0|   39|          32|           1|
+    |ap_block_state3_pp0_stage0_iter2  |        or|   0|  0|    2|           1|           1|
+    |or_ln153_1_fu_479_p2              |        or|   0|  0|    2|           1|           1|
+    |or_ln153_fu_473_p2                |        or|   0|  0|    2|           1|           1|
+    |or_ln174_fu_417_p2                |        or|   0|  0|    2|           1|           1|
+    |n1_3_fu_485_p3                    |    select|   0|  0|   10|           1|           1|
+    |select_ln172_fu_409_p3            |    select|   0|  0|    2|           1|           1|
+    |select_ln174_1_fu_513_p3          |    select|   0|  0|   64|           1|           1|
+    |select_ln174_fu_423_p3            |    select|   0|  0|   32|           1|           1|
+    |select_ln176_1_fu_499_p3          |    select|   0|  0|   42|           1|           1|
+    |select_ln176_fu_455_p3            |    select|   0|  0|   32|           1|          32|
+    |ap_enable_pp0                     |       xor|   0|  0|    2|           1|           2|
+    |xor_ln172_fu_387_p2               |       xor|   0|  0|    2|           1|           2|
+    |xor_ln174_fu_431_p2               |       xor|   0|  0|    2|           1|           2|
+    +----------------------------------+----------+----+---+-----+------------+------------+
+    |Total                             |          |   0|  0|  805|         506|         278|
+    +----------------------------------+----------+----+---+-----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------+----+-----------+-----+-----------+
+    |               Name              | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------+----+-----------+-----+-----------+
+    |aPipes_0_blk_n                   |   9|          2|    1|          2|
+    |aSplit_0_blk_n                   |   9|          2|    1|          2|
+    |aSplit_10_blk_n                  |   9|          2|    1|          2|
+    |aSplit_11_blk_n                  |   9|          2|    1|          2|
+    |aSplit_12_blk_n                  |   9|          2|    1|          2|
+    |aSplit_13_blk_n                  |   9|          2|    1|          2|
+    |aSplit_14_blk_n                  |   9|          2|    1|          2|
+    |aSplit_15_blk_n                  |   9|          2|    1|          2|
+    |aSplit_1_blk_n                   |   9|          2|    1|          2|
+    |aSplit_2_blk_n                   |   9|          2|    1|          2|
+    |aSplit_3_blk_n                   |   9|          2|    1|          2|
+    |aSplit_4_blk_n                   |   9|          2|    1|          2|
+    |aSplit_5_blk_n                   |   9|          2|    1|          2|
+    |aSplit_6_blk_n                   |   9|          2|    1|          2|
+    |aSplit_7_blk_n                   |   9|          2|    1|          2|
+    |aSplit_8_blk_n                   |   9|          2|    1|          2|
+    |aSplit_9_blk_n                   |   9|          2|    1|          2|
+    |ap_done_int                      |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1          |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2          |   9|          2|    1|          2|
+    |ap_phi_mux_empty_phi_fu_272_p32  |  81|         17|   32|        544|
+    |indvar_flatten11_fu_134          |   9|          2|   66|        132|
+    |indvar_flatten31_fu_138          |   9|          2|   87|        174|
+    |indvar_flatten_fu_130            |   9|          2|   42|         84|
+    |k_1_fu_126                       |   9|          2|   32|         64|
+    |n1_fu_122                        |   9|          2|   10|         20|
+    +---------------------------------+----+-----------+-----+-----------+
+    |Total                            | 306|         67|  289|       1058|
+    +---------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2  |   1|   0|    1|          0|
+    |bound4_cast_reg_596      |  64|   0|   66|          2|
+    |bound_cast_reg_591       |  41|   0|   42|          1|
+    |icmp_ln172_reg_601       |   1|   0|    1|          0|
+    |indvar_flatten11_fu_134  |  66|   0|   66|          0|
+    |indvar_flatten31_fu_138  |  87|   0|   87|          0|
+    |indvar_flatten_fu_130    |  42|   0|   42|          0|
+    |k_1_fu_126               |  32|   0|   32|          0|
+    |n1_fu_122                |  10|   0|   10|          0|
+    |trunc_ln176_reg_605      |   4|   0|    4|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 351|   0|  354|          3|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |                                 Source Object                                 |    C Type    |
++--------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+|ap_clk                    |   in|    1|  ap_ctrl_hs|  TransposeA_Pipeline_TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1|  return value|
+|ap_rst                    |   in|    1|  ap_ctrl_hs|  TransposeA_Pipeline_TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1|  return value|
+|ap_start                  |   in|    1|  ap_ctrl_hs|  TransposeA_Pipeline_TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1|  return value|
+|ap_done                   |  out|    1|  ap_ctrl_hs|  TransposeA_Pipeline_TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1|  return value|
+|ap_idle                   |  out|    1|  ap_ctrl_hs|  TransposeA_Pipeline_TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1|  return value|
+|ap_ready                  |  out|    1|  ap_ctrl_hs|  TransposeA_Pipeline_TransposeA_N0_TransposeA_M0_TransposeA_K_VITIS_LOOP_153_1|  return value|
+|aSplit_14_dout            |   in|   32|     ap_fifo|                                                                      aSplit_14|       pointer|
+|aSplit_14_num_data_valid  |   in|   11|     ap_fifo|                                                                      aSplit_14|       pointer|
+|aSplit_14_fifo_cap        |   in|   11|     ap_fifo|                                                                      aSplit_14|       pointer|
+|aSplit_14_empty_n         |   in|    1|     ap_fifo|                                                                      aSplit_14|       pointer|
+|aSplit_14_read            |  out|    1|     ap_fifo|                                                                      aSplit_14|       pointer|
+|aSplit_13_dout            |   in|   32|     ap_fifo|                                                                      aSplit_13|       pointer|
+|aSplit_13_num_data_valid  |   in|   11|     ap_fifo|                                                                      aSplit_13|       pointer|
+|aSplit_13_fifo_cap        |   in|   11|     ap_fifo|                                                                      aSplit_13|       pointer|
+|aSplit_13_empty_n         |   in|    1|     ap_fifo|                                                                      aSplit_13|       pointer|
+|aSplit_13_read            |  out|    1|     ap_fifo|                                                                      aSplit_13|       pointer|
+|aSplit_12_dout            |   in|   32|     ap_fifo|                                                                      aSplit_12|       pointer|
+|aSplit_12_num_data_valid  |   in|   11|     ap_fifo|                                                                      aSplit_12|       pointer|
+|aSplit_12_fifo_cap        |   in|   11|     ap_fifo|                                                                      aSplit_12|       pointer|
+|aSplit_12_empty_n         |   in|    1|     ap_fifo|                                                                      aSplit_12|       pointer|
+|aSplit_12_read            |  out|    1|     ap_fifo|                                                                      aSplit_12|       pointer|
+|aSplit_11_dout            |   in|   32|     ap_fifo|                                                                      aSplit_11|       pointer|
+|aSplit_11_num_data_valid  |   in|   11|     ap_fifo|                                                                      aSplit_11|       pointer|
+|aSplit_11_fifo_cap        |   in|   11|     ap_fifo|                                                                      aSplit_11|       pointer|
+|aSplit_11_empty_n         |   in|    1|     ap_fifo|                                                                      aSplit_11|       pointer|
+|aSplit_11_read            |  out|    1|     ap_fifo|                                                                      aSplit_11|       pointer|
+|aSplit_10_dout            |   in|   32|     ap_fifo|                                                                      aSplit_10|       pointer|
+|aSplit_10_num_data_valid  |   in|   11|     ap_fifo|                                                                      aSplit_10|       pointer|
+|aSplit_10_fifo_cap        |   in|   11|     ap_fifo|                                                                      aSplit_10|       pointer|
+|aSplit_10_empty_n         |   in|    1|     ap_fifo|                                                                      aSplit_10|       pointer|
+|aSplit_10_read            |  out|    1|     ap_fifo|                                                                      aSplit_10|       pointer|
+|aSplit_9_dout             |   in|   32|     ap_fifo|                                                                       aSplit_9|       pointer|
+|aSplit_9_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_9|       pointer|
+|aSplit_9_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_9|       pointer|
+|aSplit_9_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_9|       pointer|
+|aSplit_9_read             |  out|    1|     ap_fifo|                                                                       aSplit_9|       pointer|
+|aSplit_8_dout             |   in|   32|     ap_fifo|                                                                       aSplit_8|       pointer|
+|aSplit_8_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_8|       pointer|
+|aSplit_8_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_8|       pointer|
+|aSplit_8_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_8|       pointer|
+|aSplit_8_read             |  out|    1|     ap_fifo|                                                                       aSplit_8|       pointer|
+|aSplit_7_dout             |   in|   32|     ap_fifo|                                                                       aSplit_7|       pointer|
+|aSplit_7_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_7|       pointer|
+|aSplit_7_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_7|       pointer|
+|aSplit_7_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_7|       pointer|
+|aSplit_7_read             |  out|    1|     ap_fifo|                                                                       aSplit_7|       pointer|
+|aSplit_6_dout             |   in|   32|     ap_fifo|                                                                       aSplit_6|       pointer|
+|aSplit_6_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_6|       pointer|
+|aSplit_6_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_6|       pointer|
+|aSplit_6_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_6|       pointer|
+|aSplit_6_read             |  out|    1|     ap_fifo|                                                                       aSplit_6|       pointer|
+|aSplit_5_dout             |   in|   32|     ap_fifo|                                                                       aSplit_5|       pointer|
+|aSplit_5_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_5|       pointer|
+|aSplit_5_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_5|       pointer|
+|aSplit_5_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_5|       pointer|
+|aSplit_5_read             |  out|    1|     ap_fifo|                                                                       aSplit_5|       pointer|
+|aSplit_4_dout             |   in|   32|     ap_fifo|                                                                       aSplit_4|       pointer|
+|aSplit_4_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_4|       pointer|
+|aSplit_4_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_4|       pointer|
+|aSplit_4_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_4|       pointer|
+|aSplit_4_read             |  out|    1|     ap_fifo|                                                                       aSplit_4|       pointer|
+|aSplit_3_dout             |   in|   32|     ap_fifo|                                                                       aSplit_3|       pointer|
+|aSplit_3_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_3|       pointer|
+|aSplit_3_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_3|       pointer|
+|aSplit_3_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_3|       pointer|
+|aSplit_3_read             |  out|    1|     ap_fifo|                                                                       aSplit_3|       pointer|
+|aSplit_2_dout             |   in|   32|     ap_fifo|                                                                       aSplit_2|       pointer|
+|aSplit_2_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_2|       pointer|
+|aSplit_2_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_2|       pointer|
+|aSplit_2_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_2|       pointer|
+|aSplit_2_read             |  out|    1|     ap_fifo|                                                                       aSplit_2|       pointer|
+|aSplit_1_dout             |   in|   32|     ap_fifo|                                                                       aSplit_1|       pointer|
+|aSplit_1_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_1|       pointer|
+|aSplit_1_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_1|       pointer|
+|aSplit_1_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_1|       pointer|
+|aSplit_1_read             |  out|    1|     ap_fifo|                                                                       aSplit_1|       pointer|
+|aSplit_0_dout             |   in|   32|     ap_fifo|                                                                       aSplit_0|       pointer|
+|aSplit_0_num_data_valid   |   in|   11|     ap_fifo|                                                                       aSplit_0|       pointer|
+|aSplit_0_fifo_cap         |   in|   11|     ap_fifo|                                                                       aSplit_0|       pointer|
+|aSplit_0_empty_n          |   in|    1|     ap_fifo|                                                                       aSplit_0|       pointer|
+|aSplit_0_read             |  out|    1|     ap_fifo|                                                                       aSplit_0|       pointer|
+|aSplit_15_dout            |   in|   32|     ap_fifo|                                                                      aSplit_15|       pointer|
+|aSplit_15_num_data_valid  |   in|   11|     ap_fifo|                                                                      aSplit_15|       pointer|
+|aSplit_15_fifo_cap        |   in|   11|     ap_fifo|                                                                      aSplit_15|       pointer|
+|aSplit_15_empty_n         |   in|    1|     ap_fifo|                                                                      aSplit_15|       pointer|
+|aSplit_15_read            |  out|    1|     ap_fifo|                                                                      aSplit_15|       pointer|
+|aPipes_0_din              |  out|   32|     ap_fifo|                                                                       aPipes_0|       pointer|
+|aPipes_0_num_data_valid   |   in|    3|     ap_fifo|                                                                       aPipes_0|       pointer|
+|aPipes_0_fifo_cap         |   in|    3|     ap_fifo|                                                                       aPipes_0|       pointer|
+|aPipes_0_full_n           |   in|    1|     ap_fifo|                                                                       aPipes_0|       pointer|
+|aPipes_0_write            |  out|    1|     ap_fifo|                                                                       aPipes_0|       pointer|
+|bound16                   |   in|   87|     ap_none|                                                                        bound16|        scalar|
+|bound4                    |   in|   64|     ap_none|                                                                         bound4|        scalar|
+|size_k_1                  |   in|   32|     ap_none|                                                                       size_k_1|        scalar|
+|bound                     |   in|   41|     ap_none|                                                                          bound|        scalar|
++--------------------------+-----+-----+------------+-------------------------------------------------------------------------------+--------------+
+

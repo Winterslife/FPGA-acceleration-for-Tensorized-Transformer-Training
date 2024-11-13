@@ -1,0 +1,457 @@
+# (c) Copyright 2019 Xilinx, Inc. All rights reserved.
+#
+# This file contains confidential and proprietary information
+# of Xilinx, Inc. and is protected under U.S. and
+# international copyright and other intellectual property
+# laws.
+#
+# DISCLAIMER
+# This disclaimer is not a license and does not grant any
+# rights to the materials distributed herewith. Except as
+# otherwise provided in a valid license issued to you by
+# Xilinx, and to the maximum extent permitted by applicable
+# law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+# WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+# AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+# BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+# INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+# (2) Xilinx shall not be liable (whether in contract or tort,
+# including negligence, or under any other theory of
+# liability) for any loss or damage of any kind or nature
+# related to, arising under or in connection with these
+# materials, including for any direct, or any indirect,
+# special, incidental, or consequential loss or damage
+# (including loss of data, profits, goodwill, or any type of
+# loss or damage suffered as a result of any action brought
+# by a third party) even if such damage or loss was
+# reasonably foreseeable or Xilinx had been advised of the
+# possibility of the same.
+#
+# CRITICAL APPLICATIONS
+# Xilinx products are not designed or intended to be fail-
+# safe, or for use in any application requiring fail-safe
+# performance, such as life-support or safety devices or
+# systems, Class III medical devices, nuclear facilities,
+# applications related to the deployment of airbags, or any
+# other applications that could lead to death, personal
+# injury, or severe property or environmental damage
+# (individually and collectively, "Critical
+# Applications"). Customer assumes the sole risk and
+# liability of any use of Xilinx products in Critical
+# Applications, subject only to applicable laws and
+# regulations governing limitations on product liability.
+#
+# THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+# PART OF THIS FILE AT ALL TIMES.
+############################################################
+
+set shell_subsystem                                   [::ipxit::current_inst]
+
+#============================================================================================================================================================#
+# Get Project settings
+#============================================================================================================================================================#
+
+# N/A
+
+#============================================================================================================================================================#
+# Get user parameters
+#============================================================================================================================================================#
+
+set axi_ic_ctrl_mgmt_num_mi 1
+
+# Subsystem Version Properties
+set C_SUBSYSTEM_ID                                    [get_property CONFIG.VERSION.SUBSYSTEM_ID                                           $shell_subsystem]
+set C_VIV_VERSION                                     [get_property CONFIG.VERSION.VIV_VERSION                                            $shell_subsystem]
+set C_MAJOR_VERSION                                   [get_property CONFIG.VERSION.MAJOR_VERSION                                          $shell_subsystem]
+set C_MINOR_VERSION                                   [get_property CONFIG.VERSION.MINOR_VERSION                                          $shell_subsystem]
+set C_CORE_REVISION                                   [get_property CONFIG.VERSION.CORE_REVISION                                          $shell_subsystem]
+set C_PATCH_REVISION                                  [get_property CONFIG.VERSION.PATCH_REVISION                                         $shell_subsystem]
+set C_PERFORCE_CL                                     [get_property CONFIG.VERSION.PERFORCE_CL                                            $shell_subsystem]
+set C_RESERVED_TAG                                    [get_property CONFIG.VERSION.RESERVED_TAG                                           $shell_subsystem]
+
+set C_INIT_LOGIC_UUID                                 [get_property CONFIG.INIT_LOGIC_UUID                                                $shell_subsystem]
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# PARTITION_NAME = BLP, PLP or ULP
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_PARTITION_NAME                                  [get_property CONFIG.PARTITION_NAME                                                 $shell_subsystem]
+set C_DESIGN_TYPE                                     [string toupper [get_property CONFIG.DESIGN_TYPE                                    $shell_subsystem]]
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# ULP Peripherals
+# HAS_USER_DEBUG
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_HAS_USER_DEBUG                                  [get_property CONFIG.HAS_USER_DEBUG                                                 $shell_subsystem]
+set C_REGSLICE_USER_DEBUG_BRIDGE                      [get_property CONFIG.REGSLICE_USER_DEBUG_BRIDGE                                     $shell_subsystem]
+
+if {$C_PARTITION_NAME == "ULP"} {
+
+    if {$C_REGSLICE_USER_DEBUG_BRIDGE == "SLR"} {
+
+        set regslice_user_debug_bridge_regval 10
+
+    } else {
+
+        set regslice_user_debug_bridge_regval 11
+
+    }
+
+}
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# PLP Peripherals
+# HAS_JTAG_AXI_MASTER
+# HAS_UUID_ROM
+# HAS_MEMORY_CALIB_STATUS
+# HAS_DDR4_RESET_GATE
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_HAS_JTAG_AXI_MASTER                             [get_property CONFIG.HAS_JTAG_AXI_MASTER                                            $shell_subsystem]
+
+set C_HAS_UUID_ROM                                    [get_property CONFIG.HAS_UUID_ROM                                                   $shell_subsystem]
+set C_REGSLICE_UUID_ROM                               [get_property CONFIG.REGSLICE_UUID_ROM                                              $shell_subsystem]
+
+set C_HAS_MEMORY_CALIB_STATUS                         [get_property CONFIG.HAS_MEMORY_CALIB_STATUS                                        $shell_subsystem]
+set C_REGSLICE_MEMORY_CALIB_STATUS                    [get_property CONFIG.REGSLICE_MEMORY_CALIB_STATUS                                   $shell_subsystem]
+set C_NUM_MEMORY_CALIB                                [get_property CONFIG.NUM_MEMORY_CALIB                                               $shell_subsystem]
+
+set C_HAS_DDR4_RESET_GATE                             [get_property CONFIG.HAS_DDR4_RESET_GATE                                            $shell_subsystem]
+set C_REGSLICE_DDR4_RESET_GATE                        [get_property CONFIG.REGSLICE_DDR4_RESET_GATE                                       $shell_subsystem]
+
+if {$C_PARTITION_NAME == "PLP"} {
+
+    #  Set regslice regval values for enabled peripherals
+
+    if {$C_REGSLICE_UUID_ROM == "SLR"} {
+
+        set regslice_uuid_rom_regval 10
+
+    } else {
+
+        set regslice_uuid_rom_regval 11
+
+    }
+
+    if {$C_REGSLICE_MEMORY_CALIB_STATUS == "SLR"} {
+
+        set regslice_memory_calib_status_regval 10
+
+    } else {
+
+        set regslice_memory_calib_status_regval 11
+
+    }
+
+    if {$C_REGSLICE_DDR4_RESET_GATE == "SLR"} {
+
+        set regslice_ddr4_reset_gate_regval 10
+
+    } else {
+
+        set regslice_ddr4_reset_gate_regval 11
+
+    }
+
+    #  Increment number of master ports on axi_ic_ctrl_mgmt for each enabled peripheral
+
+    if {$C_HAS_MEMORY_CALIB_STATUS == true} {
+
+        incr axi_ic_ctrl_mgmt_num_mi
+
+    }
+
+    if {$C_HAS_UUID_ROM == true} {
+
+        incr axi_ic_ctrl_mgmt_num_mi
+
+    }
+
+    if {$C_HAS_DDR4_RESET_GATE == true} {
+
+        incr axi_ic_ctrl_mgmt_num_mi
+
+    }
+
+}
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# BLP Peripherals
+# HAS_AXI_HWICAP
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_HAS_AXI_HWICAP                                  [get_property CONFIG.HAS_AXI_HWICAP                                                 $shell_subsystem]
+set C_HAS_AXI_ICAP_ARB                                [get_property CONFIG.HAS_AXI_ICAP_ARB                                               $shell_subsystem]
+set C_REGSLICE_AXI_HWICAP                             [get_property CONFIG.REGSLICE_AXI_HWICAP                                            $shell_subsystem]
+
+set C_USE_MDM_UART                                    [get_property CONFIG.USE_MDM_UART                                                   $shell_subsystem]
+
+if {$C_PARTITION_NAME == "BLP"} {
+
+    if {$C_REGSLICE_AXI_HWICAP == "SLR"} {
+
+        set regslice_axi_hwicap_regval 10
+
+    } else {
+
+        set regslice_axi_hwicap_regval 0
+
+    }
+
+    if {$C_HAS_AXI_HWICAP == true} {
+
+        incr axi_ic_ctrl_mgmt_num_mi
+
+    }
+
+    if {$C_HAS_AXI_ICAP_ARB == true} {
+
+        incr axi_ic_ctrl_mgmt_num_mi
+
+    }
+
+}
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# COMMON BLP & PLP Peripherals
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# HAS_MGMT_DEBUG
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_HAS_MGMT_DEBUG                                  [get_property CONFIG.HAS_MGMT_DEBUG                                                 $shell_subsystem]
+set C_REGSLICE_MGMT_DEBUG                             [get_property CONFIG.REGSLICE_MGMT_DEBUG                                            $shell_subsystem]
+set C_NUM_MB_DEBUG_PORTS                              [get_property CONFIG.NUM_MB_DEBUG_PORTS                                             $shell_subsystem]
+
+if {$C_REGSLICE_MGMT_DEBUG == "SLR"} {
+
+    set regslice_mgmt_debug_regval 10
+    set regslice_mdm_regval 10
+
+} else {
+
+    set regslice_mgmt_debug_regval 11
+    set regslice_mdm_regval 10
+
+}
+
+if {($C_PARTITION_NAME == "BLP") && ($C_HAS_MGMT_DEBUG == true)} {
+
+    incr axi_ic_ctrl_mgmt_num_mi
+
+}
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# MDM address parameters
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_OFFSET_MDM_SEG                                  [get_property CONFIG.OFFSET_MDM_SEG                                                 $shell_subsystem]
+set C_RANGE_MDM_SEG                                   [get_property CONFIG.RANGE_MDM_SEG                                                  $shell_subsystem]
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# Host Peripheral Address / Endpoint parameters
+#------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+set C_ENABLE_FULL_ADDRESS_ASSIGNMENTS                 [get_property CONFIG.ENABLE_FULL_ADDRESS_ASSIGNMENTS                                $shell_subsystem]
+set C_SUPPORT_NEW_INTERRUPT_SCHEMA                    [get_property CONFIG.SUPPORT_NEW_INTERRUPT_SCHEMA                                   $shell_subsystem]
+
+set C_MGMT_PF_BASE_ADDRESS_BLP                        [get_property CONFIG.MGMT_PF_BASE_ADDRESS_BLP                                       $shell_subsystem]
+set C_MGMT_PF_BASE_ADDRESS_PLP                        [get_property CONFIG.MGMT_PF_BASE_ADDRESS_PLP                                       $shell_subsystem]
+set C_MGMT_PF_BASE_ADDRESS_ULP                        [get_property CONFIG.MGMT_PF_BASE_ADDRESS_ULP                                       $shell_subsystem]
+set C_USER_PF_BASE_ADDRESS_ULP                        [get_property CONFIG.USER_PF_BASE_ADDRESS_ULP                                       $shell_subsystem]
+
+set C_EP_CMP_BUILD_INFO_00_OFFSET                     [get_property CONFIG.EP_CMP_BUILD_INFO_00_OFFSET                                    $shell_subsystem]
+set C_EP_CMP_BLP_BUILD_INFO_00_OFFSET_FULL            [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_BLP $C_EP_CMP_BUILD_INFO_00_OFFSET]
+set C_EP_CMP_PLP_BUILD_INFO_00_OFFSET_FULL            [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_PLP $C_EP_CMP_BUILD_INFO_00_OFFSET]
+set C_EP_CMP_ULP_BUILD_INFO_00_OFFSET_FULL            [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_ULP $C_EP_CMP_BUILD_INFO_00_OFFSET]
+set C_EP_CMP_BUILD_INFO_00_RANGE                      [convert_range_to_hex [get_property CONFIG.EP_CMP_BUILD_INFO_00_RANGE               $shell_subsystem]]
+
+set C_EP_ICAP_ARB_00_OFFSET                           [get_property CONFIG.EP_ICAP_ARB_00_OFFSET                                          $shell_subsystem]
+set C_EP_ICAP_ARB_00_OFFSET_FULL                      [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_BLP $C_EP_ICAP_ARB_00_OFFSET]
+set C_EP_ICAP_ARB_00_RANGE                            [convert_range_to_hex [get_property CONFIG.EP_ICAP_ARB_00_RANGE                     $shell_subsystem]]
+set C_EP_ICAP_ARB_00_PF                               [string tolower [get_property CONFIG.EP_ICAP_ARB_00_PF                              $shell_subsystem]]
+set C_EP_ICAP_ARB_00_BAR                              [string tolower [get_property CONFIG.EP_ICAP_ARB_00_BAR                             $shell_subsystem]]
+set C_EP_ICAP_ARB_00_REGABS                           [string tolower [get_property CONFIG.EP_ICAP_ARB_00_REGABS                          $shell_subsystem]]
+
+set C_EP_DDR_MEM_CALIB_00_OFFSET                      [get_property CONFIG.EP_DDR_MEM_CALIB_00_OFFSET                                     $shell_subsystem]
+set C_EP_DDR_MEM_CALIB_00_OFFSET_FULL                 [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_PLP $C_EP_DDR_MEM_CALIB_00_OFFSET]
+set C_EP_DDR_MEM_CALIB_00_RANGE                       [convert_range_to_hex [get_property CONFIG.EP_DDR_MEM_CALIB_00_RANGE                $shell_subsystem]]
+set C_EP_DDR_MEM_CALIB_00_PF                          [string tolower [get_property CONFIG.EP_DDR_MEM_CALIB_00_PF                         $shell_subsystem]]
+set C_EP_DDR_MEM_CALIB_00_BAR                         [string tolower [get_property CONFIG.EP_DDR_MEM_CALIB_00_BAR                        $shell_subsystem]]
+set C_EP_DDR_MEM_CALIB_00_REGABS                      [string tolower [get_property CONFIG.EP_DDR_MEM_CALIB_00_REGABS                     $shell_subsystem]]
+
+set C_EP_UUID_ROM_PLP_00_OFFSET                       [get_property CONFIG.EP_UUID_ROM_PLP_00_OFFSET                                      $shell_subsystem]
+set C_EP_UUID_ROM_PLP_00_OFFSET_FULL                  [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_PLP $C_EP_UUID_ROM_PLP_00_OFFSET]
+set C_EP_UUID_ROM_PLP_00_RANGE                        [convert_range_to_hex [get_property CONFIG.EP_UUID_ROM_PLP_00_RANGE                 $shell_subsystem]]
+set C_EP_UUID_ROM_PLP_00_PF                           [string tolower [get_property CONFIG.EP_UUID_ROM_PLP_00_PF                          $shell_subsystem]]
+set C_EP_UUID_ROM_PLP_00_BAR                          [string tolower [get_property CONFIG.EP_UUID_ROM_PLP_00_BAR                         $shell_subsystem]]
+set C_EP_UUID_ROM_PLP_00_REGABS                       [string tolower [get_property CONFIG.EP_UUID_ROM_PLP_00_REGABS                      $shell_subsystem]]
+
+set C_EP_DDR_MEM_SRSR_GATE_00_OFFSET                  [get_property CONFIG.EP_DDR_MEM_SRSR_GATE_00_OFFSET                                 $shell_subsystem]
+set C_EP_DDR_MEM_SRSR_GATE_00_OFFSET_FULL             [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_PLP $C_EP_DDR_MEM_SRSR_GATE_00_OFFSET]
+set C_EP_DDR_MEM_SRSR_GATE_00_RANGE                   [convert_range_to_hex [get_property CONFIG.EP_DDR_MEM_SRSR_GATE_00_RANGE            $shell_subsystem]]
+set C_EP_DDR_MEM_SRSR_GATE_00_PF                      [string tolower [get_property CONFIG.EP_DDR_MEM_SRSR_GATE_00_PF                     $shell_subsystem]]
+set C_EP_DDR_MEM_SRSR_GATE_00_BAR                     [string tolower [get_property CONFIG.EP_DDR_MEM_SRSR_GATE_00_BAR                    $shell_subsystem]]
+set C_EP_DDR_MEM_SRSR_GATE_00_REGABS                  [string tolower [get_property CONFIG.EP_DDR_MEM_SRSR_GATE_00_REGABS                 $shell_subsystem]]
+
+set C_EP_FPGA_CONFIGURATION_00_OFFSET                 [get_property CONFIG.EP_FPGA_CONFIGURATION_00_OFFSET                                $shell_subsystem]
+set C_EP_FPGA_CONFIGURATION_00_OFFSET_FULL            [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_BLP $C_EP_FPGA_CONFIGURATION_00_OFFSET]
+set C_EP_FPGA_CONFIGURATION_00_RANGE                  [convert_range_to_hex [get_property CONFIG.EP_FPGA_CONFIGURATION_00_RANGE           $shell_subsystem]]
+set C_EP_FPGA_CONFIGURATION_00_PF                     [string tolower [get_property CONFIG.EP_FPGA_CONFIGURATION_00_PF                    $shell_subsystem]]
+set C_EP_FPGA_CONFIGURATION_00_BAR                    [string tolower [get_property CONFIG.EP_FPGA_CONFIGURATION_00_BAR                   $shell_subsystem]]
+set C_EP_FPGA_CONFIGURATION_00_REGABS                 [string tolower [get_property CONFIG.EP_FPGA_CONFIGURATION_00_REGABS                $shell_subsystem]]
+set C_EP_FPGA_CONFIGURATION_00_MSIX_START             [string tolower [get_property CONFIG.EP_FPGA_CONFIGURATION_00_MSIX_START            $shell_subsystem]]
+set C_EP_FPGA_CONFIGURATION_00_MSIX_END               [string tolower [get_property CONFIG.EP_FPGA_CONFIGURATION_00_MSIX_END              $shell_subsystem]]
+set C_EP_FPGA_CONFIGURATION_00_INTERRUPT_ALIAS        [string map {" " ""} [string tolower [get_property CONFIG.EP_FPGA_CONFIGURATION_00_INTERRUPT_ALIAS $shell_subsystem]]]
+
+set C_EP_DEBUG_BSCAN_MGMT_00_OFFSET                   [get_property CONFIG.EP_DEBUG_BSCAN_MGMT_00_OFFSET                                  $shell_subsystem]
+set C_EP_DEBUG_BSCAN_MGMT_00_OFFSET_FULL              [get_endpoint_address $C_MGMT_PF_BASE_ADDRESS_BLP $C_EP_DEBUG_BSCAN_MGMT_00_OFFSET]
+set C_EP_DEBUG_BSCAN_MGMT_00_RANGE                    [convert_range_to_hex [get_property CONFIG.EP_DEBUG_BSCAN_MGMT_00_RANGE             $shell_subsystem]]
+set C_EP_DEBUG_BSCAN_MGMT_00_PF                       [string tolower [get_property CONFIG.EP_DEBUG_BSCAN_MGMT_00_PF                      $shell_subsystem]]
+set C_EP_DEBUG_BSCAN_MGMT_00_BAR                      [string tolower [get_property CONFIG.EP_DEBUG_BSCAN_MGMT_00_BAR                     $shell_subsystem]]
+set C_EP_DEBUG_BSCAN_MGMT_00_REGABS                   [string tolower [get_property CONFIG.EP_DEBUG_BSCAN_MGMT_00_REGABS                  $shell_subsystem]]
+
+set C_EP_DEBUG_BSCAN_USER_00_OFFSET                   [get_property CONFIG.EP_DEBUG_BSCAN_USER_00_OFFSET                                  $shell_subsystem]
+set C_EP_DEBUG_BSCAN_USER_00_OFFSET_FULL              [get_endpoint_address $C_USER_PF_BASE_ADDRESS_ULP $C_EP_DEBUG_BSCAN_USER_00_OFFSET]
+set C_EP_DEBUG_BSCAN_USER_00_RANGE                    [convert_range_to_hex [get_property CONFIG.EP_DEBUG_BSCAN_USER_00_RANGE             $shell_subsystem]]
+set C_EP_DEBUG_BSCAN_USER_00_PF                       [string tolower [get_property CONFIG.EP_DEBUG_BSCAN_USER_00_PF                      $shell_subsystem]]
+set C_EP_DEBUG_BSCAN_USER_00_BAR                      [string tolower [get_property CONFIG.EP_DEBUG_BSCAN_USER_00_BAR                     $shell_subsystem]]
+set C_EP_DEBUG_BSCAN_USER_00_REGABS                   [string tolower [get_property CONFIG.EP_DEBUG_BSCAN_USER_00_REGABS                  $shell_subsystem]]
+
+#============================================================================================================================================================#
+# Create Metadata Dictionary
+#============================================================================================================================================================#
+
+# initialize Endpoint Dictionary
+
+set endpoint_dictionary {}
+
+# Load parameters into dictionary
+
+if {($C_PARTITION_NAME == "BLP") && ($C_HAS_AXI_HWICAP == true) && ($C_HAS_AXI_ICAP_ARB == true)} {
+
+    set endpoint ep_icap_arb_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_ICAP_ARB_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_ICAP_ARB_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_ICAP_ARB_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_ICAP_ARB_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_ICAP_ARB_00_REGABS
+
+}
+
+if {($C_PARTITION_NAME == "PLP") && ($C_HAS_MEMORY_CALIB_STATUS == true)} {
+
+    set endpoint ep_ddr_mem_calib_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_DDR_MEM_CALIB_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_DDR_MEM_CALIB_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_DDR_MEM_CALIB_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_DDR_MEM_CALIB_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_DDR_MEM_CALIB_00_REGABS
+    dict set endpoint_dictionary $endpoint is_last                  true
+
+}
+
+if {($C_PARTITION_NAME == "PLP") && ($C_HAS_UUID_ROM == true)} {
+
+    set endpoint ep_uuid_rom_plp_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_UUID_ROM_PLP_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_UUID_ROM_PLP_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_UUID_ROM_PLP_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_UUID_ROM_PLP_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_UUID_ROM_PLP_00_REGABS
+
+}
+
+if {($C_PARTITION_NAME == "PLP") && ($C_HAS_DDR4_RESET_GATE == true)} {
+
+    set endpoint ep_ddr_mem_srsr_gate_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_DDR_MEM_SRSR_GATE_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_DDR_MEM_SRSR_GATE_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_DDR_MEM_SRSR_GATE_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_DDR_MEM_SRSR_GATE_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_DDR_MEM_SRSR_GATE_00_REGABS
+
+}
+
+if {($C_PARTITION_NAME == "BLP") && ($C_HAS_AXI_HWICAP == true)} {
+
+    set endpoint ep_fpga_configuration_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_FPGA_CONFIGURATION_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_FPGA_CONFIGURATION_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_FPGA_CONFIGURATION_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_FPGA_CONFIGURATION_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_FPGA_CONFIGURATION_00_REGABS
+
+    # Support old interrupt schema for 2020.1_PU1 release
+
+    if {$C_SUPPORT_NEW_INTERRUPT_SCHEMA == false} {
+        dict set endpoint_dictionary $endpoint interrupt start      $C_EP_FPGA_CONFIGURATION_00_MSIX_START
+        dict set endpoint_dictionary $endpoint interrupt end        $C_EP_FPGA_CONFIGURATION_00_MSIX_END
+    } else {
+        dict set endpoint_dictionary $endpoint interrupt_alias      [split $C_EP_FPGA_CONFIGURATION_00_INTERRUPT_ALIAS ","]
+    }
+
+}
+
+if {($C_PARTITION_NAME == "BLP") && ($C_HAS_MGMT_DEBUG == true)} {
+
+    set endpoint ep_debug_bscan_mgmt_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_DEBUG_BSCAN_MGMT_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_DEBUG_BSCAN_MGMT_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_DEBUG_BSCAN_MGMT_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_DEBUG_BSCAN_MGMT_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_DEBUG_BSCAN_MGMT_00_REGABS
+    dict set endpoint_dictionary $endpoint is_last                  true
+
+}
+
+if {($C_PARTITION_NAME == "ULP") && ($C_HAS_USER_DEBUG == true)} {
+
+    set endpoint ep_debug_bscan_user_00
+    dict set endpoint_dictionary $endpoint offset                   $C_EP_DEBUG_BSCAN_USER_00_OFFSET_FULL
+    dict set endpoint_dictionary $endpoint range                    $C_EP_DEBUG_BSCAN_USER_00_RANGE
+    dict set endpoint_dictionary $endpoint pf                       $C_EP_DEBUG_BSCAN_USER_00_PF
+    dict set endpoint_dictionary $endpoint bar                      $C_EP_DEBUG_BSCAN_USER_00_BAR
+    dict set endpoint_dictionary $endpoint regabs                   $C_EP_DEBUG_BSCAN_USER_00_REGABS
+    dict set endpoint_dictionary $endpoint is_last                  true
+
+}
+
+# Ensure the is_last flag is set on an last enabled endpoint in endpoint_list
+
+set endpoint_list [list ep_icap_arb_00            \
+                        ep_fpga_configuration_00  \
+                        ep_uuid_rom_plp_00        \
+                        ep_ddr_mem_srsr_gate_00   \
+                        ep_debug_bscan_mgmt_00    \
+                        ep_ddr_mem_calib_00       \
+                        ep_debug_bscan_user_00]
+
+#============================================================================================================================================================#
+# Enable full address assignments
+#============================================================================================================================================================#
+
+if {$C_ENABLE_FULL_ADDRESS_ASSIGNMENTS == "true"} {
+
+    if {($C_PARTITION_NAME == "BLP")} {
+        set C_EP_CMP_BUILD_INFO_00_OFFSET                           $C_EP_CMP_BLP_BUILD_INFO_00_OFFSET_FULL
+    }
+    if {($C_PARTITION_NAME == "PLP")} {
+        set C_EP_CMP_BUILD_INFO_00_OFFSET                           $C_EP_CMP_PLP_BUILD_INFO_00_OFFSET_FULL
+    }
+    if {($C_PARTITION_NAME == "ULP")} {
+        set C_EP_CMP_BUILD_INFO_00_OFFSET                           $C_EP_CMP_ULP_BUILD_INFO_00_OFFSET_FULL
+    }
+    set C_EP_ICAP_ARB_00_OFFSET                                     $C_EP_ICAP_ARB_00_OFFSET_FULL
+    set C_EP_DDR_MEM_CALIB_00_OFFSET                                $C_EP_DDR_MEM_CALIB_00_OFFSET_FULL
+    set C_EP_UUID_ROM_PLP_00_OFFSET                                 $C_EP_UUID_ROM_PLP_00_OFFSET_FULL
+    set C_EP_DDR_MEM_SRSR_GATE_00_OFFSET                            $C_EP_DDR_MEM_SRSR_GATE_00_OFFSET_FULL
+    set C_EP_FPGA_CONFIGURATION_00_OFFSET                           $C_EP_FPGA_CONFIGURATION_00_OFFSET_FULL
+    set C_EP_DEBUG_BSCAN_MGMT_00_OFFSET                             $C_EP_DEBUG_BSCAN_MGMT_00_OFFSET_FULL
+    set C_EP_DEBUG_BSCAN_USER_00_OFFSET                             $C_EP_DEBUG_BSCAN_USER_00_OFFSET_FULL
+
+}
+
+#============================================================================================================================================================#

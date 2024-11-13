@@ -1,0 +1,119 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "bd_53f9_bs_switch_1_0",
+    "cell_name": "bs_switch_1",
+    "component_reference": "xilinx.com:ip:bs_switch:1.0",
+    "ip_revision": "4",
+    "gen_directory": ".",
+    "parameters": {
+      "component_parameters": {
+        "Component_Name": [ { "value": "bd_53f9_bs_switch_1_0", "resolve_type": "user", "usage": "all" } ],
+        "C_USE_EXT_BSCAN": [ { "value": "true", "value_src": "user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "C_NUM_BS_MASTER": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USER_SCAN_CHAIN": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_ONLY_PRIMITIVE": [ { "value": "false", "value_src": "user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "SLR_ASSIGNMENTS": [ { "value": "", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "C_USE_EXT_BSCAN": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_ONLY_PRIMITIVE": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_NUM_BS_MASTER": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_XDEVICEFAMILY": [ { "value": "virtexuplus", "resolve_type": "generated", "usage": "all" } ],
+        "C_USER_SCAN_CHAIN": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "virtexuplus" } ],
+        "BASE_BOARD_PART": [ { "value": "xilinx.com:au250:part0:1.4" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xcu250" } ],
+        "NEXTGEN_VERSAL": [ { "value": "0" } ],
+        "PACKAGE": [ { "value": "figd2104" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-2L" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "E" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "4" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "." } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../../../../ipshared" } ],
+        "SWVERSION": [ { "value": "2024.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "s_bscan_drck": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_reset": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_sel": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_capture": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_shift": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_update": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_tdi": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_runtest": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_tck": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_tms": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscanid_en": [ { "direction": "in", "driver_value": "0" } ],
+        "s_bscan_tdo": [ { "direction": "out" } ],
+        "drck_0": [ { "direction": "out" } ],
+        "reset_0": [ { "direction": "out" } ],
+        "sel_0": [ { "direction": "out" } ],
+        "capture_0": [ { "direction": "out" } ],
+        "shift_0": [ { "direction": "out" } ],
+        "update_0": [ { "direction": "out" } ],
+        "tdi_0": [ { "direction": "out" } ],
+        "runtest_0": [ { "direction": "out" } ],
+        "tck_0": [ { "direction": "out" } ],
+        "tms_0": [ { "direction": "out" } ],
+        "bscanid_en_0": [ { "direction": "out" } ],
+        "tdo_0": [ { "direction": "in", "driver_value": "0" } ]
+      },
+      "interfaces": {
+        "s_bscan": {
+          "vlnv": "xilinx.com:interface:bscan:1.0",
+          "abstraction_type": "xilinx.com:interface:bscan_rtl:1.0",
+          "mode": "slave",
+          "port_maps": {
+            "BSCANID_EN": [ { "physical_name": "s_bscanid_en" } ],
+            "CAPTURE": [ { "physical_name": "s_bscan_capture" } ],
+            "DRCK": [ { "physical_name": "s_bscan_drck" } ],
+            "RESET": [ { "physical_name": "s_bscan_reset" } ],
+            "RUNTEST": [ { "physical_name": "s_bscan_runtest" } ],
+            "SEL": [ { "physical_name": "s_bscan_sel" } ],
+            "SHIFT": [ { "physical_name": "s_bscan_shift" } ],
+            "TCK": [ { "physical_name": "s_bscan_tck" } ],
+            "TDI": [ { "physical_name": "s_bscan_tdi" } ],
+            "TDO": [ { "physical_name": "s_bscan_tdo" } ],
+            "TMS": [ { "physical_name": "s_bscan_tms" } ],
+            "UPDATE": [ { "physical_name": "s_bscan_update" } ]
+          }
+        },
+        "m0_bscan": {
+          "vlnv": "xilinx.com:interface:bscan:1.0",
+          "abstraction_type": "xilinx.com:interface:bscan_rtl:1.0",
+          "mode": "master",
+          "port_maps": {
+            "BSCANID_EN": [ { "physical_name": "bscanid_en_0" } ],
+            "CAPTURE": [ { "physical_name": "capture_0" } ],
+            "DRCK": [ { "physical_name": "drck_0" } ],
+            "RESET": [ { "physical_name": "reset_0" } ],
+            "RUNTEST": [ { "physical_name": "runtest_0" } ],
+            "SEL": [ { "physical_name": "sel_0" } ],
+            "SHIFT": [ { "physical_name": "shift_0" } ],
+            "TCK": [ { "physical_name": "tck_0" } ],
+            "TDI": [ { "physical_name": "tdi_0" } ],
+            "TDO": [ { "physical_name": "tdo_0" } ],
+            "TMS": [ { "physical_name": "tms_0" } ],
+            "UPDATE": [ { "physical_name": "update_0" } ]
+          }
+        }
+      }
+    }
+  }
+}

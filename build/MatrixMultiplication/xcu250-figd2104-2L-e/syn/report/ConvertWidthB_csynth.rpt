@@ -1,0 +1,201 @@
+
+
+================================================================
+== Vitis HLS Report for 'ConvertWidthB'
+================================================================
+* Date:           Mon Nov 11 16:40:33 2024
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        MatrixMultiplication
+* Solution:       xcu250-figd2104-2L-e (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.448 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------------------------------------+-----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+        |                                                                           |                                                                 |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                   |
+        |                                  Instance                                 |                              Module                             |   min   |   max   |    min   |    max   | min | max |                      Type                     |
+        +---------------------------------------------------------------------------+-----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+        |grp_ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory_fu_98  |ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory  |        ?|        ?|         ?|         ?|    0|    0|  loop auto-rewind stp(delay=0 clock cycles(s))|
+        +---------------------------------------------------------------------------+-----------------------------------------------------------------+---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|       82|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      6|      585|    18091|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|      110|     -|
+|Register             |        -|      -|      140|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      6|      725|    18283|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|     ~0|       ~0|        4|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|     ~0|       ~0|        1|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-----+-------+-----+
+    |                                  Instance                                 |                              Module                             | BRAM_18K| DSP|  FF |  LUT  | URAM|
+    +---------------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-----+-------+-----+
+    |grp_ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory_fu_98  |ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory  |        0|   0|  585|  18045|    0|
+    |mul_24ns_32ns_55_1_1_U124                                                  |mul_24ns_32ns_55_1_1                                             |        0|   2|    0|     20|    0|
+    |mul_55s_24ns_55_1_1_U125                                                   |mul_55s_24ns_55_1_1                                              |        0|   4|    0|     26|    0|
+    +---------------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-----+-------+-----+
+    |Total                                                                      |                                                                 |        0|   6|  585|  18091|    0|
+    +---------------------------------------------------------------------------+-----------------------------------------------------------------+---------+----+-----+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln111_fu_119_p2  |         +|   0|  0|  40|          33|           9|
+    |add_ln116_fu_139_p2  |         +|   0|  0|  40|          33|           9|
+    |ap_block_state1      |        or|   0|  0|   2|           1|           1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  82|          67|          19|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm         |  20|          4|    1|          4|
+    |ap_done           |   9|          2|    1|          2|
+    |bFeed_write       |   9|          2|    1|          2|
+    |bMemory_read      |   9|          2|    1|          2|
+    |real_start        |   9|          2|    1|          2|
+    |size_k_blk_n      |   9|          2|    1|          2|
+    |size_k_c6_blk_n   |   9|          2|    1|          2|
+    |size_m_blk_n      |   9|          2|    1|          2|
+    |size_m_c11_blk_n  |   9|          2|    1|          2|
+    |size_n_blk_n      |   9|          2|    1|          2|
+    |size_n_c3_blk_n   |   9|          2|    1|          2|
+    +------------------+----+-----------+-----+-----------+
+    |Total             | 110|         24|   11|         24|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                          Name                                          | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                               |   3|   0|    3|          0|
+    |ap_done_reg                                                                             |   1|   0|    1|          0|
+    |grp_ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory_fu_98_ap_start_reg  |   1|   0|    1|          0|
+    |lshr_ln_reg_178                                                                         |  24|   0|   24|          0|
+    |mul_ln132_reg_183                                                                       |  55|   0|   55|          0|
+    |start_once_reg                                                                          |   1|   0|    1|          0|
+    |tmp_s_reg_188                                                                           |  55|   0|   61|          6|
+    +----------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                   | 140|   0|  146|          6|
+    +----------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+---------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  | Source Object |    C Type    |
++---------------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|start_full_n               |   in|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|ap_continue                |   in|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|start_out                  |  out|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|start_write                |  out|    1|  ap_ctrl_hs|  ConvertWidthB|  return value|
+|bMemory_dout               |   in|  512|     ap_fifo|        bMemory|       pointer|
+|bMemory_num_data_valid     |   in|    7|     ap_fifo|        bMemory|       pointer|
+|bMemory_fifo_cap           |   in|    7|     ap_fifo|        bMemory|       pointer|
+|bMemory_empty_n            |   in|    1|     ap_fifo|        bMemory|       pointer|
+|bMemory_read               |  out|    1|     ap_fifo|        bMemory|       pointer|
+|bFeed_din                  |  out|  256|     ap_fifo|          bFeed|       pointer|
+|bFeed_num_data_valid       |   in|    3|     ap_fifo|          bFeed|       pointer|
+|bFeed_fifo_cap             |   in|    3|     ap_fifo|          bFeed|       pointer|
+|bFeed_full_n               |   in|    1|     ap_fifo|          bFeed|       pointer|
+|bFeed_write                |  out|    1|     ap_fifo|          bFeed|       pointer|
+|size_n_dout                |   in|   32|     ap_fifo|         size_n|       pointer|
+|size_n_num_data_valid      |   in|    3|     ap_fifo|         size_n|       pointer|
+|size_n_fifo_cap            |   in|    3|     ap_fifo|         size_n|       pointer|
+|size_n_empty_n             |   in|    1|     ap_fifo|         size_n|       pointer|
+|size_n_read                |  out|    1|     ap_fifo|         size_n|       pointer|
+|size_k_dout                |   in|   32|     ap_fifo|         size_k|       pointer|
+|size_k_num_data_valid      |   in|    3|     ap_fifo|         size_k|       pointer|
+|size_k_fifo_cap            |   in|    3|     ap_fifo|         size_k|       pointer|
+|size_k_empty_n             |   in|    1|     ap_fifo|         size_k|       pointer|
+|size_k_read                |  out|    1|     ap_fifo|         size_k|       pointer|
+|size_m_dout                |   in|   32|     ap_fifo|         size_m|       pointer|
+|size_m_num_data_valid      |   in|    3|     ap_fifo|         size_m|       pointer|
+|size_m_fifo_cap            |   in|    3|     ap_fifo|         size_m|       pointer|
+|size_m_empty_n             |   in|    1|     ap_fifo|         size_m|       pointer|
+|size_m_read                |  out|    1|     ap_fifo|         size_m|       pointer|
+|size_n_c3_din              |  out|   32|     ap_fifo|      size_n_c3|       pointer|
+|size_n_c3_num_data_valid   |   in|    3|     ap_fifo|      size_n_c3|       pointer|
+|size_n_c3_fifo_cap         |   in|    3|     ap_fifo|      size_n_c3|       pointer|
+|size_n_c3_full_n           |   in|    1|     ap_fifo|      size_n_c3|       pointer|
+|size_n_c3_write            |  out|    1|     ap_fifo|      size_n_c3|       pointer|
+|size_k_c6_din              |  out|   32|     ap_fifo|      size_k_c6|       pointer|
+|size_k_c6_num_data_valid   |   in|    3|     ap_fifo|      size_k_c6|       pointer|
+|size_k_c6_fifo_cap         |   in|    3|     ap_fifo|      size_k_c6|       pointer|
+|size_k_c6_full_n           |   in|    1|     ap_fifo|      size_k_c6|       pointer|
+|size_k_c6_write            |  out|    1|     ap_fifo|      size_k_c6|       pointer|
+|size_m_c11_din             |  out|   32|     ap_fifo|     size_m_c11|       pointer|
+|size_m_c11_num_data_valid  |   in|    3|     ap_fifo|     size_m_c11|       pointer|
+|size_m_c11_fifo_cap        |   in|    3|     ap_fifo|     size_m_c11|       pointer|
+|size_m_c11_full_n          |   in|    1|     ap_fifo|     size_m_c11|       pointer|
+|size_m_c11_write           |  out|    1|     ap_fifo|     size_m_c11|       pointer|
++---------------------------+-----+-----+------------+---------------+--------------+
+

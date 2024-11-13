@@ -1,0 +1,160 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'ConvertWidthC'" level="0">
+<item name = "Date">Mon Nov 11 16:41:47 2024
+</item>
+<item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
+<item name = "Project">MatrixMultiplication</item>
+<item name = "Solution">xcu250-figd2104-2L-e (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu250-figd2104-2L-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 4.681 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_ConvertWidthC_Pipeline_ConvertWidthC_N_ConvertWidthC_M_VITIS_LOOP_339_1_fu_84">ConvertWidthC_Pipeline_ConvertWidthC_N_ConvertWidthC_M_VITIS_LOOP_339_1, ?, ?, ?, ?, 0, 0, loop auto-rewind stp(delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 82, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 4, 645, 47819, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 83, -</column>
+<column name="Register">-, -, 140, -, -</column>
+<specialColumn name="Available SLR">1344, 3072, 864000, 432000, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, ~0, ~0, 11, 0</specialColumn>
+<specialColumn name="Available">5376, 12288, 3456000, 1728000, 1280</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, ~0, 2, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_ConvertWidthC_Pipeline_ConvertWidthC_N_ConvertWidthC_M_VITIS_LOOP_339_1_fu_84">ConvertWidthC_Pipeline_ConvertWidthC_N_ConvertWidthC_M_VITIS_LOOP_339_1, 0, 0, 645, 47798, 0</column>
+<column name="mul_33ns_30ns_63_1_1_U1718">mul_33ns_30ns_63_1_1, 0, 4, 0, 21, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="sub_i2_fu_123_p2">+, 0, 0, 40, 33, 9</column>
+<column name="sub_i_fu_103_p2">+, 0, 0, 40, 33, 9</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">20, 4, 1, 4</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="cMemory_write">9, 2, 1, 2</column>
+<column name="cPipes_0_read">9, 2, 1, 2</column>
+<column name="size_m_blk_n">9, 2, 1, 2</column>
+<column name="size_m_c_blk_n">9, 2, 1, 2</column>
+<column name="size_n_blk_n">9, 2, 1, 2</column>
+<column name="size_n_c_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="bound4_reg_179">63, 0, 63, 0</column>
+<column name="grp_ConvertWidthC_Pipeline_ConvertWidthC_N_ConvertWidthC_M_VITIS_LOOP_339_1_fu_84_ap_start_reg">1, 0, 1, 0</column>
+<column name="tmp_455_reg_169">24, 0, 24, 0</column>
+<column name="tmp_456_reg_174">24, 0, 30, 6</column>
+<column name="tmp_s_reg_164">24, 0, 24, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, ConvertWidthC, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, ConvertWidthC, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, ConvertWidthC, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, ConvertWidthC, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, ConvertWidthC, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, ConvertWidthC, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, ConvertWidthC, return value</column>
+<column name="cPipes_0_dout">in, 256, ap_fifo, cPipes_0, pointer</column>
+<column name="cPipes_0_num_data_valid">in, 3, ap_fifo, cPipes_0, pointer</column>
+<column name="cPipes_0_fifo_cap">in, 3, ap_fifo, cPipes_0, pointer</column>
+<column name="cPipes_0_empty_n">in, 1, ap_fifo, cPipes_0, pointer</column>
+<column name="cPipes_0_read">out, 1, ap_fifo, cPipes_0, pointer</column>
+<column name="cMemory_din">out, 512, ap_fifo, cMemory, pointer</column>
+<column name="cMemory_num_data_valid">in, 7, ap_fifo, cMemory, pointer</column>
+<column name="cMemory_fifo_cap">in, 7, ap_fifo, cMemory, pointer</column>
+<column name="cMemory_full_n">in, 1, ap_fifo, cMemory, pointer</column>
+<column name="cMemory_write">out, 1, ap_fifo, cMemory, pointer</column>
+<column name="size_n_dout">in, 32, ap_fifo, size_n, pointer</column>
+<column name="size_n_num_data_valid">in, 3, ap_fifo, size_n, pointer</column>
+<column name="size_n_fifo_cap">in, 3, ap_fifo, size_n, pointer</column>
+<column name="size_n_empty_n">in, 1, ap_fifo, size_n, pointer</column>
+<column name="size_n_read">out, 1, ap_fifo, size_n, pointer</column>
+<column name="size_m_dout">in, 32, ap_fifo, size_m, pointer</column>
+<column name="size_m_num_data_valid">in, 3, ap_fifo, size_m, pointer</column>
+<column name="size_m_fifo_cap">in, 3, ap_fifo, size_m, pointer</column>
+<column name="size_m_empty_n">in, 1, ap_fifo, size_m, pointer</column>
+<column name="size_m_read">out, 1, ap_fifo, size_m, pointer</column>
+<column name="size_n_c_din">out, 32, ap_fifo, size_n_c, pointer</column>
+<column name="size_n_c_num_data_valid">in, 3, ap_fifo, size_n_c, pointer</column>
+<column name="size_n_c_fifo_cap">in, 3, ap_fifo, size_n_c, pointer</column>
+<column name="size_n_c_full_n">in, 1, ap_fifo, size_n_c, pointer</column>
+<column name="size_n_c_write">out, 1, ap_fifo, size_n_c, pointer</column>
+<column name="size_m_c_din">out, 32, ap_fifo, size_m_c, pointer</column>
+<column name="size_m_c_num_data_valid">in, 3, ap_fifo, size_m_c, pointer</column>
+<column name="size_m_c_fifo_cap">in, 3, ap_fifo, size_m_c, pointer</column>
+<column name="size_m_c_full_n">in, 1, ap_fifo, size_m_c, pointer</column>
+<column name="size_m_c_write">out, 1, ap_fifo, size_m_c, pointer</column>
+</table>
+</item>
+</section>
+</profile>

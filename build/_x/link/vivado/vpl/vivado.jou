@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Nov 11 15:59:53 2024
+# Process ID: 12001
+# Current directory: /home/minghe/gemm_hls/build/_x/link/vivado/vpl
+# Command line: vivado -log vivado.log -applog -messageDb vivado.pb -mode batch -source vpl.tcl -notrace
+# Log file: /home/minghe/gemm_hls/build/_x/link/vivado/vpl/vivado.log
+# Journal file: /home/minghe/gemm_hls/build/_x/link/vivado/vpl/vivado.jou
+# Running On        :minghe-Lenovo-Legion-Y7000P2020
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+# CPU Frequency     :4684.925 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16629 MB
+# Swap memory       :0 MB
+# Total Virtual     :16629 MB
+# Available Virtual :13064 MB
+#-----------------------------------------------------------
+source vpl.tcl -notrace

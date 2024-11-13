@@ -1,0 +1,73 @@
+====================================================================
+Version:    xcd v2024.1 (64-bit)
+Copyright:  Copyright 1986-2024 Xilinx, Inc. All Rights Reserved.
+Created:    Mon Nov 11 16:01:14 2024
+====================================================================
+
+1. Kernel and compute unit information
+======================================
+
+Compute Unit: MatrixMultiplicationKernel_1
+Kernel: MatrixMultiplicationKernel
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+2. Interface Connections
+========================
+
+IP to Compute Unit
+------------------
+Source Pin: ict_axi_ctrl_user_01/M01_AXI
+Destination Pin: MatrixMultiplicationKernel_1/s_axi_control
+
+Compute Unit to IP
+------------------
+Source Pin: MatrixMultiplicationKernel_1/m_axi_gmem0
+Destination Pin: memory_subsystem/S04_AXI
+
+Source Pin: MatrixMultiplicationKernel_1/m_axi_gmem1
+Destination Pin: memory_subsystem/S05_AXI
+
+Source Pin: MatrixMultiplicationKernel_1/m_axi_gmem2
+Destination Pin: memory_subsystem/S06_AXI
+
+3. Clock Connections
+====================
+
+Compute Unit: MatrixMultiplicationKernel_1
+Clock ID: 0
+Platform Clock Frequency: 300.00 MHz
+Requested Kernel Clock Frequency: 300.00 MHz
+Source Pin: ss_ucs/aclk_kernel_00
+Destination Pin: MatrixMultiplicationKernel_1/ap_clk
+
+Clock Instance: ss_ucs
+Source Pin: ii_level1_wire/ulp_m_aclk_ctrl_00
+Destination Pin: ss_ucs/aclk_ctrl
+
+Clock Instance: ss_ucs
+Source Pin: ii_level1_wire/ulp_m_aclk_freerun_ref_00
+Destination Pin: ss_ucs/aclk_freerun
+
+Clock Instance: ss_ucs
+Source Pin: ii_level1_wire/ulp_m_aclk_pcie_user_00
+Destination Pin: ss_ucs/aclk_pcie
+
+4. Reset Connections
+====================
+
+Compute Unit: MatrixMultiplicationKernel_1
+Source Pin: ip_psr_aresetn_kernel_00_slr1/peripheral_aresetn
+Destination Pin: MatrixMultiplicationKernel_1/ap_rst_n
+Associated Clock Pin: MatrixMultiplicationKernel_1/ap_clk
+
+5. Clock Summary
+================
+
+PL
++------------------------------+----------------------------+------------+---------------+------------+
+| Instance                     | Kernel                     | Clock Port | Compile (MHz) | Link (MHz) |
++------------------------------+----------------------------+------------+---------------+------------+
+| MatrixMultiplicationKernel_1 | MatrixMultiplicationKernel | ap_clk     | 300.03        | 300.00     |
++------------------------------+----------------------------+------------+---------------+------------+
+

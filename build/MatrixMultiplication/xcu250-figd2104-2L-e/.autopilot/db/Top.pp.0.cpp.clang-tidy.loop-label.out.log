@@ -1,0 +1,269 @@
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:4273:5: warning: Added loop label VITIS_LOOP_110_1:   [xilinx-label-all-loops]
+    for (int w = 0; w < width; ++w) {
+    ^~~
+    VITIS_LOOP_110_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:4273:5: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:4282:5: warning: Added loop label VITIS_LOOP_119_1:   [xilinx-label-all-loops]
+    for (int w = 0; w < width; ++w) {
+    ^~~
+    VITIS_LOOP_119_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:4282:5: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:28453:7: warning: Added loop label VITIS_LOOP_1223_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1223_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:28453:7: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:29427:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:29427:5: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:29441:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:29441:5: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:29455:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:29455:5: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:31072:7: warning: Added loop label VITIS_LOOP_1247_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1247_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:31072:7: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33051:5: warning: Added loop label VITIS_LOOP_220_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < outWidth; ++i) {
+    ^~~
+    VITIS_LOOP_220_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33051:5: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33168:3: warning: Added loop label VITIS_LOOP_337_1:   [xilinx-label-all-loops]
+  for (int i = 1; i < width; ++i) {
+  ^~~
+  VITIS_LOOP_337_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33168:3: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33179:34: warning: Added loop label VITIS_LOOP_414_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_414_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33179:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33187:34: warning: Added loop label VITIS_LOOP_414_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_414_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33187:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33195:34: warning: Added loop label VITIS_LOOP_414_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_414_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33195:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33203:2: warning: Added loop label VITIS_LOOP_414_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_414_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33203:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33211:2: warning: Added loop label VITIS_LOOP_414_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_414_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33211:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33219:2: warning: Added loop label VITIS_LOOP_414_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_414_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33219:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33228:34: warning: Added loop label VITIS_LOOP_415_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_415_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33228:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33236:34: warning: Added loop label VITIS_LOOP_415_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_415_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33236:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33244:34: warning: Added loop label VITIS_LOOP_415_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_415_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33244:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33252:2: warning: Added loop label VITIS_LOOP_415_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_415_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33252:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33260:2: warning: Added loop label VITIS_LOOP_415_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_415_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33260:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33268:2: warning: Added loop label VITIS_LOOP_415_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_415_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33268:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33277:34: warning: Added loop label VITIS_LOOP_416_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_416_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33277:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33285:34: warning: Added loop label VITIS_LOOP_416_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_416_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33285:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33293:34: warning: Added loop label VITIS_LOOP_416_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_416_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33293:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33301:2: warning: Added loop label VITIS_LOOP_416_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_416_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33301:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33309:2: warning: Added loop label VITIS_LOOP_416_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_416_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33309:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33317:2: warning: Added loop label VITIS_LOOP_416_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_416_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33317:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33326:34: warning: Added loop label VITIS_LOOP_417_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_417_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33326:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33334:34: warning: Added loop label VITIS_LOOP_417_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_417_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33334:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33342:34: warning: Added loop label VITIS_LOOP_417_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_417_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33342:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33350:2: warning: Added loop label VITIS_LOOP_417_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_417_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33350:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33358:2: warning: Added loop label VITIS_LOOP_417_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_417_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33358:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33366:2: warning: Added loop label VITIS_LOOP_417_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_417_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33366:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33375:34: warning: Added loop label VITIS_LOOP_418_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_418_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33375:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33383:34: warning: Added loop label VITIS_LOOP_418_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_418_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33383:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33391:34: warning: Added loop label VITIS_LOOP_418_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_418_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33391:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33399:2: warning: Added loop label VITIS_LOOP_418_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_418_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33399:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33407:2: warning: Added loop label VITIS_LOOP_418_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_418_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33407:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33415:2: warning: Added loop label VITIS_LOOP_418_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_418_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33415:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33424:34: warning: Added loop label VITIS_LOOP_419_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_419_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33424:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33432:34: warning: Added loop label VITIS_LOOP_419_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_419_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33432:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33440:34: warning: Added loop label VITIS_LOOP_419_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_419_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33440:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33448:2: warning: Added loop label VITIS_LOOP_419_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_419_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33448:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33456:2: warning: Added loop label VITIS_LOOP_419_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_419_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33456:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33464:2: warning: Added loop label VITIS_LOOP_419_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_419_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33464:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33473:34: warning: Added loop label VITIS_LOOP_420_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_420_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33473:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33481:34: warning: Added loop label VITIS_LOOP_420_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_420_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33481:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33489:34: warning: Added loop label VITIS_LOOP_420_1:   [xilinx-label-all-loops]
+ hlslib::DataPack<T, width> res; for (int i = 0; i < width; ++i) {
+                                 ^~~
+                                 VITIS_LOOP_420_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33489:34: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33497:2: warning: Added loop label VITIS_LOOP_420_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_420_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33497:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33505:2: warning: Added loop label VITIS_LOOP_420_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_420_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33505:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33513:2: warning: Added loop label VITIS_LOOP_420_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < width; ++i) {
+ ^~~
+ VITIS_LOOP_420_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33513:2: note: FIX-IT applied suggested code changes
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33934:54: error: Invalid Directive: for current device, FIFO + BRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS bind_storage variable=this->stream_ type=FIFO impl=BRAM
+                                                     ^
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33936:54: error: Invalid Directive: for current device, FIFO + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS bind_storage variable=this->stream_ type=FIFO impl=LUTRAM
+                                                     ^
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:33938:54: error: Invalid Directive: for current device, FIFO + SRL is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS bind_storage variable=this->stream_ type=FIFO impl=SRL
+                                                     ^
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:34194:3: warning: Added loop label VITIS_LOOP_95_1:   [xilinx-label-all-loops]
+  for (unsigned pe = 0; pe < kComputeTilesN; ++pe) {
+  ^~~
+  VITIS_LOOP_95_1: 
+/home/minghe/gemm_hls/build/MatrixMultiplication/xcu250-figd2104-2L-e/.autopilot/db/Top.pp.0.cpp:34194:3: note: FIX-IT applied suggested code changes

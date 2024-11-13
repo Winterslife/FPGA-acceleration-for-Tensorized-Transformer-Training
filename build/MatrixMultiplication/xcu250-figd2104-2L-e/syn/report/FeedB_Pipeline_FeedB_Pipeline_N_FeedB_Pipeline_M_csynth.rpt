@@ -1,0 +1,177 @@
+
+
+================================================================
+== Vitis HLS Report for 'FeedB_Pipeline_FeedB_Pipeline_N_FeedB_Pipeline_M'
+================================================================
+* Date:           Mon Nov 11 16:40:33 2024
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        MatrixMultiplication
+* Solution:       xcu250-figd2104-2L-e (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.803 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+-----------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                   |
+    |   min   |   max   |    min    |    max    |  min |  max |                      Type                     |
+    +---------+---------+-----------+-----------+------+------+-----------------------------------------------+
+    |     1026|     1026|  10.260 us|  10.260 us|  1025|  1025|  loop auto-rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+------+------+-----------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |              Loop Name              |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- FeedB_Pipeline_N_FeedB_Pipeline_M  |     1024|     1024|         2|          1|          1|  1024|       yes|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|      110|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|      104|     -|
+|Register             |        -|      -|       35|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|       35|      214|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|       ~0|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln420_1_fu_163_p2             |         +|   0|  0|  12|           5|           1|
+    |add_ln420_fu_137_p2               |         +|   0|  0|  18|          11|           1|
+    |add_ln422_fu_188_p2               |         +|   0|  0|  14|           7|           1|
+    |ap_block_pp0_stage0_01001         |       and|   0|  0|   2|           1|           1|
+    |ap_predicate_op38_read_state2     |       and|   0|  0|   2|           1|           1|
+    |cmp31_fu_177_p2                   |      icmp|   0|  0|  12|           5|           1|
+    |icmp_ln420_fu_131_p2              |      icmp|   0|  0|  19|          11|          12|
+    |icmp_ln422_fu_149_p2              |      icmp|   0|  0|  15|           7|           8|
+    |ap_block_state2_pp0_stage0_iter1  |        or|   0|  0|   2|           1|           1|
+    |select_ln420_1_fu_169_p3          |    select|   0|  0|   5|           1|           5|
+    |select_ln420_fu_155_p3            |    select|   0|  0|   7|           1|           1|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0| 110|          52|          35|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                           |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1               |   9|          2|    1|          2|
+    |ap_phi_mux_val_2_phi_fu_104_p4        |  14|          3|  256|        768|
+    |ap_sig_allocacmp_indvar_flatten_load  |   9|          2|   11|         22|
+    |ap_sig_allocacmp_m1_load              |   9|          2|    7|         14|
+    |ap_sig_allocacmp_n1_02_load           |   9|          2|    5|         10|
+    |bFeed_blk_n                           |   9|          2|    1|          2|
+    |bPipes_0_blk_n                        |   9|          2|    1|          2|
+    |indvar_flatten_fu_58                  |   9|          2|   11|         22|
+    |m1_fu_50                              |   9|          2|    7|         14|
+    |n1_02_fu_54                           |   9|          2|    5|         10|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 104|         23|  306|        868|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |cmp31_reg_234            |   1|   0|    1|          0|
+    |icmp_ln420_reg_230       |   1|   0|    1|          0|
+    |indvar_flatten_fu_58     |  11|   0|   11|          0|
+    |m1_fu_50                 |   7|   0|    7|          0|
+    |n1_02_fu_54              |   5|   0|    5|          0|
+    |zext_ln422_reg_238       |   7|   0|   64|         57|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  35|   0|   92|         57|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+--------------------------------------------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |                   Source Object                  |    C Type    |
++-------------------------+-----+-----+------------+--------------------------------------------------+--------------+
+|ap_clk                   |   in|    1|  ap_ctrl_hs|  FeedB_Pipeline_FeedB_Pipeline_N_FeedB_Pipeline_M|  return value|
+|ap_rst                   |   in|    1|  ap_ctrl_hs|  FeedB_Pipeline_FeedB_Pipeline_N_FeedB_Pipeline_M|  return value|
+|ap_start                 |   in|    1|  ap_ctrl_hs|  FeedB_Pipeline_FeedB_Pipeline_N_FeedB_Pipeline_M|  return value|
+|ap_done                  |  out|    1|  ap_ctrl_hs|  FeedB_Pipeline_FeedB_Pipeline_N_FeedB_Pipeline_M|  return value|
+|ap_idle                  |  out|    1|  ap_ctrl_hs|  FeedB_Pipeline_FeedB_Pipeline_N_FeedB_Pipeline_M|  return value|
+|ap_ready                 |  out|    1|  ap_ctrl_hs|  FeedB_Pipeline_FeedB_Pipeline_N_FeedB_Pipeline_M|  return value|
+|bFeed_dout               |   in|  256|     ap_fifo|                                             bFeed|       pointer|
+|bFeed_num_data_valid     |   in|    3|     ap_fifo|                                             bFeed|       pointer|
+|bFeed_fifo_cap           |   in|    3|     ap_fifo|                                             bFeed|       pointer|
+|bFeed_empty_n            |   in|    1|     ap_fifo|                                             bFeed|       pointer|
+|bFeed_read               |  out|    1|     ap_fifo|                                             bFeed|       pointer|
+|bPipes_0_din             |  out|  256|     ap_fifo|                                          bPipes_0|       pointer|
+|bPipes_0_num_data_valid  |   in|    3|     ap_fifo|                                          bPipes_0|       pointer|
+|bPipes_0_fifo_cap        |   in|    3|     ap_fifo|                                          bPipes_0|       pointer|
+|bPipes_0_full_n          |   in|    1|     ap_fifo|                                          bPipes_0|       pointer|
+|bPipes_0_write           |  out|    1|     ap_fifo|                                          bPipes_0|       pointer|
+|buffer_r_address0        |  out|    6|   ap_memory|                                          buffer_r|         array|
+|buffer_r_ce0             |  out|    1|   ap_memory|                                          buffer_r|         array|
+|buffer_r_we0             |  out|    1|   ap_memory|                                          buffer_r|         array|
+|buffer_r_d0              |  out|  256|   ap_memory|                                          buffer_r|         array|
+|buffer_r_address1        |  out|    6|   ap_memory|                                          buffer_r|         array|
+|buffer_r_ce1             |  out|    1|   ap_memory|                                          buffer_r|         array|
+|buffer_r_q1              |   in|  256|   ap_memory|                                          buffer_r|         array|
++-------------------------+-----+-----+------------+--------------------------------------------------+--------------+
+

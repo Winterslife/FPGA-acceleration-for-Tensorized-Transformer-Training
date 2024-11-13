@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++14 -rdynamic CMakeFiles/TestSimulation.dir/test/TestSimulation.cpp.o -o TestSimulation  -Wl,-rpath,:/opt/xilinx/xrt/lib:/home/minghe/Xilinx/Vitis_HLS/2024.1/lib/lnx64.o -lOpenCL /opt/xilinx/xrt/lib/libxilinxopencl.so -lOpenCL /opt/xilinx/xrt/lib/libxilinxopencl.so libmmkernel.a 

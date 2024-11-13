@@ -1,0 +1,178 @@
+
+
+================================================================
+== Vitis HLS Report for 'ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory'
+================================================================
+* Date:           Mon Nov 11 16:40:32 2024
+
+* Version:        2024.1 (Build 5069499 on May 21 2024)
+* Project:        MatrixMultiplication
+* Solution:       xcu250-figd2104-2L-e (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.871 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                   |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                     |
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+    |        ?|        ?|         ?|         ?|    0|    0|  loop auto-rewind stp(delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+-----------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |                  Loop Name                 |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- ConvertWidthB_Outer_ConvertWidthB_Memory  |        ?|        ?|         3|          1|          1|     ?|       yes|
+        +--------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K|  DSP  |    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|    17968|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        0|       77|     -|
+|Register             |        -|      -|      585|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|      585|    18045|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|       ~0|        4|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|       ~0|        1|     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+------+------------+------------+
+    |           Variable Name          | Operation| DSP| FF|  LUT | Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+------+------------+------------+
+    |add_ln303_fu_119_p2               |         +|   0|  0|    68|          61|           1|
+    |j_fu_149_p2                       |         +|   0|  0|     9|           2|           1|
+    |ap_block_state3_pp0_stage0_iter2  |       and|   0|  0|     2|           1|           1|
+    |icmp_ln303_fu_111_p2              |      icmp|   0|  0|    68|          61|          61|
+    |icmp_ln306_fu_125_p2              |      icmp|   0|  0|    10|           2|           3|
+    |icmp_ln309_fu_139_p2              |      icmp|   0|  0|     9|           2|           1|
+    |lshr_ln170_1_fu_220_p2            |      lshr|   0|  0|  2171|         512|         512|
+    |lshr_ln170_2_fu_241_p2            |      lshr|   0|  0|  2171|         512|         512|
+    |lshr_ln170_3_fu_262_p2            |      lshr|   0|  0|  2171|         512|         512|
+    |lshr_ln170_4_fu_283_p2            |      lshr|   0|  0|  2171|         512|         512|
+    |lshr_ln170_5_fu_304_p2            |      lshr|   0|  0|  2171|         512|         512|
+    |lshr_ln170_6_fu_325_p2            |      lshr|   0|  0|  2171|         512|         512|
+    |lshr_ln170_7_fu_346_p2            |      lshr|   0|  0|  2171|         512|         512|
+    |lshr_ln170_fu_199_p2              |      lshr|   0|  0|  2171|         512|         512|
+    |ap_block_pp0_stage0_01001         |        or|   0|  0|     2|           1|           1|
+    |select_ln302_1_fu_131_p3          |    select|   0|  0|     2|           1|           1|
+    |select_ln302_fu_168_p3            |    select|   0|  0|   428|           1|           1|
+    |ap_enable_pp0                     |       xor|   0|  0|     2|           1|           2|
+    +----------------------------------+----------+----+---+------+------------+------------+
+    |Total                             |          |   0|  0| 17968|        4229|        4169|
+    +----------------------------------+----------+----+---+------+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2  |   9|          2|    1|          2|
+    |bFeed_blk_n              |   9|          2|    1|          2|
+    |bMemory_blk_n            |   9|          2|    1|          2|
+    |indvar_flatten_fu_70     |   9|          2|   61|        122|
+    |j_2_fu_62                |   9|          2|    2|          4|
+    |p_0_0_06_fu_66           |  14|          3|  512|       1536|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  77|         17|  580|       1672|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+-----+----+-----+-----------+
+    |               Name               |  FF | LUT| Bits| Const Bits|
+    +----------------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                         |    1|   0|    1|          0|
+    |ap_done_reg                       |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg  |    1|   0|    1|          0|
+    |empty_reg_418                     |    1|   0|    1|          0|
+    |empty_reg_418_pp0_iter2_reg       |    1|   0|    1|          0|
+    |icmp_ln306_reg_409                |    1|   0|    1|          0|
+    |icmp_ln309_reg_414                |    1|   0|    1|          0|
+    |indvar_flatten_fu_70              |   61|   0|   61|          0|
+    |j_2_fu_62                         |    2|   0|    2|          0|
+    |p_0_0_06_fu_66                    |  512|   0|  512|          0|
+    +----------------------------------+-----+----+-----+-----------+
+    |Total                             |  585|   0|  585|          0|
+    +----------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |                          Source Object                          |    C Type    |
++------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+|ap_clk                  |   in|    1|  ap_ctrl_hs|  ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory|  return value|
+|ap_rst                  |   in|    1|  ap_ctrl_hs|  ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory|  return value|
+|ap_start                |   in|    1|  ap_ctrl_hs|  ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory|  return value|
+|ap_done                 |  out|    1|  ap_ctrl_hs|  ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory|  return value|
+|ap_idle                 |  out|    1|  ap_ctrl_hs|  ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory|  return value|
+|ap_ready                |  out|    1|  ap_ctrl_hs|  ConvertWidthB_Pipeline_ConvertWidthB_Outer_ConvertWidthB_Memory|  return value|
+|bMemory_dout            |   in|  512|     ap_fifo|                                                          bMemory|       pointer|
+|bMemory_num_data_valid  |   in|    7|     ap_fifo|                                                          bMemory|       pointer|
+|bMemory_fifo_cap        |   in|    7|     ap_fifo|                                                          bMemory|       pointer|
+|bMemory_empty_n         |   in|    1|     ap_fifo|                                                          bMemory|       pointer|
+|bMemory_read            |  out|    1|     ap_fifo|                                                          bMemory|       pointer|
+|bFeed_din               |  out|  256|     ap_fifo|                                                            bFeed|       pointer|
+|bFeed_num_data_valid    |   in|    3|     ap_fifo|                                                            bFeed|       pointer|
+|bFeed_fifo_cap          |   in|    3|     ap_fifo|                                                            bFeed|       pointer|
+|bFeed_full_n            |   in|    1|     ap_fifo|                                                            bFeed|       pointer|
+|bFeed_write             |  out|    1|     ap_fifo|                                                            bFeed|       pointer|
+|bound                   |   in|   61|     ap_none|                                                            bound|        scalar|
++------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+

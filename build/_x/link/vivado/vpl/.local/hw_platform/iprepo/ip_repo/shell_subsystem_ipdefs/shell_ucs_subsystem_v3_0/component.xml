@@ -1,0 +1,1893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>ip</spirit:library>
+  <spirit:name>shell_ucs_subsystem</spirit:name>
+  <spirit:version>3.0</spirit:version>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_blockdiagram</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_blockdiagram_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>9ecb6693</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_elaboratebd</spirit:name>
+        <spirit:displayName>Elaborate BD</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:elaborate.bd</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_axi_interconnect_2_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_clk_metadata_adapter_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_shell_utils_build_info_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_shell_utils_clock_shutdown_latch_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_shell_utils_clock_throttling_2_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_shell_utils_clock_throttling_avg_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_shell_utils_frequency_counter_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_pipeline_reg_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_proc_sys_reset_5_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_util_vector_logic_2_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_xlconcat_2_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_xlconstant_1_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_xilinx_com_ip_xlslice_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaboratebd_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>9af3e7e2</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_elaborateports</spirit:name>
+        <spirit:displayName>Elaborate Ports</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:elaborate.ports</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_elaborateports_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>0f58c0e2</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>5c676059</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:modelName>shell_ucs_subsystem_v3_0_5</spirit:modelName>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:modelName>shell_ucs_subsystem_v3_0_5</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>ad7c76c9</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_utilityxitfiles</spirit:name>
+        <spirit:displayName>Utility XIT/TTCL</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xit.util</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_utilityxitfiles_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>980f8fa8</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_versioninformation</spirit:name>
+        <spirit:displayName>Version Information</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+      </spirit:view>
+    </spirit:views>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9b94c6ac</spirit:name>
+      <spirit:enumeration>4k</spirit:enumeration>
+      <spirit:enumeration>8k</spirit:enumeration>
+      <spirit:enumeration>16k</spirit:enumeration>
+      <spirit:enumeration>32k</spirit:enumeration>
+      <spirit:enumeration>64k</spirit:enumeration>
+      <spirit:enumeration>128k</spirit:enumeration>
+      <spirit:enumeration>256k</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_5237311b</spirit:name>
+      <spirit:enumeration spirit:text="Fixed">false</spirit:enumeration>
+      <spirit:enumeration spirit:text="Scalable">true</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_5c26e5fc</spirit:name>
+      <spirit:enumeration spirit:text="DISABLED">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="400MHz">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="450MHz">3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_ecab8bff</spirit:name>
+      <spirit:enumeration spirit:text="OFF">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="DIV 2">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="DIV 3">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="DIV 4">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="DIV 5">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="DIV 6">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="DIV 7">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="DIV 8">8</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_blockdiagram_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xit/update_contents.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_gpio_2_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_gpio" xilinx:version="2.0" xilinx:coreRevision="28">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_axi_interconnect_2_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_interconnect" xilinx:version="2.1" xilinx:coreRevision="27">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_clk_metadata_adapter_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_metadata_adapter" xilinx:version="1.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_wiz" xilinx:version="6.0" xilinx:coreRevision="10">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="c_counter_binary" xilinx:version="12.0" xilinx:coreRevision="15">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_shell_utils_build_info_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="shell_utils_build_info" xilinx:version="1.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_shell_utils_clock_shutdown_latch_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="shell_utils_clock_shutdown_latch" xilinx:version="1.0" xilinx:coreRevision="1">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_shell_utils_clock_throttling_2_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="shell_utils_clock_throttling" xilinx:version="2.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_shell_utils_clock_throttling_avg_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="shell_utils_clock_throttling_avg" xilinx:version="1.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_shell_utils_frequency_counter_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="shell_utils_frequency_counter" xilinx:version="1.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_pipeline_reg_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="pipeline_reg" xilinx:version="1.0" xilinx:coreRevision="0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_proc_sys_reset_5_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="proc_sys_reset" xilinx:version="5.0" xilinx:coreRevision="13">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_util_vector_logic_2_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="util_vector_logic" xilinx:version="2.0" xilinx:coreRevision="2">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_xlconcat_2_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="xlconcat" xilinx:version="2.1" xilinx:coreRevision="4">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_xlconstant_1_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="xlconstant" xilinx:version="1.1" xilinx:coreRevision="7">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaboratebd_xilinx_com_ip_xlslice_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="xlslice" xilinx:version="1.0" xilinx:coreRevision="2">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_elaborateports_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xit/update_ports.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/shell_ucs_subsystem_v3_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>ttcl/utils/common.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ttcl/xdc/xdc.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ttcl/xdc/ooc_xdc.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>ttcl/utils/disclaimer.ttcl</spirit:name>
+        <spirit:userFileType>ttcl</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_utilityxitfiles_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xit/get_params.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/util.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/debug_util.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/generate_ports.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>xit/generate_contents.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>doc/shell_ucs_subsystem_v3_0_changelog.txt</spirit:name>
+        <spirit:userFileType>text</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>This is a horizontal subsystem which contains generates user clocks</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="2">shell_ucs_subsystem_v3_0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Component_Name">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NUM_SLR</spirit:name>
+      <spirit:displayName>Configure number of SLRs</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_SLR" spirit:order="3" spirit:minimum="1" spirit:maximum="4" spirit:rangeType="long">3</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.NUM_SLR">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NUM_RESET_FANOUT_FLOPS_SLR0</spirit:name>
+      <spirit:displayName>Configure number of fanout flops for SLR0 resets</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_RESET_FANOUT_FLOPS_SLR0" spirit:order="4" spirit:minimum="1" spirit:maximum="6" spirit:rangeType="long">4</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.NUM_RESET_FANOUT_FLOPS_SLR0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NUM_RESET_FANOUT_FLOPS_SLR1</spirit:name>
+      <spirit:displayName>Configure number of fanout flops for SLR1 resets</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_RESET_FANOUT_FLOPS_SLR1" spirit:order="5" spirit:minimum="1" spirit:maximum="6" spirit:rangeType="long">4</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.NUM_RESET_FANOUT_FLOPS_SLR1" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.NUM_SLR&apos;)) > 1">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NUM_RESET_FANOUT_FLOPS_SLR2</spirit:name>
+      <spirit:displayName>Configure number of fanout flops for SLR2 resets</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_RESET_FANOUT_FLOPS_SLR2" spirit:order="6" spirit:minimum="1" spirit:maximum="6" spirit:rangeType="long">4</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.NUM_RESET_FANOUT_FLOPS_SLR2" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.NUM_SLR&apos;)) > 2">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NUM_RESET_FANOUT_FLOPS_SLR3</spirit:name>
+      <spirit:displayName>Configure number of fanout flops for SLR3 resets</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_RESET_FANOUT_FLOPS_SLR3" spirit:order="7" spirit:minimum="1" spirit:maximum="6" spirit:rangeType="long">4</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.NUM_RESET_FANOUT_FLOPS_SLR3" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.NUM_SLR&apos;)) > 3">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>HAS_HBM_CLK</spirit:name>
+      <spirit:displayName>Include HBM Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.HAS_HBM_CLK" spirit:choiceRef="choice_pairs_5c26e5fc" spirit:order="8">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.HAS_HBM_CLK">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FREQ_CNT_REF_CLK_HZ</spirit:name>
+      <spirit:displayName>Frequency Counter Reference Clock (Hz)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FREQ_CNT_REF_CLK_HZ" spirit:order="9">100000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FREQ_CNT_REF_CLK_HZ">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DISABLE_THROTTLING</spirit:name>
+      <spirit:displayName>Disable Throttling for all Kernel Clocks</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.DISABLE_THROTTLING" spirit:order="10">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.DISABLE_THROTTLING">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SHUTDOWN_CLOCKS</spirit:name>
+      <spirit:displayName>Enable Clock Shutdown</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SHUTDOWN_CLOCKS" spirit:order="11">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_SHUTDOWN_CLOCKS">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DISABLE_MGMT_JSON_METADATA</spirit:name>
+      <spirit:displayName>Disable generation of MGMT endpoint JSON metadata</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.DISABLE_MGMT_JSON_METADATA" spirit:order="12">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.DISABLE_MGMT_JSON_METADATA">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FREQ_HZ_KERNEL_CLOCK_00</spirit:name>
+      <spirit:displayName>Set Kernel Clock Frequency (MHz)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_00" spirit:order="13" spirit:minimum="10" spirit:maximum="650" spirit:rangeType="long">300</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FREQ_HZ_KERNEL_CLOCK_00">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FREQ_HZ_KERNEL_CLOCK_01</spirit:name>
+      <spirit:displayName>Set Kernel Clock Frequency (MHz)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_01" spirit:order="14" spirit:minimum="10" spirit:maximum="650" spirit:rangeType="long">500</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FREQ_HZ_KERNEL_CLOCK_01">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FREQ_HZ_KERNEL_CLOCK_02</spirit:name>
+      <spirit:displayName>Set Kernel Clock Frequency (MHz)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_02" spirit:order="15" spirit:minimum="0" spirit:maximum="650" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FREQ_HZ_KERNEL_CLOCK_02">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FREQ_HZ_KERNEL_CLOCK_03</spirit:name>
+      <spirit:displayName>Set Kernel Clock Frequency (MHz)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_03" spirit:order="16" spirit:minimum="0" spirit:maximum="650" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FREQ_HZ_KERNEL_CLOCK_03">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FREQ_HZ_KERNEL_CLOCK_04</spirit:name>
+      <spirit:displayName>Set Kernel Clock Frequency (MHz)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_04" spirit:order="17" spirit:minimum="0" spirit:maximum="650" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FREQ_HZ_KERNEL_CLOCK_04">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FREQ_HZ_KERNEL_CLOCK_05</spirit:name>
+      <spirit:displayName>Set Kernel Clock Frequency (MHz)</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_05" spirit:order="18" spirit:minimum="0" spirit:maximum="650" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FREQ_HZ_KERNEL_CLOCK_05">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SCALABLE_KERNEL_CLOCK_00</spirit:name>
+      <spirit:displayName>Select Kernel Clock Mode</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_00" spirit:choiceRef="choice_pairs_5237311b" spirit:order="19">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_SCALABLE_KERNEL_CLOCK_00" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_00&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SCALABLE_KERNEL_CLOCK_01</spirit:name>
+      <spirit:displayName>Select Kernel Clock Mode</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_01" spirit:choiceRef="choice_pairs_5237311b" spirit:order="20">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_SCALABLE_KERNEL_CLOCK_01" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_01&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SCALABLE_KERNEL_CLOCK_02</spirit:name>
+      <spirit:displayName>Select Kernel Clock Mode</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_02" spirit:choiceRef="choice_pairs_5237311b" spirit:order="21">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_SCALABLE_KERNEL_CLOCK_02" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_02&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SCALABLE_KERNEL_CLOCK_03</spirit:name>
+      <spirit:displayName>Select Kernel Clock Mode</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_03" spirit:choiceRef="choice_pairs_5237311b" spirit:order="22">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_SCALABLE_KERNEL_CLOCK_03" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_03&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SCALABLE_KERNEL_CLOCK_04</spirit:name>
+      <spirit:displayName>Select Kernel Clock Mode</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_04" spirit:choiceRef="choice_pairs_5237311b" spirit:order="23">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_SCALABLE_KERNEL_CLOCK_04" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_04&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_SCALABLE_KERNEL_CLOCK_05</spirit:name>
+      <spirit:displayName>Select Kernel Clock Mode</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_05" spirit:choiceRef="choice_pairs_5237311b" spirit:order="24">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_SCALABLE_KERNEL_CLOCK_05" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_05&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_THROTTLING_KERNEL_CLOCK_00</spirit:name>
+      <spirit:displayName>Enable Throttling on Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_00" spirit:order="25">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_THROTTLING_KERNEL_CLOCK_00" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_00&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_THROTTLING_KERNEL_CLOCK_01</spirit:name>
+      <spirit:displayName>Enable Throttling on Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_01" spirit:order="26">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_THROTTLING_KERNEL_CLOCK_01" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_01&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_THROTTLING_KERNEL_CLOCK_02</spirit:name>
+      <spirit:displayName>Enable Throttling on Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_02" spirit:order="27">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_THROTTLING_KERNEL_CLOCK_02" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_02&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_THROTTLING_KERNEL_CLOCK_03</spirit:name>
+      <spirit:displayName>Enable Throttling on Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_03" spirit:order="28">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_THROTTLING_KERNEL_CLOCK_03" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_03&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_THROTTLING_KERNEL_CLOCK_04</spirit:name>
+      <spirit:displayName>Enable Throttling on Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_04" spirit:order="29">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_THROTTLING_KERNEL_CLOCK_04" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_04&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_THROTTLING_KERNEL_CLOCK_05</spirit:name>
+      <spirit:displayName>Enable Throttling on Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_05" spirit:order="30">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_THROTTLING_KERNEL_CLOCK_05" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_05&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_CONT_KERNEL_CLOCK_00</spirit:name>
+      <spirit:displayName>Enable Continuous Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_CONT_KERNEL_CLOCK_00" spirit:order="31">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_CONT_KERNEL_CLOCK_00" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_00&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_CONT_KERNEL_CLOCK_01</spirit:name>
+      <spirit:displayName>Enable Continuous Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_CONT_KERNEL_CLOCK_01" spirit:order="32">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_CONT_KERNEL_CLOCK_01" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_01&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_CONT_KERNEL_CLOCK_02</spirit:name>
+      <spirit:displayName>Enable Continuous Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_CONT_KERNEL_CLOCK_02" spirit:order="33">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_CONT_KERNEL_CLOCK_02" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_02&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_CONT_KERNEL_CLOCK_03</spirit:name>
+      <spirit:displayName>Enable Continuous Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_CONT_KERNEL_CLOCK_03" spirit:order="34">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_CONT_KERNEL_CLOCK_03" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_03&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_CONT_KERNEL_CLOCK_04</spirit:name>
+      <spirit:displayName>Enable Continuous Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_CONT_KERNEL_CLOCK_04" spirit:order="35">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_CONT_KERNEL_CLOCK_04" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_04&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_CONT_KERNEL_CLOCK_05</spirit:name>
+      <spirit:displayName>Enable Continuous Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_CONT_KERNEL_CLOCK_05" spirit:order="36">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_CONT_KERNEL_CLOCK_05" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.ENABLE_THROTTLING_KERNEL_CLOCK_05&apos;)) = TRUE">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_00</spirit:name>
+      <spirit:displayName>Select Edge Aligned Divided Kernel Clock Divide Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_00" spirit:choiceRef="choice_pairs_ecab8bff" spirit:order="37">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_00" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_00&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_01</spirit:name>
+      <spirit:displayName>Select Edge Aligned Divided Kernel Clock Divide Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_01" spirit:choiceRef="choice_pairs_ecab8bff" spirit:order="38">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_01" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_01&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_02</spirit:name>
+      <spirit:displayName>Select Edge Aligned Divided Kernel Clock Divide Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_02" spirit:choiceRef="choice_pairs_ecab8bff" spirit:order="39">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_02" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_02&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_03</spirit:name>
+      <spirit:displayName>Select Edge Aligned Divided Kernel Clock Divide Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_03" spirit:choiceRef="choice_pairs_ecab8bff" spirit:order="40">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_03" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_03&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_04</spirit:name>
+      <spirit:displayName>Select Edge Aligned Divided Kernel Clock Divide Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_04" spirit:choiceRef="choice_pairs_ecab8bff" spirit:order="41">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_04" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_04&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_05</spirit:name>
+      <spirit:displayName>Select Edge Aligned Divided Kernel Clock Divide Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_05" spirit:choiceRef="choice_pairs_ecab8bff" spirit:order="42">1</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.EDGE_ALIGNED_KERNEL_CLOCK_DIVISOR_05" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_05&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_00</spirit:name>
+      <spirit:displayName>Set multiple MMCM group for Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_00" spirit:order="43" spirit:minimum="0" spirit:maximum="5" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_00" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_00&apos;)) > 0 and spirit:decode(id(&apos;PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_00&apos;)) = FALSE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_01</spirit:name>
+      <spirit:displayName>Set multiple MMCM group for Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_01" spirit:order="44" spirit:minimum="0" spirit:maximum="5" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_01" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_01&apos;)) > 0 and spirit:decode(id(&apos;PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_01&apos;)) = FALSE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_02</spirit:name>
+      <spirit:displayName>Set multiple MMCM group for Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_02" spirit:order="45" spirit:minimum="0" spirit:maximum="5" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_02" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_02&apos;)) > 0 and spirit:decode(id(&apos;PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_02&apos;)) = FALSE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_03</spirit:name>
+      <spirit:displayName>Set multiple MMCM group for Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_03" spirit:order="46" spirit:minimum="0" spirit:maximum="5" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_03" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_03&apos;)) > 0 and spirit:decode(id(&apos;PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_03&apos;)) = FALSE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_04</spirit:name>
+      <spirit:displayName>Set multiple MMCM group for Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_04" spirit:order="47" spirit:minimum="0" spirit:maximum="5" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_04" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_04&apos;)) > 0 and spirit:decode(id(&apos;PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_04&apos;)) = FALSE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_05</spirit:name>
+      <spirit:displayName>Set multiple MMCM group for Kernel Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_05" spirit:order="48" spirit:minimum="0" spirit:maximum="5" spirit:rangeType="long">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.MULTIPLE_MMCM_GROUP_KERNEL_CLOCK_05" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_05&apos;)) > 0 and spirit:decode(id(&apos;PARAM_VALUE.ENABLE_SCALABLE_KERNEL_CLOCK_05&apos;)) = FALSE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_DOMAIN_ACLK_KERNEL_00</spirit:name>
+      <spirit:displayName>Set Clock Domain Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DOMAIN_ACLK_KERNEL_00" spirit:order="49">cd_aclk_kernel_00</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.CLK_DOMAIN_ACLK_KERNEL_00" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_00&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_DOMAIN_ACLK_KERNEL_01</spirit:name>
+      <spirit:displayName>Set Clock Domain Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DOMAIN_ACLK_KERNEL_01" spirit:order="50">cd_aclk_kernel_01</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.CLK_DOMAIN_ACLK_KERNEL_01" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_01&apos;)) > 0">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_DOMAIN_ACLK_KERNEL_02</spirit:name>
+      <spirit:displayName>Set Clock Domain Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DOMAIN_ACLK_KERNEL_02" spirit:order="51">cd_aclk_kernel_02</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.CLK_DOMAIN_ACLK_KERNEL_02" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_02&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_DOMAIN_ACLK_KERNEL_03</spirit:name>
+      <spirit:displayName>Set Clock Domain Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DOMAIN_ACLK_KERNEL_03" spirit:order="52">cd_aclk_kernel_03</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.CLK_DOMAIN_ACLK_KERNEL_03" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_03&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_DOMAIN_ACLK_KERNEL_04</spirit:name>
+      <spirit:displayName>Set Clock Domain Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DOMAIN_ACLK_KERNEL_04" spirit:order="53">cd_aclk_kernel_04</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.CLK_DOMAIN_ACLK_KERNEL_04" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_04&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_DOMAIN_ACLK_KERNEL_05</spirit:name>
+      <spirit:displayName>Set Clock Domain Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DOMAIN_ACLK_KERNEL_05" spirit:order="54">cd_aclk_kernel_05</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.CLK_DOMAIN_ACLK_KERNEL_05" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.FREQ_HZ_KERNEL_CLOCK_05&apos;)) > 0">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_DOMAIN_CLK_HBM</spirit:name>
+      <spirit:displayName>HBM Clock Domain Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DOMAIN_CLK_HBM" spirit:order="55">cd_aclk_hbm_00</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.CLK_DOMAIN_CLK_HBM" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.HAS_HBM_CLK&apos;)) > 1">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.SUBSYSTEM_ID</spirit:name>
+      <spirit:displayName>Subsystem ID</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.SUBSYSTEM_ID" spirit:order="56" spirit:bitStringLength="8">0x07</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.SUBSYSTEM_ID">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.MAJOR_VERSION</spirit:name>
+      <spirit:displayName>Subsystem Major Version</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.MAJOR_VERSION" spirit:order="57">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.MINOR_VERSION</spirit:name>
+      <spirit:displayName>Subsystem Minor Version</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.MINOR_VERSION" spirit:order="58">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.CORE_REVISION</spirit:name>
+      <spirit:displayName>Subsystem Core Revision</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.CORE_REVISION" spirit:order="59">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.PATCH_REVISION</spirit:name>
+      <spirit:displayName>Subsystem Patch Revision</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.PATCH_REVISION" spirit:order="60">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.RESERVED_TAG</spirit:name>
+      <spirit:displayName>Reserved Tag</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.RESERVED_TAG" spirit:order="61" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.RESERVED_TAG">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ENABLE_FULL_ADDRESS_ASSIGNMENTS</spirit:name>
+      <spirit:displayName>Enable full address assignments for all Hst endpoints</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.ENABLE_FULL_ADDRESS_ASSIGNMENTS" spirit:order="62">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.ENABLE_FULL_ADDRESS_ASSIGNMENTS">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>MGMT_PF_BASE_ADDRESS</spirit:name>
+      <spirit:displayName>Platform MGMT PF Base address for this subsystem</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MGMT_PF_BASE_ADDRESS" spirit:order="63" spirit:bitStringLength="32">0x01000000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SUPPORT_NEW_INTERRUPT_SCHEMA</spirit:name>
+      <spirit:displayName>Support new Interrupt Metadata Exchange</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.SUPPORT_NEW_INTERRUPT_SCHEMA" spirit:order="64">true</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.SUPPORT_NEW_INTERRUPT_SCHEMA">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UCS_BUILD_INFO_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_ucs_build_info_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UCS_BUILD_INFO_00_OFFSET" spirit:order="65" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_UCS_BUILD_INFO_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UCS_BUILD_INFO_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_ucs_build_info_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UCS_BUILD_INFO_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="66">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_UCS_BUILD_INFO_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_GAPPING_DEMAND_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_gapping_demand_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_GAPPING_DEMAND_00_OFFSET" spirit:order="67" spirit:bitStringLength="32">0x00001000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_GAPPING_DEMAND_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_GAPPING_DEMAND_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_gapping_demand_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_GAPPING_DEMAND_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="68">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_GAPPING_DEMAND_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_GAPPING_DEMAND_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_gapping_demand_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_GAPPING_DEMAND_00_PF" spirit:order="69" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_GAPPING_DEMAND_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_gapping_demand_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_GAPPING_DEMAND_00_BAR" spirit:order="70" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_GAPPING_DEMAND_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_gapping_demand_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_GAPPING_DEMAND_00_REGABS" spirit:order="71">xilinx.com:reg_abs:ucs_gapping_demand:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UCS_CONTROL_STATUS_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_ucs_control_status_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UCS_CONTROL_STATUS_00_OFFSET" spirit:order="72" spirit:bitStringLength="32">0x00002000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_UCS_CONTROL_STATUS_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UCS_CONTROL_STATUS_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_ucs_control_status_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UCS_CONTROL_STATUS_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="73">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_UCS_CONTROL_STATUS_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UCS_CONTROL_STATUS_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_ucs_control_status_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UCS_CONTROL_STATUS_00_PF" spirit:order="74" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UCS_CONTROL_STATUS_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_ucs_control_status_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UCS_CONTROL_STATUS_00_BAR" spirit:order="75" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_UCS_CONTROL_STATUS_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_ucs_control_status_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_UCS_CONTROL_STATUS_00_REGABS" spirit:order="76">xilinx.com:reg_abs:ucs_control_status:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_00_OFFSET" spirit:order="77" spirit:bitStringLength="32">0x00003000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="78">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_00_PF" spirit:order="79" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_00_BAR" spirit:order="80" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_00_REGABS" spirit:order="81">xilinx.com:reg_abs:clkwiz:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_01_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_01_OFFSET" spirit:order="82" spirit:bitStringLength="32">0x00004000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_01_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_01_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_01_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="83">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_01_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_01_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_01_PF" spirit:order="84" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_01_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_01_BAR" spirit:order="85" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_01_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_01_REGABS" spirit:order="86">xilinx.com:reg_abs:clkwiz:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_02_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_02_OFFSET" spirit:order="87" spirit:bitStringLength="32">0x00005000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_02_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_02_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_02_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="88">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_02_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_02_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_02_PF" spirit:order="89" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_02_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_02_BAR" spirit:order="90" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_02_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_02_REGABS" spirit:order="91">xilinx.com:reg_abs:clkwiz:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_03_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_03_OFFSET" spirit:order="92" spirit:bitStringLength="32">0x00006000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_03_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_03_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_03_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="93">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_03_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_03_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_03_PF" spirit:order="94" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_03_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_03_BAR" spirit:order="95" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_03_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_03_REGABS" spirit:order="96">xilinx.com:reg_abs:clkwiz:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_04_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_04_OFFSET" spirit:order="97" spirit:bitStringLength="32">0x00007000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_04_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_04_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_04_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="98">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_04_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_04_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_04_PF" spirit:order="99" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_04_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_04_BAR" spirit:order="100" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_04_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_04_REGABS" spirit:order="101">xilinx.com:reg_abs:clkwiz:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_05_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_05_OFFSET" spirit:order="102" spirit:bitStringLength="32">0x00008000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_05_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_05_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_05_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="103">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_KERNEL_05_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_05_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_05_PF" spirit:order="104" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_05_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_05_BAR" spirit:order="105" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_KERNEL_05_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_KERNEL_05_REGABS" spirit:order="106">xilinx.com:reg_abs:clkwiz:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET" spirit:order="107" spirit:bitStringLength="32">0x00009000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="108">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_00_PF" spirit:order="109" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_00_BAR" spirit:order="110" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_kernel_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_00_REGABS" spirit:order="111">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET" spirit:order="112" spirit:bitStringLength="32">0x0000A000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_01_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_01_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_01_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="113">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_01_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_01_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_01_PF" spirit:order="114" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_01_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_01_BAR" spirit:order="115" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_01_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_kernel_01</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_01_REGABS" spirit:order="116">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET" spirit:order="117" spirit:bitStringLength="32">0x0000B000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_02_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_02_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_02_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="118">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_02_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_02_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_02_PF" spirit:order="119" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_02_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_02_BAR" spirit:order="120" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_02_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_kernel_02</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_02_REGABS" spirit:order="121">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET" spirit:order="122" spirit:bitStringLength="32">0x0000C000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_03_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_03_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_03_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="123">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_03_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_03_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_03_PF" spirit:order="124" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_03_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_03_BAR" spirit:order="125" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_03_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_kernel_03</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_03_REGABS" spirit:order="126">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET" spirit:order="127" spirit:bitStringLength="32">0x0000D000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_04_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_04_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_04_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="128">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_04_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_04_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_04_PF" spirit:order="129" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_04_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_04_BAR" spirit:order="130" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_04_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_kernel_04</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_04_REGABS" spirit:order="131">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET" spirit:order="132" spirit:bitStringLength="32">0x0000E000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_05_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_05_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_05_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="133">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_KERNEL_05_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_05_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_05_PF" spirit:order="134" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_05_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_05_BAR" spirit:order="135" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_KERNEL_05_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_kernel_05</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_KERNEL_05_REGABS" spirit:order="136">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_HBM_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_HBM_00_OFFSET" spirit:order="137" spirit:bitStringLength="32">0x0000F000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_HBM_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_HBM_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_HBM_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="138">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_ACLK_HBM_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_HBM_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_HBM_00_PF" spirit:order="139" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_HBM_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_HBM_00_BAR" spirit:order="140" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_ACLK_HBM_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_ACLK_HBM_00_REGABS" spirit:order="141">xilinx.com:reg_abs:clkwiz:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_HBM_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_HBM_00_OFFSET" spirit:order="142" spirit:bitStringLength="32">0x00010000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_HBM_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_HBM_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_HBM_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="143">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_HBM_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_HBM_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_HBM_00_PF" spirit:order="144" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_HBM_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_HBM_00_BAR" spirit:order="145" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_HBM_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_hbm_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_HBM_00_REGABS" spirit:order="146">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_00_OFFSET</spirit:name>
+      <spirit:displayName>Enter Offset for ep_freq_cnt_aclk_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_00_OFFSET" spirit:order="147" spirit:bitStringLength="32">0x00011000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_00_OFFSET">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_00_RANGE</spirit:name>
+      <spirit:displayName>Enter Range for ep_freq_cnt_aclk_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_00_RANGE" spirit:choiceRef="choice_list_9b94c6ac" spirit:order="148">4k</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.EP_FREQ_CNT_ACLK_00_RANGE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_00_PF</spirit:name>
+      <spirit:displayName>Enter PF for ep_freq_cnt_aclk_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_00_PF" spirit:order="149" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_00_BAR</spirit:name>
+      <spirit:displayName>Enter Base Address Register (BAR) for ep_freq_cnt_aclk_00</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_00_BAR" spirit:order="150" spirit:bitStringLength="4">0x0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>EP_FREQ_CNT_ACLK_00_REGABS</spirit:name>
+      <spirit:displayName>Enter Register Abstraction for ep_freq_cnt_aclk_00</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.EP_FREQ_CNT_ACLK_00_REGABS" spirit:order="151">xilinx.com:reg_abs:frequency_counter:1.0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.PERFORCE_CL</spirit:name>
+      <spirit:displayName>VERSION.PERFORCE_CL</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.PERFORCE_CL">3478949</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.PERFORCE_CL">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>VERSION.VIV_VERSION</spirit:name>
+      <spirit:displayName>VERSION.VIV_VERSION</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.VERSION.VIV_VERSION" spirit:bitStringLength="24">0x202210</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.VERSION.VIV_VERSION">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g{xcu26-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g{xcux35-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g{xcvu23p-(vsva1365)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM{xcu(50|55c|55n|280)-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM{xcvu(35p|37p|47p)-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus{xcu(200|250)-(.*)-(.*)-(.*)}</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus{xcu(25|30)-(.*)-(.*)-(.*)}</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/Shell_Subsystems</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>Shell User Clocking Subsystem</xilinx:displayName>
+      <xilinx:designToolContexts>
+        <xilinx:designToolContext>IPI</xilinx:designToolContext>
+      </xilinx:designToolContexts>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-03-01T12:06:03Z</xilinx:coreCreationDateTime>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="cc7bd2ef"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="bb718a94"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

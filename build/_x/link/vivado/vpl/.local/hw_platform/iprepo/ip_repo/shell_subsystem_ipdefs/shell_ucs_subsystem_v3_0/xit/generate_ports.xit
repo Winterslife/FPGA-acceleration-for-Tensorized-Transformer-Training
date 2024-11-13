@@ -1,0 +1,225 @@
+# (c) Copyright 2019 Xilinx, Inc. All rights reserved.
+#
+# This file contains confidential and proprietary information
+# of Xilinx, Inc. and is protected under U.S. and
+# international copyright and other intellectual property
+# laws.
+#
+# DISCLAIMER
+# This disclaimer is not a license and does not grant any
+# rights to the materials distributed herewith. Except as
+# otherwise provided in a valid license issued to you by
+# Xilinx, and to the maximum extent permitted by applicable
+# law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+# WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+# AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+# BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+# INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+# (2) Xilinx shall not be liable (whether in contract or tort,
+# including negligence, or under any other theory of
+# liability) for any loss or damage of any kind or nature
+# related to, arising under or in connection with these
+# materials, including for any direct, or any indirect,
+# special, incidental, or consequential loss or damage
+# (including loss of data, profits, goodwill, or any type of
+# loss or damage suffered as a result of any action brought
+# by a third party) even if such damage or loss was
+# reasonably foreseeable or Xilinx had been advised of the
+# possibility of the same.
+#
+# CRITICAL APPLICATIONS
+# Xilinx products are not designed or intended to be fail-
+# safe, or for use in any application requiring fail-safe
+# performance, such as life-support or safety devices or
+# systems, Class III medical devices, nuclear facilities,
+# applications related to the deployment of airbags, or any
+# other applications that could lead to death, personal
+# injury, or severe property or environmental damage
+# (individually and collectively, "Critical
+# Applications"). Customer assumes the sole risk and
+# liability of any use of Xilinx products in Critical
+# Applications, subject only to applicable laws and
+# regulations governing limitations on product liability.
+#
+# THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+# PART OF THIS FILE AT ALL TIMES.
+############################################################
+
+#========================================================================================================================================#
+# (1) Create interface ports
+#========================================================================================================================================#
+
+set s_axi_ctrl_mgmt [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_ctrl_mgmt ]
+set_property -dict [ list                                                                                                                 \
+    CONFIG.PROTOCOL                                 {AXI4LITE}                                                                            \
+    CONFIG.ADDR_WIDTH                               {32}                                                                                  \
+    CONFIG.DATA_WIDTH                               {32}                                                                                  \
+    CONFIG.MAX_BURST_LENGTH                         {1}                                                                                   \
+    CONFIG.SUPPORTS_NARROW_BURST                    {0}                                                                                   \
+    CONFIG.INSERT_VIP                               {1}                                                                                   \
+] $s_axi_ctrl_mgmt
+
+#========================================================================================================================================#
+# (2) Create ports
+#========================================================================================================================================#
+
+# Define associated resets
+
+set num_slr_index 1
+
+set aclk_ctrl_associated_reset                      {aresetn_ctrl:aresetn_ctrl_slr0}
+set aclk_pcie_associated_reset                      {aresetn_pcie:aresetn_pcie_slr0}
+
+for {set k 0} {$k < $max_kernel_clocks} {incr k} {
+    set index                                       [dict get $kernel_clock_dictionary $k index]
+    set aclk_kernel_${index}_associated_reset       aresetn_kernel_${index}_slr0
+}
+
+while {$num_slr_index < $C_NUM_SLR} {
+
+    set aclk_ctrl_associated_reset                  ${aclk_ctrl_associated_reset}:aresetn_ctrl_slr${num_slr_index}
+    set aclk_pcie_associated_reset                  ${aclk_pcie_associated_reset}:aresetn_pcie_slr${num_slr_index}
+
+    for {set k 0} {$k < $max_kernel_clocks} {incr k} {
+        set index                                   [dict get $kernel_clock_dictionary $k index]
+        set associated_reset                        aclk_kernel_${index}_associated_reset
+        set aclk_kernel_${index}_associated_reset   [subst $$associated_reset]:aresetn_kernel_${index}_slr${num_slr_index}
+    }
+
+    incr num_slr_index
+
+}
+
+# General Clocks
+
+set aclk_freerun [ create_bd_port -dir I -type clk aclk_freerun ]
+set_property -dict [ list                                                                                                                 \
+    CONFIG.FREQ_HZ                                  {100000000}                                                                           \
+] $aclk_freerun
+
+set aclk_ctrl [ create_bd_port -dir I -type clk aclk_ctrl ]
+set_property -dict [ list                                                                                                                 \
+    CONFIG.FREQ_HZ                                  {50000000}                                                                            \
+    CONFIG.FREQ_HZ.VALUE_SRC                        {PROPAGATED}                                                                          \
+    CONFIG.ASSOCIATED_RESET                         $aclk_ctrl_associated_reset                                                           \
+    CONFIG.ASSOCIATED_BUSIF                         {s_axi_ctrl_mgmt}                                                                     \
+] $aclk_ctrl
+
+set aclk_pcie [ create_bd_port -dir I -type clk aclk_pcie ]
+set_property -dict [ list                                                                                                                 \
+    CONFIG.FREQ_HZ                                  {250000000}                                                                           \
+    CONFIG.ASSOCIATED_RESET                         $aclk_pcie_associated_reset                                                           \
+] $aclk_pcie
+
+# Kernel clocks
+
+for {set k 0} {$k < $max_kernel_clocks} {incr k} {
+
+    set index                                       [dict get $kernel_clock_dictionary $k index]
+    set associated_reset                            aclk_kernel_${index}_associated_reset
+
+    if {[dict get $kernel_clock_dictionary $k frequency] > 0} {
+
+        set instance                                aclk_kernel_${index}
+        set aclk_kernel_${index}                    [ create_bd_port -dir O -type clk aclk_kernel_${index} ]
+        set_property -dict [ list                                                                                                         \
+            CONFIG.ASSOCIATED_RESET                 [subst $$associated_reset]                                                            \
+        ] [subst $$instance]
+
+        if {[dict get $kernel_clock_dictionary $k continuous] == true} {
+
+            set instance                            aclk_kernel_${index}_cont
+            set aclk_kernel_${index}_cont           [ create_bd_port -dir O -type clk aclk_kernel_${index}_cont ]
+            set_property -dict [ list                                                                                                     \
+                CONFIG.ASSOCIATED_RESET             [subst $$associated_reset]                                                            \
+            ] [subst $$instance]
+
+        }
+
+        if {[dict get $kernel_clock_dictionary $k divisor] > 1} {
+
+            set instance aclk_kernel_${index}_div
+            set aclk_kernel_${index}_div [ create_bd_port -dir O -type clk aclk_kernel_${index}_div ]
+            set_property -dict [ list                                                                                                     \
+                CONFIG.ASSOCIATED_RESET             [subst $$associated_reset]                                                            \
+            ] [subst $$instance]
+
+        }
+
+    }
+
+}
+
+# HBM Clock
+
+if {$C_HAS_HBM_CLK == true} {
+
+    set aclk_hbm [ create_bd_port -dir O -type clk aclk_hbm ]
+    set_property -dict [ list                                                                                                             \
+        CONFIG.ASSOCIATED_RESET                     {aresetn_hbm}                                                                         \
+    ] $aclk_hbm
+
+    set aclk_hbm_refclk [ create_bd_port -dir I -type clk aclk_hbm_refclk ]
+
+}
+
+# Resets #################################################################################################################################
+
+set aresetn_ctrl [ create_bd_port -dir I -type rst aresetn_ctrl ]
+set aresetn_pcie [ create_bd_port -dir I -type rst aresetn_pcie ]
+
+set num_slr_index 0
+while {$num_slr_index < $C_NUM_SLR} {
+
+    set aresetn_ctrl_slr${num_slr_index} [ create_bd_port -dir O -type rst aresetn_ctrl_slr${num_slr_index} ]
+    incr num_slr_index
+
+}
+
+set num_slr_index 0
+while {$num_slr_index < $C_NUM_SLR} {
+
+    set aresetn_pcie_slr${num_slr_index} [ create_bd_port -dir O -type rst aresetn_pcie_slr${num_slr_index} ]
+    incr num_slr_index
+
+}
+
+# Kernel Resets
+
+for {set k 0} {$k < $max_kernel_clocks} {incr k} {
+
+    set index [dict get $kernel_clock_dictionary $k index]
+    set associated_reset aclk_kernel_${index}_associated_reset
+
+    if {[dict get $kernel_clock_dictionary $k frequency] > 0} {
+
+        set num_slr_index 0
+        while {$num_slr_index < $C_NUM_SLR} {
+
+            set aresetn_kernel_${index}_slr${num_slr_index} [ create_bd_port -dir O -type rst aresetn_kernel_${index}_slr${num_slr_index} ]
+            incr num_slr_index
+
+        }
+
+    }
+
+}
+
+# HBM Reset
+
+if {$C_HAS_HBM_CLK == true} {
+
+    set aresetn_hbm [ create_bd_port -dir O -type rst aresetn_hbm ]
+
+}
+
+# Interrupts #############################################################################################################################
+
+
+# Other ##################################################################################################################################
+
+if {$C_ENABLE_SHUTDOWN_CLOCKS == true} {
+
+    set shutdown_clocks [ create_bd_port -dir I shutdown_clocks ]
+
+}
