@@ -1,4 +1,4 @@
-TT-format Tensor Contraction based on Scalable matrix matrix multiplication on FPGA
+Tensor Contraction based on Scalable matrix matrix multiplication on FPGA
 =============================================
 
 Downloading the code
