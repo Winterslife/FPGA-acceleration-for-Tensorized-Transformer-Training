@@ -8,7 +8,25 @@
 #include "hlslib/xilinx/DataPack.h"
 #include "hlslib/xilinx/Resource.h"
 #include "hlslib/xilinx/Stream.h"
+using Data_t = float;
+constexpr int kParallelismN = MM_PARALLELISM_N;    // 32
+constexpr int kParallelismM = MM_PARALLELISM_M;    // 8
+constexpr int kTileSizeN = MM_MEMORY_TILE_SIZE_N;  // 32
+constexpr int kTileSizeM = MM_MEMORY_TILE_SIZE_M;  // 32
 
+// Memory interface widths  
+constexpr int kMemoryWidthK = kMemoryWidthBytesK / sizeof(Data_t);
+constexpr int kMemoryWidthM = kMemoryWidthBytesM / sizeof(Data_t);
+constexpr int kMemoryWidthN = kMemoryWidthBytesN / sizeof(Data_t);
+
+// Memory pack types 
+using MemoryPackK_t = hlslib::DataPack<Data_t, kMemoryWidthK>;
+using MemoryPackM_t = hlslib::DataPack<Data_t, kMemoryWidthM>;
+using MemoryPackN_t = hlslib::DataPack<Data_t, kMemoryWidthN>;
+
+// Compute pack types
+using ComputePackN_t = hlslib::DataPack<Data_t, kParallelismN>;
+using ComputePackM_t = hlslib::DataPack<Data_t, kParallelismM>;
 using hlslib::Stream;
 // 定义内存数据包类型
 using Data_t = float; // 或其他基础数据类型

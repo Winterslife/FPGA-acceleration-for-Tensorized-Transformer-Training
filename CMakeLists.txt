@@ -5,7 +5,13 @@ add_definitions(
   -DMM_BATCH_SIZE=2
   -DMM_SEQ_LEN=4
 )
-
+add_definitions(
+  -DMM_DATA_TYPE=float
+  -DMM_PARALLELISM_N=32
+  -DMM_PARALLELISM_M=8
+  -DMM_MEMORY_TILE_SIZE_N=32
+  -DMM_MEMORY_TILE_SIZE_M=32
+)
 cmake_minimum_required(VERSION 3.0)
 project(sdaccel_mm)
 

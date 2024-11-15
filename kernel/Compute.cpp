@@ -22,12 +22,12 @@ void ProcessingElement(
     const unsigned batch_size,
     const unsigned seq_len) {
 
-  // 双缓冲输入
-  ComputePackN_t input_buffer[2][kInputDim];
+  // 双缓冲输入 - 使用kParallelismN
+  ComputePackN_t input_buffer[2][kTileSizeN/kParallelismN];
   #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=2
 
-  // 计算缓存
-  ComputePackM_t output_buffer[kBatchSize][kSeqLen][kOutputDim];
+  // 计算缓存 - 使用kParallelismM  
+  ComputePackM_t output_buffer[kBatchSize][kSeqLen][kTileSizeM/kParallelismM];
   #pragma HLS ARRAY_PARTITION variable=output_buffer complete dim=3
 
 Compute_Batch:
@@ -35,29 +35,37 @@ Compute_Batch:
   Compute_Seq:
     for(unsigned s = 0; s < seq_len; s++) {
     Compute_Out:
-      for(unsigned o = 0; o < kOutputDim; o++) {
+      for(unsigned o = 0; o < kTileSizeM/kParallelismM; o++) {
         #pragma HLS PIPELINE II=1
         
-        // 获取数据
+        // 获取计算包大小的数据
         auto input = input_in.Pop();
         auto weight = weight_in.Pop();
         
-        // 计算乘加
+        // 初始化部分和
         ComputePackM_t partial_sum;
-        for(int i = 0; i < kWidth; i++) {
-          partial_sum[i] = 0;
-        }
-      Compute_In:
-        for(unsigned i = 0; i < kInputDim; i++) {
+        for(unsigned w = 0; w < kParallelismM; w++) {
           #pragma HLS UNROLL
-          partial_sum += input[i] * weight[i];
+          partial_sum[w] = 0;
         }
         
-        // 累积结果
-        output_buffer[b][s][o] = output_buffer[b][s][o] + partial_sum;
+        // 计算乘加，使用并行度参数
+        for(unsigned i = 0; i < kParallelismN; i++) {
+          #pragma HLS UNROLL
+          for(unsigned w = 0; w < kParallelismM; w++) {
+            #pragma HLS UNROLL
+            partial_sum[w] = partial_sum[w] + input[i] * weight[w];
+          }
+        }
 
-        // 输出结果
-        if(o == kOutputDim-1) {
+        // 累积结果
+        for(unsigned w = 0; w < kParallelismM; w++) {
+          #pragma HLS UNROLL
+          output_buffer[b][s][o][w] = output_buffer[b][s][o][w] + partial_sum[w];
+        }
+
+        // 输出
+        if(o == kTileSizeM/kParallelismM-1) {
           output_out.Push(output_buffer[b][s][o]);
         }
       }
