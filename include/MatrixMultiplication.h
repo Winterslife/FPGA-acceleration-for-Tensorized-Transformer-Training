@@ -27,6 +27,10 @@ using MemoryPackN_t = hlslib::DataPack<Data_t, kMemoryWidthN>;
 // Compute pack types
 using ComputePackN_t = hlslib::DataPack<Data_t, kParallelismN>;
 using ComputePackM_t = hlslib::DataPack<Data_t, kParallelismM>;
+
+using IntermediatePackN_t = hlslib::DataPack<Data_t, kMemoryWidthN>;
+using IntermediatePackM_t = hlslib::DataPack<Data_t, kMemoryWidthM>;
+
 using hlslib::Stream;
 // 定义内存数据包类型
 // using Data_t = float; // 或其他基础数据类型

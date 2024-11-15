@@ -117,7 +117,6 @@ void ReadInput(MemoryPackN_t const input[],
               Stream<ComputePackN_t> &pipe,
               const unsigned batch_size,
               const unsigned seq_len) {
-
 ReadInput_Batch:
   for(unsigned b = 0; b < batch_size; b++) {
   ReadInput_Seq:
@@ -125,8 +124,23 @@ ReadInput_Batch:
     ReadInput_Data:
       for(unsigned i = 0; i < kTileSizeN/kParallelismN; i++) {
         #pragma HLS PIPELINE II=1
-        pipe.Push(input[b*seq_len*(kTileSizeN/kParallelismN) + 
-                       s*(kTileSizeN/kParallelismN) + i]);
+        
+        // 创建中间数据包
+        ComputePackN_t compute_pack;
+        
+        // 从内存读取并转换到计算包
+        const auto memory_pack = input[b*seq_len*(kTileSizeN/kParallelismN) + 
+                                     s*(kTileSizeN/kParallelismN) + i];
+        
+        // 复制数据
+        for(unsigned w = 0; w < kMemoryWidthN; ++w) {
+          compute_pack[w] = memory_pack[w];
+        }
+        for(unsigned w = kMemoryWidthN; w < kParallelismN; ++w) {
+          compute_pack[w] = 0;
+        }
+        
+        pipe.Push(compute_pack);
       }
     }
   }
@@ -334,7 +348,19 @@ ReadWeights_Out:
   ReadWeights_In:
     for(unsigned i = 0; i < input_dim/kParallelismN; i++) {
       #pragma HLS PIPELINE II=1
-      pipe.Push(weights[o*(input_dim/kParallelismN) + i]);
+      
+      // 创建计算包
+      ComputePackM_t compute_pack;
+      
+      // 从内存读取
+      const auto memory_pack = weights[o*(input_dim/kParallelismN) + i];
+      
+      // 复制数据
+      for(unsigned w = 0; w < kParallelismM; ++w) {
+        compute_pack[w] = (w < kMemoryWidthM) ? memory_pack[w] : 0;
+      }
+      
+      pipe.Push(compute_pack);
     }
   }
 }
@@ -388,8 +414,20 @@ WriteOutput_Batch:
     WriteOutput_Data:
       for(unsigned o = 0; o < kTileSizeM/kParallelismM; o++) {
         #pragma HLS PIPELINE II=1
+        
+        // 从管道读取计算包
+        auto compute_pack = pipe.Pop();
+        
+        // 创建内存包
+        MemoryPackM_t memory_pack;
+        
+        // 复制数据
+        for(unsigned w = 0; w < kMemoryWidthM; ++w) {
+          memory_pack[w] = (w < kParallelismM) ? compute_pack[w] : 0;
+        }
+        
         output[b*seq_len*(kTileSizeM/kParallelismM) + 
-               s*(kTileSizeM/kParallelismM) + o] = pipe.Pop();
+               s*(kTileSizeM/kParallelismM) + o] = memory_pack;
       }
     }
   }
