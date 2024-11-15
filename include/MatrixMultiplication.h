@@ -189,16 +189,20 @@ constexpr T PowerOfTwo(T number, unsigned char power) {
 #define MM_MULT_RESOURCE_PRAGMA(var)
 #endif
 
-extern "C" {
-void MatrixMultiplicationKernel(
-    MemoryPackN_t const input[],    // [batch, seq, in_dim] 
-    MemoryPackM_t const weights[],  // [in_dim, out_dim]
-    MemoryPackM_t output[],         // [batch, seq, out_dim]
-    const unsigned batch_size,      // 批大小
-    const unsigned seq_len,         // 序列长度 
-    const unsigned input_dim,       // 输入维度
-    const unsigned output_dim);     // 输出维度
-}
+std::cout << "Running original implementation simulation...\n" << std::flush;
+#ifdef MM_DYNAMIC_SIZES
+    MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data(),
+                              size_n,  // batch_size
+                              size_k,  // seq_len
+                              size_k,  // input_dim
+                              size_m); // output_dim
+#else
+    MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data(),
+                              kSizeN,
+                              kSizeK, 
+                              kSizeK,
+                              kSizeM);
+#endif
 extern "C" {
 void TTLinearLayerKernel(
     MemoryPackN_t const input[],    

@@ -114,9 +114,12 @@ int main(int argc, char **argv) {
     std::cout << "Running original implementation simulation...\n" << std::flush;
 #ifdef MM_DYNAMIC_SIZES
     MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data(),
-                             size_n, size_k, size_m);
+                             size_n, size_k, size_k, size_m);
 #else
-    MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data());
+    MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data(),kSizeN,
+                              kSizeK,
+                              kSizeK,
+                              kSizeM);
 #endif
     std::cout << "Verifying original implementation results...\n" << std::flush;
 
