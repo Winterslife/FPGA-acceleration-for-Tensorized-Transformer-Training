@@ -13,7 +13,18 @@
 // 使用已有的SIZE宏
 #define MM_INPUT_DIM 512
 #define MM_OUTPUT_DIM 512
+// 在适当位置添加:
+#ifndef MM_TT_RANKS
+#define MM_TT_RANKS {1, 16, 16, 16, 1}
+#endif
 
+#ifndef MM_TT_SHAPES
+#define MM_TT_SHAPES {8, 8, 8, 8}
+#endif
+
+#ifndef MM_TT_OUTPUT_SHAPES
+#define MM_TT_OUTPUT_SHAPES {8, 8, 8, 8}
+#endif
 // 定义维度常量
 constexpr unsigned long kBatchSize = MM_BATCH_SIZE;
 constexpr unsigned long kSeqLen = MM_SEQ_LEN;

@@ -79,3 +79,28 @@ void ConvertWidthC(Stream<OutputPack_t> &narrow, Stream<MemoryPackM_t> &wide,
 
 void WriteC(Stream<MemoryPackM_t> &pipe, MemoryPackM_t memory[], unsigned n,
             unsigned k, unsigned m);
+
+// 在现有声明的后面添加:
+void LoadTTCores(
+    MemoryPackM_t const weights[],
+    TTCores &tt_cores);
+
+void ReadTTInput(
+    MemoryPackN_t const input[],
+    Stream<ComputePackN_t> &pipe,
+    const unsigned batch_size,
+    const unsigned seq_len);
+struct TTMemoryInterface {
+    MemoryPackM_t const* weights;
+    unsigned core_offsets[4];  // 每个TT核的起始偏移
+    
+    TTMemoryInterface(MemoryPackM_t const* w) : weights(w) {
+        // 计算每个核的偏移
+        core_offsets[0] = 0;
+        for(unsigned i = 1; i < 4; ++i) {
+            core_offsets[i] = core_offsets[i-1] + 
+                (kTTRanks[i-1] * kTTShapes[i-1] * 
+                 kTTOutputShapes[i-1] * kTTRanks[i]) / kMemoryWidthM;
+        }
+    }
+};

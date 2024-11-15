@@ -58,3 +58,50 @@ void MatrixMultiplicationKernel(
 
   HLSLIB_DATAFLOW_FINALIZE();
 }
+
+// 在文件末尾添加:
+void TTLinearLayerKernel(
+    MemoryPackN_t const input[],    
+    MemoryPackM_t const weights[],  
+    MemoryPackM_t output[],         
+    const unsigned batch_size,       
+    const unsigned seq_len,          
+    const unsigned input_dim,        
+    const unsigned output_dim) {     
+
+    #pragma HLS DATAFLOW
+
+    Stream<ComputePackN_t> input_pipe("input_pipe");
+    Stream<ComputePackM_t> output_pipe("output_pipe");
+
+    TTCores tt_cores;
+    #pragma HLS ARRAY_PARTITION variable=tt_cores.cores complete dim=1
+    
+    LoadTTCores(weights, tt_cores);
+
+    Stream<ComputePackN_t> input_pipes[kParallelismN + 1];
+    Stream<ComputePackM_t> output_pipes[kParallelismN + 1];
+    
+    #pragma HLS ARRAY_PARTITION variable=input_pipes complete dim=1
+    #pragma HLS ARRAY_PARTITION variable=output_pipes complete dim=1
+
+    HLSLIB_DATAFLOW_INIT();
+
+    HLSLIB_DATAFLOW_FUNCTION(ReadTTInput, input, input_pipes[0], 
+                            batch_size, seq_len);
+
+    for(unsigned pe = 0; pe < kParallelismN; ++pe) {
+        #pragma HLS UNROLL
+        HLSLIB_DATAFLOW_FUNCTION(TTProcessingElement,
+                                input_pipes[pe],
+                                input_pipes[pe + 1],
+                                tt_cores,
+                                output_pipes[pe],
+                                batch_size, seq_len);
+    }
+
+    HLSLIB_DATAFLOW_FUNCTION(WriteOutput, output_pipes[0], output,
+                            batch_size, seq_len);
+
+    HLSLIB_DATAFLOW_FINALIZE();
+}

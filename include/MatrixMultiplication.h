@@ -9,6 +9,15 @@
 #include "hlslib/xilinx/Resource.h"
 #include "hlslib/xilinx/Stream.h"
 using Data_t = float;
+// 在已有定义后添加
+// TT Layer specific constants
+constexpr int kTTCoreWidth = 16;  // TT核的宽度
+constexpr int kTTStreamDepth = 4; // TT stream深度
+constexpr int kTTBufferSize = 64; // TT缓冲区大小
+
+// TT computation pack types
+using TTCorePack_t = hlslib::DataPack<Data_t, kTTCoreWidth>;
+using TTIntermediatePack_t = hlslib::DataPack<Data_t, kTTRanks[1]>;
 constexpr int kParallelismN = MM_PARALLELISM_N;    // 32
 constexpr int kParallelismM = MM_PARALLELISM_M;    // 8
 constexpr int kTileSizeN = MM_MEMORY_TILE_SIZE_N;  // 32
@@ -188,4 +197,14 @@ void MatrixMultiplicationKernel(
     const unsigned seq_len,         // 序列长度 
     const unsigned input_dim,       // 输入维度
     const unsigned output_dim);     // 输出维度
+}
+extern "C" {
+void TTLinearLayerKernel(
+    MemoryPackN_t const input[],    
+    MemoryPackM_t const weights[],  
+    MemoryPackM_t output[],         
+    const unsigned batch_size,       
+    const unsigned seq_len,          
+    const unsigned input_dim,        
+    const unsigned output_dim);    
 }

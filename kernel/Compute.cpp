@@ -72,3 +72,85 @@ Compute_Batch:
     }
   }
 }
+
+// 在文件末尾添加:
+void TTProcessingElement(
+    Stream<ComputePackN_t> &input_in,
+    Stream<ComputePackN_t> &input_out,
+    const TTCores &tt_cores,
+    Stream<ComputePackM_t> &output_out,
+    const unsigned batch_size,
+    const unsigned seq_len) {
+    
+    #pragma HLS INLINE off
+    
+    Data_t input_buffer[kTTRanks[0]][kTTShapes[0]];
+    #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=0
+    
+    Data_t intermediate_results[kTTRanks[2]][kTTOutputShapes[0]];
+    #pragma HLS ARRAY_PARTITION variable=intermediate_results complete dim=0
+
+ComputeBatch:
+    for(unsigned b = 0; b < batch_size; b++) {
+    ComputeSeq:
+        for(unsigned s = 0; s < seq_len; s++) {
+            
+        TT_Core1:
+            for(unsigned i = 0; i < kTTShapes[0]; i++) {
+                #pragma HLS PIPELINE II=1
+                
+                const auto input = input_in.Pop();
+                
+            Core1_Rank:
+                for(unsigned r1 = 0; r1 < kTTRanks[1]; r1++) {
+                    #pragma HLS UNROLL
+                    Data_t sum = 0;
+                    
+                Core1_Compute:
+                    for(unsigned j = 0; j < kTTOutputShapes[0]; j++) {
+                        #pragma HLS UNROLL
+                        sum += tt_cores.GetCore(0, 0, i, j, r1) * input[j];
+                    }
+                    intermediate_results[r1][i] = sum;
+                }
+            }
+            
+        TT_Remaining_Cores:
+            for(unsigned core = 1; core < 4; core++) {
+            Core_Compute:
+                for(unsigned r1 = 0; r1 < kTTRanks[core]; r1++) {
+                    #pragma HLS PIPELINE II=1
+                    
+                    Data_t temp[kTTOutputShapes[core]];
+                    #pragma HLS ARRAY_PARTITION variable=temp complete dim=0
+                    
+                Core_Inner:
+                    for(unsigned i = 0; i < kTTShapes[core]; i++) {
+                        for(unsigned j = 0; j < kTTOutputShapes[core]; j++) {
+                            #pragma HLS UNROLL
+                            for(unsigned r2 = 0; r2 < kTTRanks[core+1]; r2++) {
+                                #pragma HLS UNROLL
+                                temp[j] += intermediate_results[r1][i] * 
+                                         tt_cores.GetCore(core, r1, i, j, r2);
+                            }
+                        }
+                    }
+                    
+                    for(unsigned j = 0; j < kTTOutputShapes[core]; j++) {
+                        #pragma HLS UNROLL
+                        intermediate_results[r1][j] = temp[j];
+                    }
+                }
+            }
+            
+            ComputePackM_t output;
+        Prepare_Output:
+            for(unsigned i = 0; i < kParallelismM; i++) {
+                #pragma HLS UNROLL
+                output[i] = intermediate_results[0][i];
+            }
+            
+            output_out.Push(output);
+        }
+    }
+}

@@ -13,3 +13,11 @@ void ProcessingElement(Stream<ComputePackN_t> &aIn,
                        Stream<ComputePackM_t> &cIn, const unsigned locationN,
                        const unsigned size_n, const unsigned size_k,
                        const unsigned size_m);
+// 在现有声明的后面添加:
+void TTProcessingElement(
+    Stream<ComputePackN_t> &input_in,
+    Stream<ComputePackN_t> &input_out,
+    const TTCores &tt_cores,
+    Stream<ComputePackM_t> &output_out,
+    const unsigned batch_size,
+    const unsigned seq_len);

@@ -478,3 +478,68 @@ FeedB_OuterTile_N:
     }
   }
 }
+void LoadTTCores(
+    MemoryPackM_t const weights[],
+    TTCores &tt_cores) {
+    
+    #pragma HLS INLINE off
+
+    unsigned offset = 0;
+LoadCores:
+    for(unsigned core_idx = 0; core_idx < 4; core_idx++) {
+    LoadRanks:
+        for(unsigned r1 = 0; r1 < kTTRanks[core_idx]; r1++) {
+        LoadDims:
+            for(unsigned i = 0; i < kTTShapes[core_idx]; i++) {
+            LoadOutputs:
+                for(unsigned j = 0; j < kTTOutputShapes[core_idx]; j++) {
+                LoadNextRanks:
+                    for(unsigned r2 = 0; r2 < kTTRanks[core_idx+1]; r2++) {
+                        #pragma HLS PIPELINE II=1
+                        
+                        const unsigned mem_idx = offset / kMemoryWidthM;
+                        const unsigned mem_offset = offset % kMemoryWidthM;
+                        
+                        if(mem_offset == 0) {
+                            const auto memory_pack = weights[mem_idx];
+                            tt_cores.GetCore(core_idx, r1, i, j, r2) = 
+                                memory_pack[mem_offset];
+                        }
+                        
+                        offset++;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void ReadTTInput(
+    MemoryPackN_t const input[],
+    Stream<ComputePackN_t> &pipe,
+    const unsigned batch_size,
+    const unsigned seq_len) {
+    
+    #pragma HLS INLINE off
+    
+ReadBatch:
+    for(unsigned b = 0; b < batch_size; b++) {
+    ReadSeq:
+        for(unsigned s = 0; s < seq_len; s++) {
+        ReadInput:
+            for(unsigned i = 0; i < kInputDim/kParallelismN; i++) {
+                #pragma HLS PIPELINE II=1
+                
+                ComputePackN_t compute_pack;
+                const auto memory_pack = input[b*seq_len*(kInputDim/kParallelismN) + 
+                                             s*(kInputDim/kParallelismN) + i];
+                
+                for(unsigned w = 0; w < kParallelismN; ++w) {
+                    compute_pack[w] = (w < kMemoryWidthN) ? memory_pack[w] : 0;
+                }
+                
+                pipe.Push(compute_pack);
+            }
+        }
+    }
+}
