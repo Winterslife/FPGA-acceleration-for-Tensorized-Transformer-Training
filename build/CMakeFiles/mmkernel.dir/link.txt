@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmmkernel.a CMakeFiles/mmkernel.dir/kernel/Compute.cpp.o CMakeFiles/mmkernel.dir/kernel/Memory.cpp.o CMakeFiles/mmkernel.dir/kernel/Top.cpp.o
-/usr/bin/ranlib libmmkernel.a

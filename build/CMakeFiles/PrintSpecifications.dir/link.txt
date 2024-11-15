@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++14 -rdynamic CMakeFiles/PrintSpecifications.dir/src/PrintSpecifications.cpp.o -o PrintSpecifications  -Wl,-rpath,:/opt/xilinx/xrt/lib:/home/minghe/Xilinx/Vitis_HLS/2024.1/lib/lnx64.o 

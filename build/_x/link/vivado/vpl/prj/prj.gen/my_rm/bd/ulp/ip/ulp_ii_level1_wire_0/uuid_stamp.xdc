@@ -1,4 +1,0 @@
-create_property II.INTERFACE_UUID cell
-set_property II.INTERFACE_UUID a8880c2311a2a42b5fb76899d385acee [get_cells]
-create_property II.PARAMSET_UUID cell
-set_property II.PARAMSET_UUID ED20DA9393D23B27FEE71E7B557FC284 [get_cells]
