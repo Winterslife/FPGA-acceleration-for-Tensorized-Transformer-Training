@@ -113,25 +113,19 @@ ReadA_N2:
   }
 }
 
-void ReadA(MemoryPackK_t const a[], Stream<Data_t> aSplit[kTransposeWidth],
-           const unsigned size_n, const unsigned size_k,
-           const unsigned size_m) {
-  assert((static_cast<unsigned long>(OuterTilesN(size_n)) *
-          OuterTilesM(size_m) * (size_k / kTransposeWidth) * kInnerTilesN *
-          kInnerTileSizeN * (kTransposeWidth / kMemoryWidthK) *
-          MemoryPackK_t::kWidth) == TotalReadsFromA(size_n, size_k, size_m));
+void ReadInput(MemoryPackN_t const input[], Stream<Data_t> &pipe,
+              const unsigned batch_size, const unsigned seq_len) {
+  assert((static_cast<unsigned long>(batch_size) * seq_len * kInputDim) == 
+         TotalReadsFromA(batch_size, seq_len, kInputDim));
 
-ReadA_N0:
-  for (unsigned n0 = 0; n0 < OuterTilesN(size_n); ++n0) {
-  ReadA_M0:
-    for (unsigned m0 = 0; m0 < OuterTilesM(size_m); ++m0) {
-    ReadA_K0:
-      for (unsigned k0 = 0; k0 < size_k / kTransposeWidth; ++k0) {
-      ReadA_N1:
-        for (unsigned n1 = 0; n1 < kInnerTilesN; ++n1) {
-          _ReadAInnerLoop<kTransposeWidth / kMemoryWidthK>(
-              a, aSplit, n0, n1, k0, size_n, size_k, size_m);
-        }
+ReadInput_Batch:
+  for(unsigned b = 0; b < batch_size; b++) {
+  ReadInput_Seq:
+    for(unsigned s = 0; s < seq_len; s++) {
+    ReadInput_Data:
+      for(unsigned i = 0; i < kInputDim; i++) {
+        #pragma HLS PIPELINE II=1
+        pipe.Push(input[IndexInput(b,s,i)]);
       }
     }
   }
@@ -368,35 +362,17 @@ ConvertWidthC_N:
   }
 }
 
-void WriteC(Stream<MemoryPackM_t> &pipe, MemoryPackM_t memory[],
-            const unsigned size_n, const unsigned size_k,
-            const unsigned size_m) {
-  // assert((OuterTilesN(size_n) * OuterTilesM(size_m) * kOuterTileSizeN *
-  //         kOuterTileSizeMMemory * MemoryPackM_t::kWidth) == size_n * size_m);
-
-WriteC_OuterTile_N:
-  for (unsigned n0 = 0; n0 < OuterTilesN(size_n); ++n0) {
-  WriteC_OuterTile_M:
-    for (unsigned m0 = 0; m0 < OuterTilesM(size_m); ++m0) {
-    WriteC_N1:
-      for (unsigned n1 = 0; n1 < kOuterTileSizeN; ++n1) {
-      WriteC_M1:
-        for (unsigned m1m = 0; m1m < kOuterTileSizeMMemory; ++m1m) {
-          #pragma HLS PIPELINE II=1
-          #pragma HLS LOOP_FLATTEN
-          const auto val = pipe.Pop();
-          if ((n0 * kOuterTileSizeN + n1 < size_n) &&
-              (m0 * kOuterTileSizeMMemory + m1m < SizeMMemory(size_m))) {
-            memory[IndexC(n0, n1, m0, m1m, size_n, size_k, size_m)] = val;
-          }
-        }
+void WriteOutput(Stream<MemoryPackM_t> &pipe, MemoryPackM_t output[],
+                const unsigned batch_size, const unsigned seq_len) {
+WriteOutput_Batch:
+  for(unsigned b = 0; b < batch_size; b++) {
+  WriteOutput_Seq:
+    for(unsigned s = 0; s < seq_len; s++) {
+    WriteOutput_Data:
+      for(unsigned o = 0; o < kOutputDim; o++) {
+        #pragma HLS PIPELINE II=1
+        output[IndexOutput(b,s,o)] = pipe.Pop();
       }
-#ifndef MM_SYNTHESIS
-      std::cout << "Finished tile (" << n0 << ", " << m0 << ") of ("
-                << OuterTilesN(size_n) - 1 << ", " << OuterTilesM(size_m) - 1
-                << ")\n"
-                << std::flush;
-#endif
     }
   }
 }
