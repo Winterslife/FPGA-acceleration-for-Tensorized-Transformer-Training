@@ -1,6 +1,6 @@
 /// @author    Johannes de Fine Licht (definelicht@inf.ethz.ch)
 /// @copyright This software is copyrighted under the BSD 3-Clause License.
-
+// 负责数据的读取和写入
 #include "Memory.h"
 #include "hlslib/xilinx/Stream.h"
 #include "hlslib/xilinx/Simulation.h"

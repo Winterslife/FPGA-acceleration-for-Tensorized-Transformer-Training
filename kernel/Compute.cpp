@@ -12,7 +12,7 @@
 
 
 
-
+// 实现矩阵乘法的基本计算单元
 void ProcessingElement(
     Stream<ComputePackN_t> &input_in,
     Stream<ComputePackN_t> &input_out,
@@ -21,7 +21,10 @@ void ProcessingElement(
     Stream<ComputePackM_t> &output_out,
     Stream<ComputePackM_t> &output_in,
     const unsigned batch_size,
-    const unsigned seq_len) {
+    const unsigned seq_len,
+    const unsigned input_dim,    // 添加参数
+    const unsigned output_dim
+    ) {
 
   // 双缓冲输入 - 使用kParallelismN
   ComputePackN_t input_buffer[2][kTileSizeN/kParallelismN];

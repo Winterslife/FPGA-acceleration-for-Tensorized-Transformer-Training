@@ -8,7 +8,7 @@
 #include "hlslib/xilinx/Utility.h"     // 添加这行
 
 using hlslib::Stream;
-
+// 顶层计算函数,管理整个计算流程
 void MatrixMultiplicationKernel(
     MemoryPackN_t const input[],    
     MemoryPackM_t const weights[],  
@@ -48,13 +48,16 @@ void MatrixMultiplicationKernel(
     for (unsigned pe = 0; pe < kParallelismN; ++pe) {
         #pragma HLS UNROLL
         HLSLIB_DATAFLOW_FUNCTION(ProcessingElement,
-                                input_pipes[pe],
-                                input_pipes[pe + 1],
-                                weight_pipes[pe],
-                                weight_pipes[pe + 1],
-                                output_pipes[pe],
-                                output_pipes[pe + 1],
-                                batch_size, seq_len);
+                         input_pipes[pe],
+                         input_pipes[pe + 1],
+                         weight_pipes[pe],
+                         weight_pipes[pe + 1],
+                         output_pipes[pe],
+                         output_pipes[pe + 1],
+                         batch_size, 
+                         seq_len,
+                         input_dim,   // 添加input_dim参数
+                         output_dim); // 添加output_dim参数
     }
 
     // 写回输出
