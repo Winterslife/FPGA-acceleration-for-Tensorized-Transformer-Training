@@ -31,6 +31,11 @@ Heterogeneous High-performance Reconfigurable Computing (H2RC'19).
 
 
 
+```
+cd build
+cmake ../ -DMM_DATA_TYPE=float -DMM_PARALLELISM_N=32 -DMM_PARALLELISM_M=8 -DMM_MEMORY_TILE_SIZE_N=512 -DMM_MEMORY_TILE_SIZE_M=512
+```
+
 # Princeple
 
 这段代码实现了一个针对Transformer类神经网络的矩阵乘法加速器，主要用于加速序列处理中的线性层计算。

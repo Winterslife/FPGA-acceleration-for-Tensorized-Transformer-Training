@@ -202,7 +202,17 @@ constexpr T PowerOfTwo(T number, unsigned char power) {
                               kSizeK,
                               kSizeM);
 #endif
+
 extern "C" {
+void MatrixMultiplicationKernel(
+    MemoryPackN_t const input[],    
+    MemoryPackM_t const weights[],  
+    MemoryPackM_t output[],         
+    const unsigned batch_size,       
+    const unsigned seq_len,          
+    const unsigned input_dim,        
+    const unsigned output_dim);
+
 void TTLinearLayerKernel(
     MemoryPackN_t const input[],    
     MemoryPackM_t const weights[],  
