@@ -153,19 +153,12 @@ constexpr T PowerOfTwo(T number, unsigned char power) {
 #endif
 
 extern "C" {
-
-#ifdef MM_TRANSPOSED_A
-void MatrixMultiplicationKernel(MemoryPackN_t const a[],
-                                MemoryPackM_t const b[], MemoryPackM_t c[]
-#else
-void MatrixMultiplicationKernel(MemoryPackK_t const a[],
-                                MemoryPackM_t const b[], MemoryPackM_t c[]
-#endif
-#ifdef MM_DYNAMIC_SIZES
-                                ,
-                                const unsigned size_n, const unsigned size_k,
-                                const unsigned size_m
-#endif
-);
-
+void MatrixMultiplicationKernel(
+    MemoryPackN_t const input[],    // [batch, seq, in_dim] 
+    MemoryPackM_t const weights[],  // [in_dim, out_dim]
+    MemoryPackM_t output[],         // [batch, seq, out_dim]
+    const unsigned batch_size,      // 批大小
+    const unsigned seq_len,         // 序列长度 
+    const unsigned input_dim,       // 输入维度
+    const unsigned output_dim);     // 输出维度
 }

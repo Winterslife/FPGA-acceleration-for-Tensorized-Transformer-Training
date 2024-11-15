@@ -1,7 +1,7 @@
 # Vitis 基础路径
-set(VITIS_ROOT "$ENV{HOME}/Xilinx/Vitis/2024.1" CACHE PATH "Path to Vitis installation")
-set(VITIS_HLS_ROOT "$ENV{HOME}/Xilinx/Vitis_HLS/2024.1" CACHE PATH "Path to Vitis HLS installation")
-set(VIVADO_ROOT "$ENV{HOME}/Xilinx/Vivado/2024.1" CACHE PATH "Path to Vivado installation")
+set(VITIS_ROOT "/tools/Xilinx/Vitis/2023.2" CACHE PATH "Path to Vitis installation")
+set(VITIS_HLS_ROOT "/tools/Xilinx/Vitis_HLS/2023.2" CACHE PATH "Path to Vitis HLS installation")
+set(VIVADO_ROOT "/tools/Xilinx/Vivado/2023.2" CACHE PATH "Path to Vivado installation")
 
 # 编译器和工具
 set(Vitis_COMPILER "${VITIS_ROOT}/bin/v++" CACHE FILEPATH "Vitis compiler")

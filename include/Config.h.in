@@ -21,6 +21,12 @@ constexpr unsigned long kSizeN = ${MM_SIZE_N};
 constexpr unsigned long kSizeK = ${MM_SIZE_K};
 constexpr unsigned long kSizeM = ${MM_SIZE_M};
 #endif
+// 添加张量维度配置
+constexpr unsigned long kBatchSize = ${MM_BATCH_SIZE};
+constexpr unsigned long kSeqLen = ${MM_SEQ_LEN}; 
+constexpr unsigned long kInputDim = ${MM_INPUT_DIM};
+constexpr unsigned long kOutputDim = ${MM_OUTPUT_DIM};
+
 constexpr unsigned long kOuterTileSizeN = ${MM_MEMORY_TILE_SIZE_N};
 constexpr unsigned long kOuterTileSizeM = ${MM_MEMORY_TILE_SIZE_M};
 constexpr unsigned long kInnerTileSizeN = ${MM_PARALLELISM_N};

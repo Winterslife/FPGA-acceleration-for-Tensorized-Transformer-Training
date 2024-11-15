@@ -6,6 +6,16 @@
 
 using hlslib::Stream;
 
+// 在文件开头添加新的索引计算函数
+unsigned IndexInput(const unsigned b, const unsigned s, const unsigned i) {
+  #pragma HLS INLINE
+  return (b * kSeqLen * kInputDim + s * kInputDim + i);
+}
+
+unsigned IndexOutput(const unsigned b, const unsigned s, const unsigned o) {
+  #pragma HLS INLINE
+  return (b * kSeqLen * kOutputDim + s * kOutputDim + o);
+}
 #ifndef MM_TRANSPOSED_A
 
 unsigned IndexA(const unsigned n0, const unsigned n1, const unsigned n2,
