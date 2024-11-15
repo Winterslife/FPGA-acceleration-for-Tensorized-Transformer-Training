@@ -1,11 +1,12 @@
 /// @author    Johannes de Fine Licht (definelicht@inf.ethz.ch)
 /// @copyright This software is copyrighted under the BSD 3-Clause License. 
-
 #include "hlslib/xilinx/Stream.h"
 #include "hlslib/xilinx/Simulation.h"
+#include "hlslib/xilinx/DataPack.h"
 #include "hlslib/xilinx/Utility.h"
 #include "MatrixMultiplication.h"
 #include "Memory.h"
+#include "TTConfig.h"
 #include <cassert>
 
 
