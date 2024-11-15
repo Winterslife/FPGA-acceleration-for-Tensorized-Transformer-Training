@@ -5,7 +5,20 @@
 
 #include "MatrixMultiplication.h"
 #include "hlslib/xilinx/Stream.h"
+void ReadInput(MemoryPackN_t const input[], 
+              Stream<ComputePackN_t> &pipe,
+              const unsigned batch_size,
+              const unsigned seq_len);
 
+void ReadWeights(MemoryPackM_t const weights[],
+                Stream<ComputePackM_t> &pipe,
+                const unsigned input_dim,
+                const unsigned output_dim);
+
+void WriteOutput(Stream<ComputePackM_t> &pipe,
+                MemoryPackM_t output[],
+                const unsigned batch_size,
+                const unsigned seq_len);
 #ifndef MM_TRANSPOSED_A
 
 // Read wide bursts from memory, then distribute it into separate column

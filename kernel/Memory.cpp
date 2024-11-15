@@ -113,19 +113,20 @@ ReadA_N2:
   }
 }
 
-void ReadInput(MemoryPackN_t const input[], Stream<Data_t> &pipe,
-              const unsigned batch_size, const unsigned seq_len) {
-  assert((static_cast<unsigned long>(batch_size) * seq_len * kInputDim) == 
-         TotalReadsFromA(batch_size, seq_len, kInputDim));
+void ReadInput(MemoryPackN_t const input[], 
+              Stream<ComputePackN_t> &pipe,
+              const unsigned batch_size,
+              const unsigned seq_len) {
 
 ReadInput_Batch:
   for(unsigned b = 0; b < batch_size; b++) {
   ReadInput_Seq:
     for(unsigned s = 0; s < seq_len; s++) {
     ReadInput_Data:
-      for(unsigned i = 0; i < kInputDim; i++) {
+      for(unsigned i = 0; i < kTileSizeN/kParallelismN; i++) {
         #pragma HLS PIPELINE II=1
-        pipe.Push(input[IndexInput(b,s,i)]);
+        pipe.Push(input[b*seq_len*(kTileSizeN/kParallelismN) + 
+                       s*(kTileSizeN/kParallelismN) + i]);
       }
     }
   }
@@ -324,6 +325,20 @@ ConvertWidthB_Outer:
   }
 }
 
+void ReadWeights(MemoryPackM_t const weights[],
+                Stream<ComputePackM_t> &pipe,
+                const unsigned input_dim,
+                const unsigned output_dim) {
+ReadWeights_Out:
+  for(unsigned o = 0; o < output_dim/kParallelismM; o++) {
+  ReadWeights_In:
+    for(unsigned i = 0; i < input_dim/kParallelismN; i++) {
+      #pragma HLS PIPELINE II=1
+      pipe.Push(weights[o*(input_dim/kParallelismN) + i]);
+    }
+  }
+}
+
 void ConvertWidthC(Stream<ComputePackM_t> &narrow, Stream<MemoryPackM_t> &wide,
                    const unsigned size_n, const unsigned size_k,
                    const unsigned size_m) {
@@ -362,16 +377,19 @@ ConvertWidthC_N:
   }
 }
 
-void WriteOutput(Stream<MemoryPackM_t> &pipe, MemoryPackM_t output[],
-                const unsigned batch_size, const unsigned seq_len) {
+void WriteOutput(Stream<ComputePackM_t> &pipe,
+                MemoryPackM_t output[],
+                const unsigned batch_size,
+                const unsigned seq_len) {
 WriteOutput_Batch:
   for(unsigned b = 0; b < batch_size; b++) {
   WriteOutput_Seq:
     for(unsigned s = 0; s < seq_len; s++) {
     WriteOutput_Data:
-      for(unsigned o = 0; o < kOutputDim; o++) {
+      for(unsigned o = 0; o < kTileSizeM/kParallelismM; o++) {
         #pragma HLS PIPELINE II=1
-        output[IndexOutput(b,s,o)] = pipe.Pop();
+        output[b*seq_len*(kTileSizeM/kParallelismM) + 
+               s*(kTileSizeM/kParallelismM) + o] = pipe.Pop();
       }
     }
   }
