@@ -50,8 +50,8 @@ static_assert(kMemoryWidthBytesM % sizeof(Data_t) == 0,
 using MemoryPackM_t = hlslib::DataPack<Data_t, kMemoryWidthM>;
 
 // Internal compute buses
-using ComputePackN_t = hlslib::DataPack<Data_t, kComputeTileSizeN>;
-using ComputePackM_t = hlslib::DataPack<Data_t, kComputeTileSizeM>;
+// using ComputePackN_t = hlslib::DataPack<Data_t, kComputeTileSizeN>;
+// using ComputePackM_t = hlslib::DataPack<Data_t, kComputeTileSizeM>;
 using OutputPack_t = hlslib::DataPack<Data_t, kComputeTileSizeM>;
 
 #ifndef MM_TRANSPOSED_A
@@ -85,7 +85,7 @@ inline unsigned SizeNMemory(unsigned n) {
   #pragma HLS INLINE
   return n / kMemoryWidthN;
 }
-
+ComputePackN_tComputePackN_t
 #endif // MM_TRANSPOSED_A
 
 constexpr unsigned long kOuterTileSizeMMemory = kOuterTileSizeM / kMemoryWidthM;
