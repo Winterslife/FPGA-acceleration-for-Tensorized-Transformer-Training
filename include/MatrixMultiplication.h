@@ -8,6 +8,7 @@
 #include "hlslib/xilinx/DataPack.h"
 #include "hlslib/xilinx/Resource.h"
 #include "hlslib/xilinx/Stream.h"
+#include "TTConfig.h"
 using Data_t = float;
 // 在已有定义后添加
 // TT Layer specific constants

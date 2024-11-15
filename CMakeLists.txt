@@ -1,6 +1,28 @@
 # Author:  Johannes de Fine Licht (definelicht@inf.ethz.ch)
 # Copyright: This software is copyrighted under the BSD 3-Clause License.
+# 添加TT配置选项
+option(MM_TT_RANKS_0 "First TT rank" 1)
+option(MM_TT_RANKS_1 "Second TT rank" 16)
+option(MM_TT_RANKS_2 "Third TT rank" 16)
+option(MM_TT_RANKS_3 "Fourth TT rank" 16)
+option(MM_TT_RANKS_4 "Fifth TT rank" 1)
 
+option(MM_TT_SHAPES_0 "First TT shape" 8)
+option(MM_TT_SHAPES_1 "Second TT shape" 8)
+option(MM_TT_SHAPES_2 "Third TT shape" 8)
+option(MM_TT_SHAPES_3 "Fourth TT shape" 8)
+
+# 配置编译定义
+add_definitions(-DMM_TT_RANKS_0=${MM_TT_RANKS_0})
+add_definitions(-DMM_TT_RANKS_1=${MM_TT_RANKS_1})
+add_definitions(-DMM_TT_RANKS_2=${MM_TT_RANKS_2})
+add_definitions(-DMM_TT_RANKS_3=${MM_TT_RANKS_3})
+add_definitions(-DMM_TT_RANKS_4=${MM_TT_RANKS_4})
+
+add_definitions(-DMM_TT_SHAPES_0=${MM_TT_SHAPES_0})
+add_definitions(-DMM_TT_SHAPES_1=${MM_TT_SHAPES_1})
+add_definitions(-DMM_TT_SHAPES_2=${MM_TT_SHAPES_2})
+add_definitions(-DMM_TT_SHAPES_3=${MM_TT_SHAPES_3})
 add_definitions(
   -DMM_BATCH_SIZE=2
   -DMM_SEQ_LEN=4

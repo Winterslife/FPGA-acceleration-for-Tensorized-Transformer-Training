@@ -5,6 +5,7 @@
 
 #include "MatrixMultiplication.h"
 #include "hlslib/xilinx/Stream.h"
+#include "TTConfig.h"
 void ReadInput(MemoryPackN_t const input[], 
               Stream<ComputePackN_t> &pipe,
               const unsigned batch_size,
