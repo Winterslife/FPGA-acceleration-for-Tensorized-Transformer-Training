@@ -10,7 +10,12 @@
 #include "hlslib/xilinx/Stream.h"
 
 using hlslib::Stream;
-
+// 定义内存数据包类型
+using Data_t = float; // 或其他基础数据类型
+using MemoryPackN_t = hlslib::DataPack<Data_t, kInputDim>;
+using MemoryPackM_t = hlslib::DataPack<Data_t, kOutputDim>;
+using ComputePackN_t = hlslib::DataPack<Data_t, kInputDim>; 
+using ComputePackM_t = hlslib::DataPack<Data_t, kOutputDim>;
 constexpr int kSeed = 5; // For initializing matrices for testing
 constexpr unsigned kPipeDepth = 4;
 

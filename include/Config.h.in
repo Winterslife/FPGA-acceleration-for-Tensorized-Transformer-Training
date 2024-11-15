@@ -2,7 +2,23 @@
 /// @copyright This software is copyrighted under the BSD 3-Clause License. 
 
 #pragma once
+#ifndef MM_BATCH_SIZE
+#define MM_BATCH_SIZE 2
+#endif
 
+#ifndef MM_SEQ_LEN  
+#define MM_SEQ_LEN 4
+#endif
+
+// 使用已有的SIZE宏
+#define MM_INPUT_DIM MM_SIZE_K
+#define MM_OUTPUT_DIM MM_SIZE_M
+
+// 定义维度常量
+constexpr unsigned long kBatchSize = MM_BATCH_SIZE;
+constexpr unsigned long kSeqLen = MM_SEQ_LEN;
+constexpr unsigned long kInputDim = MM_INPUT_DIM;
+constexpr unsigned long kOutputDim = MM_OUTPUT_DIM;
 #include <cstddef>
 #include <cstdint>
 #ifdef MM_HALF_PRECISION

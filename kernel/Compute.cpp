@@ -43,7 +43,10 @@ Compute_Batch:
         auto weight = weight_in.Pop();
         
         // 计算乘加
-        ComputePackM_t partial_sum = 0;
+        ComputePackM_t partial_sum;
+        for(int i = 0; i < kWidth; i++) {
+          partial_sum[i] = 0;
+        }
       Compute_In:
         for(unsigned i = 0; i < kInputDim; i++) {
           #pragma HLS UNROLL
@@ -51,7 +54,7 @@ Compute_Batch:
         }
         
         // 累积结果
-        output_buffer[b][s][o] += partial_sum;
+        output_buffer[b][s][o] = output_buffer[b][s][o] + partial_sum;
 
         // 输出结果
         if(o == kOutputDim-1) {

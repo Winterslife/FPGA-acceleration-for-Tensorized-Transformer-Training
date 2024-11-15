@@ -1,6 +1,11 @@
 # Author:  Johannes de Fine Licht (definelicht@inf.ethz.ch)
 # Copyright: This software is copyrighted under the BSD 3-Clause License.
 
+add_definitions(
+  -DMM_BATCH_SIZE=2
+  -DMM_SEQ_LEN=4
+)
+
 cmake_minimum_required(VERSION 3.0)
 project(sdaccel_mm)
 

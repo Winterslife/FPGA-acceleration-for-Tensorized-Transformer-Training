@@ -18,10 +18,12 @@ int main() {
   const unsigned output_dim = 32;
 
   // 2. 准备测试数据
-  std::vector<Data_t> input(batch_size * seq_len * input_dim);
-  std::vector<Data_t> weights(input_dim * output_dim);
-  std::vector<Data_t> output(batch_size * seq_len * output_dim);
-  std::vector<Data_t> reference(batch_size * seq_len * output_dim, 0);
+  std::vector<Data_t, hlslib::ocl::AlignedAllocator<Data_t, 4096>> 
+    input(batch_size * seq_len * input_dim);
+  std::vector<Data_t, hlslib::ocl::AlignedAllocator<Data_t, 4096>> 
+    weights(input_dim * output_dim);
+  std::vector<Data_t, hlslib::ocl::AlignedAllocator<Data_t, 4096>> 
+    output(batch_size * seq_len * output_dim);
 
   // 3. 初始化随机数据
   std::default_random_engine rng(kSeed);
