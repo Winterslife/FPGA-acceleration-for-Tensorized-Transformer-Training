@@ -29,22 +29,22 @@ using ComputePackN_t = hlslib::DataPack<Data_t, kParallelismN>;
 using ComputePackM_t = hlslib::DataPack<Data_t, kParallelismM>;
 using hlslib::Stream;
 // 定义内存数据包类型
-using Data_t = float; // 或其他基础数据类型
-using MemoryPackN_t = hlslib::DataPack<Data_t, kInputDim>;
-using MemoryPackM_t = hlslib::DataPack<Data_t, kOutputDim>;
-using ComputePackN_t = hlslib::DataPack<Data_t, kInputDim>; 
-using ComputePackM_t = hlslib::DataPack<Data_t, kOutputDim>;
+// using Data_t = float; // 或其他基础数据类型
+// using MemoryPackN_t = hlslib::DataPack<Data_t, kInputDim>;
+// using MemoryPackM_t = hlslib::DataPack<Data_t, kOutputDim>;
+// using ComputePackN_t = hlslib::DataPack<Data_t, kInputDim>; 
+// using ComputePackM_t = hlslib::DataPack<Data_t, kOutputDim>;
 constexpr int kSeed = 5; // For initializing matrices for testing
 constexpr unsigned kPipeDepth = 4;
 
 // Memory bus in K-dimension
-constexpr int kMemoryWidthK = kMemoryWidthBytesK / sizeof(Data_t);
+// constexpr int kMemoryWidthK = kMemoryWidthBytesK / sizeof(Data_t);
 static_assert(kMemoryWidthBytesK % sizeof(Data_t) == 0,
               "Memory width in K not divisable by size of data type.");
 using MemoryPackK_t = hlslib::DataPack<Data_t, kMemoryWidthK>;
 
 // Memory bus in M-dimension
-constexpr int kMemoryWidthM = kMemoryWidthBytesM / sizeof(Data_t);
+// constexpr int kMemoryWidthM = kMemoryWidthBytesM / sizeof(Data_t);
 static_assert(kMemoryWidthBytesM % sizeof(Data_t) == 0,
               "Memory width in M not divisable by size of data type.");
 using MemoryPackM_t = hlslib::DataPack<Data_t, kMemoryWidthM>;
@@ -69,7 +69,7 @@ constexpr decltype(kMemoryWidthK) kMemoryWidthA = kMemoryWidthK;
 #else // MM_TRANSPOSED_A
 
 // Memory bus in N-dimension (for transposed A)
-constexpr int kMemoryWidthN = kMemoryWidthBytesN / sizeof(Data_t);
+// constexpr int kMemoryWidthN = kMemoryWidthBytesN / sizeof(Data_t);
 static_assert(kMemoryWidthBytesN % sizeof(Data_t) == 0,
               "Memory width in N not divisable by size of data type.");
 using MemoryPackN_t = hlslib::DataPack<Data_t, kMemoryWidthN>;
