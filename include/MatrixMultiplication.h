@@ -189,7 +189,6 @@ constexpr T PowerOfTwo(T number, unsigned char power) {
 #define MM_MULT_RESOURCE_PRAGMA(var)
 #endif
 
-std::cout << "Running original implementation simulation...\n" << std::flush;
 #ifdef MM_DYNAMIC_SIZES
     MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data(),
                               size_n,  // batch_size
