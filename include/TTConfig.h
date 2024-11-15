@@ -30,11 +30,18 @@ constexpr unsigned kOutputAccumulated[] = {
 
 // TT核数据结构
 struct TTCores {
-    // 存储四个TT核
-    Data_t cores[4][kTTRanks[0] * kTTShapes[0] * kTTOutputShapes[0] * kTTRanks[1]];
+    Data_t cores[4][1024];  // 使用足够大的固定大小
     
-    // 获取核元素的访问函数
+    // 非const版本
     Data_t& GetCore(unsigned core_idx, unsigned r1, unsigned i, unsigned j, unsigned r2) {
+        const unsigned offset = r1 * (kTTShapes[core_idx] * kTTOutputShapes[core_idx] * kTTRanks[core_idx+1]) +
+                              i * (kTTOutputShapes[core_idx] * kTTRanks[core_idx+1]) +
+                              j * kTTRanks[core_idx+1] + r2;
+        return cores[core_idx][offset];
+    }
+    
+    // const版本
+    Data_t GetCore(unsigned core_idx, unsigned r1, unsigned i, unsigned j, unsigned r2) const {
         const unsigned offset = r1 * (kTTShapes[core_idx] * kTTOutputShapes[core_idx] * kTTRanks[core_idx+1]) +
                               i * (kTTOutputShapes[core_idx] * kTTRanks[core_idx+1]) +
                               j * kTTRanks[core_idx+1] + r2;
