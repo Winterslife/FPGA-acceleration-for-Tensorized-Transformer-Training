@@ -20,9 +20,9 @@ set(Vitis_FLOATING_POINT_LIBRARY "${VITIS_HLS_ROOT}/lib/lnx64.o/libhlsmath.so" C
 set(Vitis_LIBRARIES "${VITIS_ROOT}/lib/lnx64.o/libxilinxopencl.so" CACHE FILEPATH "Vitis libraries")
 
 # 版本信息
-set(Vitis_VERSION "2024.1" CACHE STRING "Vitis version")
-set(Vitis_MAJOR_VERSION "2024" CACHE STRING "Vitis major version")
-set(Vitis_MINOR_VERSION "1" CACHE STRING "Vitis minor version")
+set(Vitis_VERSION "2023.2" CACHE STRING "Vitis version")
+set(Vitis_MAJOR_VERSION "2023" CACHE STRING "Vitis major version")
+set(Vitis_MINOR_VERSION "2" CACHE STRING "Vitis minor version")
 
 # 使用 Vitis HLS
 set(Vitis_USE_VITIS_HLS ON CACHE BOOL "Use Vitis HLS instead of Vivado HLS")
