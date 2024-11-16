@@ -25,7 +25,7 @@ void ProcessingElement(
     const unsigned input_dim,    // 添加参数
     const unsigned output_dim
     ) {
-
+      // #pragma HLS PIPELINE II=1
   // 双缓冲输入 - 使用kParallelismN
   ComputePackN_t input_buffer[2][kTileSizeN/kParallelismN];
   #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=2
@@ -42,6 +42,7 @@ Compute_Batch:
       for(unsigned o = 0; o < kTileSizeM/kParallelismM; o++) {
         #pragma HLS PIPELINE II=1
         
+        bool valid_input = false;
         // 获取计算包大小的数据
         auto input = input_in.Pop();
         auto weight = weight_in.Pop();

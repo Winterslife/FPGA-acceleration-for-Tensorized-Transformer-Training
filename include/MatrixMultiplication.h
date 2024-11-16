@@ -21,7 +21,7 @@ using TTCorePack_t = hlslib::DataPack<Data_t, kTTCoreWidth>;
 using TTIntermediatePack_t = hlslib::DataPack<Data_t, kTTRanks[1]>;
 constexpr int kParallelismN = MM_PARALLELISM_N;    // 32
 constexpr int kParallelismM = MM_PARALLELISM_M;    // 8
-constexpr int kTileSizeN = MM_MEMORY_TILE_SIZE_N;  // 32
+constexpr int kTileSizeN = MM_MEMORY_TILE_SIZE_N;  // 32  
 constexpr int kTileSizeM = MM_MEMORY_TILE_SIZE_M;  // 32
 
 // Memory interface widths  
@@ -49,7 +49,7 @@ using hlslib::Stream;
 // using ComputePackN_t = hlslib::DataPack<Data_t, kInputDim>; 
 // using ComputePackM_t = hlslib::DataPack<Data_t, kOutputDim>;
 constexpr int kSeed = 5; // For initializing matrices for testing
-constexpr unsigned kPipeDepth = 4;
+constexpr unsigned kPipeDepth = 8;//增加Stream缓冲区大小
 
 // Memory bus in K-dimension
 // constexpr int kMemoryWidthK = kMemoryWidthBytesK / sizeof(Data_t);
