@@ -99,7 +99,7 @@ inline unsigned SizeNMemory(unsigned n) {
   #pragma HLS INLINE
   return n / kMemoryWidthN;
 }
-ComputePackN_tComputePackN_t
+ComputePackN_t
 #endif // MM_TRANSPOSED_A
 
 constexpr unsigned long kOuterTileSizeMMemory = kOuterTileSizeM / kMemoryWidthM;
@@ -187,20 +187,6 @@ constexpr T PowerOfTwo(T number, unsigned char power) {
   HLSLIB_RESOURCE_PRAGMA(var, MM_MULT_RESOURCE)
 #else
 #define MM_MULT_RESOURCE_PRAGMA(var)
-#endif
-
-#ifdef MM_DYNAMIC_SIZES
-    MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data(),
-                              size_n,  // batch_size
-                              size_k,  // seq_len
-                              size_k,  // input_dim
-                              size_m); // output_dim
-#else
-    MatrixMultiplicationKernel(aKernel.data(), bKernel.data(), cKernel.data(),
-                              kSizeN,
-                              kSizeK, 
-                              kSizeK,
-                              kSizeM);
 #endif
 
 extern "C" {
