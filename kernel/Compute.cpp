@@ -1,5 +1,3 @@
-/// @author    Johannes de Fine Licht (definelicht@inf.ethz.ch)
-/// @copyright This software is copyrighted under the BSD 3-Clause License. 
 #include "hlslib/xilinx/Stream.h"
 #include "hlslib/xilinx/Simulation.h"
 #include "hlslib/xilinx/DataPack.h"
@@ -9,10 +7,6 @@
 #include "TTConfig.h"
 #include <cassert>
 
-
-
-
-// 实现矩阵乘法的基本计算单元
 void ProcessingElement(
     Stream<ComputePackN_t> &input_in,
     Stream<ComputePackN_t> &input_out,
@@ -22,15 +16,16 @@ void ProcessingElement(
     Stream<ComputePackM_t> &output_in,
     const unsigned batch_size,
     const unsigned seq_len,
-    const unsigned input_dim,    // 添加参数
-    const unsigned output_dim
-    ) {
+    const unsigned input_dim,
+    const unsigned output_dim) {
 
-  // 双缓冲输入 - 使用kParallelismN
+  #pragma HLS INLINE off
+
+  // 双缓冲输入 - 保持原有的缓存策略
   ComputePackN_t input_buffer[2][kTileSizeN/kParallelismN];
   #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=2
 
-  // 计算缓存 - 使用kParallelismM  
+  // 计算缓存
   ComputePackM_t output_buffer[kBatchSize][kSeqLen][kTileSizeM/kParallelismM];
   #pragma HLS ARRAY_PARTITION variable=output_buffer complete dim=3
 
@@ -39,45 +34,58 @@ Compute_Batch:
   Compute_Seq:
     for(unsigned s = 0; s < seq_len; s++) {
     Compute_Out:
-      for(unsigned o = 0; o < kTileSizeM/kParallelismM; o++) {
-        #pragma HLS PIPELINE II=1
-        
-        // 获取计算包大小的数据
-        auto input = input_in.Pop();
-        auto weight = weight_in.Pop();
-        
-        // 初始化部分和
-        ComputePackM_t partial_sum;
-        for(unsigned w = 0; w < kParallelismM; w++) {
-          #pragma HLS UNROLL
-          partial_sum[w] = 0;
-        }
-        
-        // 计算乘加，使用并行度参数
-        for(unsigned i = 0; i < kParallelismN; i++) {
-          #pragma HLS UNROLL
-          for(unsigned w = 0; w < kParallelismM; w++) {
-            #pragma HLS UNROLL
-            partial_sum[w] = partial_sum[w] + input[i] * weight[w];
+      for(unsigned o = 0; o < output_dim/kParallelismM; o++) {
+      Compute_In:
+        for(unsigned i = 0; i < input_dim/kParallelismN; i++) {
+          #pragma HLS PIPELINE II=1
+          
+          // 获取输入数据
+          ComputePackN_t input = input_in.Pop();
+          // 及时转发给下一个PE
+          input_out.Push(input);  
+          
+          // 获取权重数据
+          ComputePackM_t weight = weight_in.Pop();
+          // 及时转发给下一个PE
+          weight_out.Push(weight);
+          
+          // 初始化部分和
+          if (i == 0) {
+            for(unsigned w = 0; w < kParallelismM; w++) {
+              #pragma HLS UNROLL
+              output_buffer[b][s][o][w] = 0;
+            }
           }
-        }
+          
+          // 计算乘加，使用并行度参数
+          for(unsigned n = 0; n < kParallelismN; n++) {
+            #pragma HLS UNROLL
+            for(unsigned w = 0; w < kParallelismM; w++) {
+              #pragma HLS UNROLL
+              output_buffer[b][s][o][w] += input[n] * weight[w];
+            }
+          }
 
-        // 累积结果
-        for(unsigned w = 0; w < kParallelismM; w++) {
-          #pragma HLS UNROLL
-          output_buffer[b][s][o][w] = output_buffer[b][s][o][w] + partial_sum[w];
-        }
-
-        // 输出
-        if(o == kTileSizeM/kParallelismM-1) {
-          output_out.Push(output_buffer[b][s][o]);
+          // 处理输出
+          if(i == input_dim/kParallelismN - 1) {
+            // 从前一级PE获取输出
+            ComputePackM_t prev_output = output_in.Pop();
+            
+            // 累加前一级结果
+            for(unsigned w = 0; w < kParallelismM; w++) {
+              #pragma HLS UNROLL
+              output_buffer[b][s][o][w] += prev_output[w];
+            }
+            
+            // 将结果发送给下一级PE
+            output_out.Push(output_buffer[b][s][o]);
+          }
         }
       }
     }
   }
 }
 
-// 在文件末尾添加:
 void TTProcessingElement(
     Stream<ComputePackN_t> &input_in,
     Stream<ComputePackN_t> &input_out,
@@ -88,6 +96,7 @@ void TTProcessingElement(
     
     #pragma HLS INLINE off
     
+    // TT计算所需的缓冲区
     Data_t input_buffer[kTTRanks[0]][kTTShapes[0]];
     #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=0
     
@@ -99,11 +108,13 @@ ComputeBatch:
     ComputeSeq:
         for(unsigned s = 0; s < seq_len; s++) {
             
+        // 第一个TT核的计算
         TT_Core1:
             for(unsigned i = 0; i < kTTShapes[0]; i++) {
                 #pragma HLS PIPELINE II=1
                 
                 const auto input = input_in.Pop();
+                input_out.Push(input);  // Forward input to next PE
                 
             Core1_Rank:
                 for(unsigned r1 = 0; r1 < kTTRanks[1]; r1++) {
@@ -119,6 +130,7 @@ ComputeBatch:
                 }
             }
             
+        // 剩余TT核的计算
         TT_Remaining_Cores:
             for(unsigned core = 1; core < 4; core++) {
             Core_Compute:
@@ -147,8 +159,8 @@ ComputeBatch:
                 }
             }
             
+            // 准备输出结果
             ComputePackM_t output;
-        Prepare_Output:
             for(unsigned i = 0; i < kParallelismM; i++) {
                 #pragma HLS UNROLL
                 output[i] = intermediate_results[0][i];

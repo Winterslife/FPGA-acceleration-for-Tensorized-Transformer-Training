@@ -21,15 +21,15 @@ void MatrixMultiplicationKernel(
     #pragma HLS DATAFLOW
 
     // 定义流水线流
-    Stream<ComputePackN_t> input_pipe("input_pipe");
-    Stream<ComputePackM_t> weight_pipe("weight_pipe");
-    Stream<ComputePackM_t> output_pipe("output_pipe");
+    Stream<ComputePackN_t, 32> input_pipe("input_pipe");
+    Stream<ComputePackM_t, 32> weight_pipe("weight_pipe");
+    Stream<ComputePackM_t, 32> output_pipe("output_pipe");
 
     // 中间流
-    Stream<ComputePackN_t> input_pipes[kParallelismN + 1];
-    Stream<ComputePackM_t> weight_pipes[kParallelismN + 1];
-    Stream<ComputePackM_t> output_pipes[kParallelismN + 1];
-    
+    Stream<ComputePackN_t, 32> input_pipes[kParallelismN + 1];
+    Stream<ComputePackM_t, 32> weight_pipes[kParallelismN + 1];
+    Stream<ComputePackM_t, 32> output_pipes[kParallelismN + 1];
+
     #pragma HLS ARRAY_PARTITION variable=input_pipes complete dim=1
     #pragma HLS ARRAY_PARTITION variable=weight_pipes complete dim=1
     #pragma HLS ARRAY_PARTITION variable=output_pipes complete dim=1
@@ -54,6 +54,7 @@ void MatrixMultiplicationKernel(
                          weight_pipes[pe + 1],
                          output_pipes[pe],
                          output_pipes[pe + 1],
+                         pe,
                          batch_size, 
                          seq_len,
                          input_dim,   // 添加input_dim参数
@@ -61,7 +62,7 @@ void MatrixMultiplicationKernel(
     }
 
     // 写回输出
-    HLSLIB_DATAFLOW_FUNCTION(WriteOutput, output_pipes[0], output,
+    HLSLIB_DATAFLOW_FUNCTION(WriteOutput, output_pipes[kParallelismN-1], output,
                             batch_size, seq_len);
 
     HLSLIB_DATAFLOW_FINALIZE();

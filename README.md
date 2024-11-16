@@ -32,8 +32,8 @@ Heterogeneous High-performance Reconfigurable Computing (H2RC'19).
 
 
 ```
-cd build
 cmake ../ -DMM_DATA_TYPE=float -DMM_PARALLELISM_N=32 -DMM_PARALLELISM_M=8 -DMM_MEMORY_TILE_SIZE_N=512 -DMM_MEMORY_TILE_SIZE_M=512
+make
 ```
 
 # Princeple
