@@ -346,11 +346,17 @@ void ReadWeights(MemoryPackM_t const weights[],
                 Stream<ComputePackM_t> &pipe,
                 const unsigned input_dim,
                 const unsigned output_dim) {
+    #ifndef HLSLIB_SYNTHESIS
+    std::cout << "Starting ReadWeights..." << std::endl;
+    #endif
 ReadWeights_Out:
   for(unsigned o = 0; o < output_dim/kParallelismM; o++) {
   ReadWeights_In:
     for(unsigned i = 0; i < input_dim/kParallelismN; i++) {
       #pragma HLS PIPELINE II=1
+      #ifndef HLSLIB_SYNTHESIS
+      std::cout << "ReadWeights: o=" << o << ", i=" << i << std::endl;
+      #endif
       
       // 创建计算包
       ComputePackM_t compute_pack;

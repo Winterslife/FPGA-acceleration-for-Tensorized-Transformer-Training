@@ -25,14 +25,19 @@ void ProcessingElement(
     const unsigned input_dim,    // 添加参数
     const unsigned output_dim
     ) {
-      // #pragma HLS PIPELINE II=1
+      #pragma HLS PIPELINE II=1
+      #ifndef HLSLIB_SYNTHESIS
+    static int pe_id = 0;
+    std::cout << "PE " << pe_id++ << " started" << std::endl;
+    #endif
   // 双缓冲输入 - 使用kParallelismN
-  ComputePackN_t input_buffer[2][kTileSizeN/kParallelismN];
-  #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=2
+  // ComputePackN_t input_buffer[2][kTileSizeN/kParallelismN];
+  // #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=2
 
   // 计算缓存 - 使用kParallelismM  
-  ComputePackM_t output_buffer[kBatchSize][kSeqLen][kTileSizeM/kParallelismM];
-  #pragma HLS ARRAY_PARTITION variable=output_buffer complete dim=3
+  // ComputePackM_t output_buffer[kBatchSize][kSeqLen][kTileSizeM/kParallelismM];
+  // ComputePackM_t output_buffer;
+  // #pragma HLS ARRAY_PARTITION variable=output_buffer complete dim=3
 
 Compute_Batch:
   for(unsigned b = 0; b < batch_size; b++) {
@@ -42,11 +47,30 @@ Compute_Batch:
       for(unsigned o = 0; o < kTileSizeM/kParallelismM; o++) {
         #pragma HLS PIPELINE II=1
         
-        bool valid_input = false;
+        #ifndef HLSLIB_SYNTHESIS
+        std::cout << "PE iteration: b=" << b << ", s=" << s << ", o=" << o << std::endl;
+        #endif
+        // bool valid_input = false;
         // 获取计算包大小的数据
-        auto input = input_in.Pop();
-        auto weight = weight_in.Pop();
-        
+        // auto input = input_in.Pop();
+        // auto weight = weight_in.Pop();
+        // 读取输入并立即转发
+        #ifndef HLSLIB_SYNTHESIS
+        if(input_in.empty()) {
+            std::cout << "input_in is empty" << std::endl;
+        }
+        #endif
+        ComputePackN_t input = input_in.Pop();
+        input_out.Push(input);
+
+        // 读取权重并转发  
+        #ifndef HLSLIB_SYNTHESIS
+        if(weight_in.empty()) {
+            std::cout << "weight_in is empty" << std::endl; 
+        }
+        #endif
+        ComputePackM_t weight = weight_in.Pop();
+        weight_out.Push(weight);
         // 初始化部分和
         ComputePackM_t partial_sum;
         for(unsigned w = 0; w < kParallelismM; w++) {
@@ -64,15 +88,26 @@ Compute_Batch:
         }
 
         // 累积结果
-        for(unsigned w = 0; w < kParallelismM; w++) {
-          #pragma HLS UNROLL
-          output_buffer[b][s][o][w] = output_buffer[b][s][o][w] + partial_sum[w];
+        // for(unsigned w = 0; w < kParallelismM; w++) {
+        //   #pragma HLS UNROLL
+        //   output_buffer[b][s][o][w] = output_buffer[b][s][o][w] + partial_sum[w];
+        // }
+        ComputePackM_t result = partial_sum;
+        #ifndef HLSLIB_SYNTHESIS
+        std::cout << "Checking output_in..." << std::endl;
+        #endif
+        if(!output_in.empty()) {  // 非阻塞读取
+            for(unsigned w = 0; w < kParallelismM; w++) {
+                #pragma HLS UNROLL
+                result[w] = result[w] + partial_sum[w];
+            }
         }
-
-        // 输出
-        if(o == kTileSizeM/kParallelismM-1) {
-          output_out.Push(output_buffer[b][s][o]);
-        }
+        // // 输出
+        // if(o == kTileSizeM/kParallelismM-1) {
+        //   output_out.Push(output_buffer[b][s][o]);
+        // }
+        // 输出结果
+        output_out.Push(result);
       }
     }
   }
