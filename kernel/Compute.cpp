@@ -124,10 +124,10 @@ void TTProcessingElement(
     
     #pragma HLS INLINE off
     
+    // 输入和中间结果缓存
     Data_t input_buffer[kTTRanks[0]][kTTShapes[0]];
-    #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=0
-    
     Data_t intermediate_results[kTTRanks[2]][kTTOutputShapes[0]];
+    #pragma HLS ARRAY_PARTITION variable=input_buffer complete dim=0
     #pragma HLS ARRAY_PARTITION variable=intermediate_results complete dim=0
 
 ComputeBatch:
@@ -135,11 +135,13 @@ ComputeBatch:
     ComputeSeq:
         for(unsigned s = 0; s < seq_len; s++) {
             
+        // 第一个TT核计算    
         TT_Core1:
             for(unsigned i = 0; i < kTTShapes[0]; i++) {
                 #pragma HLS PIPELINE II=1
                 
                 const auto input = input_in.Pop();
+                input_out.Push(input); // 转发输入
                 
             Core1_Rank:
                 for(unsigned r1 = 0; r1 < kTTRanks[1]; r1++) {
@@ -155,6 +157,7 @@ ComputeBatch:
                 }
             }
             
+        // G2-G4核计算    
         TT_Remaining_Cores:
             for(unsigned core = 1; core < 4; core++) {
             Core_Compute:
@@ -171,11 +174,12 @@ ComputeBatch:
                             for(unsigned r2 = 0; r2 < kTTRanks[core+1]; r2++) {
                                 #pragma HLS UNROLL
                                 temp[j] += intermediate_results[r1][i] * 
-                                         tt_cores.GetCore(core, r1, i, j, r2);
+                                        tt_cores.GetCore(core, r1, i, j, r2);
                             }
                         }
                     }
                     
+                    // 更新中间结果
                     for(unsigned j = 0; j < kTTOutputShapes[core]; j++) {
                         #pragma HLS UNROLL
                         intermediate_results[r1][j] = temp[j];
@@ -183,6 +187,7 @@ ComputeBatch:
                 }
             }
             
+            // 准备输出
             ComputePackM_t output;
         Prepare_Output:
             for(unsigned i = 0; i < kParallelismM; i++) {

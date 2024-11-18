@@ -505,7 +505,7 @@ LoadCores:
                 LoadNextRanks:
                     for(unsigned r2 = 0; r2 < kTTRanks[core_idx+1]; r2++) {
                         #pragma HLS PIPELINE II=1
-                        
+                        // 计算内存访问偏移
                         const unsigned mem_idx = offset / kMemoryWidthM;
                         const unsigned mem_offset = offset % kMemoryWidthM;
                         
